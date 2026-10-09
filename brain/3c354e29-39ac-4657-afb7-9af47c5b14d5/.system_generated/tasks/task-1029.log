@@ -1,0 +1,4 @@
+1249:window.submitAgenMaterialQuiz = function(agentId, moduleId, score) {
+1354:    html += `<button type="button" class="btn-primary" onclick="submitAgenMaterialQuizForm('${moduleId}')" style="width:100%; padding:12px;">Kirim Jawaban Kuis</button>`;
+1360:window.submitAgenMaterialQuizForm = function(moduleId) {
+1376:    window.submitAgenMaterialQuiz(agentId, moduleId, score);

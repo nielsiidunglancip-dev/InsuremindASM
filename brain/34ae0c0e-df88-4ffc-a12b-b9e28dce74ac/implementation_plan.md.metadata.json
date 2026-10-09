@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Rencana implementasi detail untuk menyuntikkan 3 modul baru ke InsureMind Agent SPA: (1) Header Profile Widget & Halaman Profil Agen (Modul 6), (2) Arena Game Edukasi dengan Swipe Match & Word Duel (Modul 4.3), dan (3) PPT Builder dengan backend Express.js menggunakan pptxgenjs (Modul 3.3). Mencakup daftar file yang diubah/dibuat, logika fungsi, dan rencana verifikasi.",
+  "updatedAt": "2026-06-10T08:24:30.432685300Z",
+  "requestFeedback": true
+}

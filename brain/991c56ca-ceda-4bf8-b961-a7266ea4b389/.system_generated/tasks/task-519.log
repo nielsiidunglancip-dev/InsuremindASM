@@ -1,0 +1,4 @@
+120:window.renderHubPosts = function() {
+203:        window.renderHubPosts();
+328:        if (typeof renderHubPosts === 'function') {
+329:            renderHubPosts();

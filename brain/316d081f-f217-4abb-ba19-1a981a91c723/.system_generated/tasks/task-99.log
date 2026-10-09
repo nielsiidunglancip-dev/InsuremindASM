@@ -1,0 +1,96 @@
+Memulai inisialisasi RAG (Membaca PDF)...
+Extracting texts from PDFs...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Chunking text... (Total length: 1810424 chars)
+Generated 1393 chunks. Creating embeddings (this may take a moment)...
+
+Failed to embed batch 0: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 1: terminated
+
+Failed to embed batch 2: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 3: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 4: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 5: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 6: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 7: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 8: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 9: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 10: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 11: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 12: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 13: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 14: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 15: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 16: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 17: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 18: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 19: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 20: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 21: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 22: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 23: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 24: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 25: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 26: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Failed to embed batch 27: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents: fetch failed
+
+Finished creating embeddings. Saving to cache...
+==================================================
+🚀 InsureMind AI Web Server berjalan di: http://localhost:3000
+==================================================
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:103:20 {
+  status: 503,
+  statusText: 'Service Unavailable',
+  errorDetails: undefined
+}
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:103:20 {
+  status: 503,
+  statusText: 'Service Unavailable',
+  errorDetails: undefined
+}

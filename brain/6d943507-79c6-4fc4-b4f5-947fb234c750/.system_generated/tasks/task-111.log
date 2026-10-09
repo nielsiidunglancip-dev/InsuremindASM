@@ -1,0 +1,16 @@
+Memulai inisialisasi RAG (Membaca PDF)...
+Loading RAG embeddings from cache...
+Loaded 0 chunks from cache.
+==================================================
+🚀 InsureMind AI Web Server berjalan di: http://localhost:3000
+==================================================
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:93:20 {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}

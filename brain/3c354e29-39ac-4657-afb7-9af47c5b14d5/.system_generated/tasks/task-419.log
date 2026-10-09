@@ -1,0 +1,119 @@
+8:    content="ASM Insurance Academy - Platform Pembelajaran Mandiri, Uji Sertifikasi LSP, dan Pendamping Kerja Digital untuk Agen Asuransi Umum Indonesia dengan Sistem Gamifikasi.">
+9:  <title>InsureMind Agent - LMS & AI Coach</title>
+27:        <p class="login-subtitle">LMS & Sertifikasi Agen Asuransi Umum Indonesia</p>
+58:          <button onclick="fillLogin('agen@asm.id', 'agen123')" class="btn-demo">Agen (Rian)</button>
+122:          <span id="sidebar-user-role" class="role-badge">Agen</span>
+129:        <!-- Grup Menu Agen -->
+130:        <div id="agen-menu-group">
+131:          <div class="nav-section-title">Menu Utama Agen</div>
+150:            <button class="sidebar-link" id="nav-agen-training" onclick="navigateTo('agen-training')">
+248:              Coaching Agen
+304:              Profil Agen
+307:        </div> <!-- End of agen-menu-group -->
+343:          <button class="sidebar-link" id="nav-trainer-evaluasi" onclick="navigateTo('trainer-evaluasi')">
+352:            Evaluasi Nilai Ujian Agen
+378:            Manajemen User (Akun Agen & Trainer)
+423:            Laporan Kelulusan & Sertifikasi Agen
+471:        <div class="gamify-widget" title="Level Pangkat Agen">
+545:      <!-- ==================== PAGE: DASHBOARD AGEN ==================== -->
+549:            <h2 class="welcome-txt">Selamat Datang Kembali, <span id="dash-user-name">Agen Rian</span>!</h2>
+570:                Progress Karir Agen</h3>
+573:                <span id="dash-rank-name" style="font-weight:700; color:var(--primary-blue);">Agen Pratama</span>
+828:                  <span>Simulasi Ujian</span>
+999:                <label for="motor-value">Nilai Pertanggungan / Harga Pasar Kendaraan (Rp)</label>
+1075:                <label for="prop-value">Nilai Bangunan & Perabot</label>
+1149:                  <span>Nilai Pertanggungan:</span>
+1254:            <h3>Form Pengisian Quotation & SPPA Agen</h3>
+1303:                    <th>Nilai Pertanggungan</th>
+1375:                    <label for="pptx-nama-agen">Nama Agen Penjual</label>
+1376:                    <input type="text" id="pptx-nama-agen" placeholder="Nama Agen..." readonly
+1385:                    <label for="pptx-nilai-pertanggungan">Nilai Uang Pertanggungan (Rp)</label>
+1386:                    <input type="number" id="pptx-nilai-pertanggungan" placeholder="0"
+1476:      <!-- ==================== [MODUL 6] PAGE: PROFIL AGEN ==================== -->
+1479:          <h2>Profil Agen Saya</h2>
+1492:              <div class="identity-rank-badge" id="profil-rank-badge">⭐ Agen Pratama</div>
+1495:                  <span class="field-label">🪪 Kode Keagenan</span>
+1500:                  <span class="field-value" id="profil-email">agen@asm.id</span>
+1590:                <span id="profil-rank-name-lbl" style="font-weight:700; color: var(--primary-blue);">Agen Pratama</span>
+1834:      <!-- ==================== PAGE: COACHING AGEN ==================== -->
+1837:          <h2>Coaching Agen & Teknik Penjualan</h2>
+1855:              <h3>Pilih Modul Coaching Agen</h3>
+1867:          <p>Modul belajar terarah berdasarkan SKKNI untuk menghadapi ujian sertifikasi keagenan resmi.</p>
+1870:        <!-- Pilihan Kualifikasi Ujian -->
+1874:            <option value="Level 3">Kualifikasi Agen Level 3 (Asuransi Umum Dasar)</option>
+1875:            <option value="Level 4 - Bonding">Kualifikasi Agen Level 4 - Bonding (Penjaminan Proyek)</option>
+1876:            <option value="Level 4 - PAYDI">Kualifikasi Agen Level 4 - PAYDI (Investasi/Unit Link)</option>
+1883:            <h3 id="lsp-qualification-title">Kualifikasi Agen Level 3</h3>
+1902:          <!-- Tips Ujian & Action Card -->
+1905:              <h3>Tips Menghadapi Ujian LSP</h3>
+1912:              <p>Uji kesiapan kompetensi Anda dengan bank soal asuransi resmi yang mirip dengan soal asli ujian LSP.</p>
+1915:                Buka Ujian Simulasi
+1925:          <h2>Simulasi Ujian Sertifikasi</h2>
+1926:          <p>Uji pemahaman Anda terhadap kualifikasi keagenan terpilih dengan simulasi waktu nyata.</p>
+1939:            <h2>Mulai Simulasi Ujian</h2>
+1940:            <p>Pilih jumlah soal ujian yang ingin dikerjakan. Soal akan diacak dari bank kompetensi berdasarkan jenjang
+1952:              Mulai Ujian Sekarang
+1956:          <!-- Papan Nilai & Riwayat -->
+1958:            <h3>Riwayat Hasil Latihan Ujian</h3>
+1970:                    <th>Nilai</th>
+1983:      <!-- ==================== PAGE: UJIAN AKTIF (TRYOUT SEDANG BERJALAN) ==================== -->
+1985:        <!-- Header Ujian -->
+2022:              Akhiri Ujian & Kumpulkan Lembar Jawaban
+2041:      <!-- ==================== PAGE: HASIL UJIAN (TRYOUT RESULT) ==================== -->
+2098:      <!-- ==================== PAGE: ULASAN PEMBAHASAN UJIAN ==================== -->
+2155:                  <li>Menjawab pertanyaan tentang persiapan ujian LSP.</li>
+2190:              respons asuransi otomatis InsureMind Agent.</p>
+2203:          <h2>Papan Peringkat Agen</h2>
+2204:          <p>Bersaing secara sehat dengan agen lain secara nasional maupun cabang untuk menjadi agen terbaik.</p>
+2262:            <span>Rata-Rata Nilai Kuis</span>
+2266:            <span>Ujian Sertifikasi Diikuti</span>
+2357:              <h3>Nilai Kuis Bab</h3>
+2395:          <p>Pantau ringkasan performa, progres belajar, dan papan peringkat agen khusus di cabang Anda (View-Only).</p>
+2400:            <span>Total Agen Aktif</span>
+2401:            <h2 id="pim-total-agents">0</h2>
+2408:            <span>Agen Lulus LSP</span>
+2415:            <h3>Progres Agen Cabang</h3>
+2420:                    <th>Nama Agen</th>
+2426:                <tbody id="pim-agent-progress-rows">
+2446:          <p>Kelola materi pembelajaran asuransi, perbarui kuis bab, dan evaluasi laporan progres agen.</p>
+2509:                <h3>Daftar Taktik Coaching Agen</h3>
+2511:                  tampil di halaman "Coaching Agen" milik semua agen secara real-time.</p>
+2540:            <h3>Laporan Belajar & Tryout Agen</h3>
+2545:                    <th>Kode Agen</th>
+2546:                    <th>Nama Agen</th>
+2552:                <tbody id="trainer-agent-progress-rows">
+2598:                <h3>Daftar Klaim Hadiah Agen</h3>
+2606:                      <th>Nama Agen</th>
+2751:              langsung tersinkron ke halaman Coaching Agen.</p>
+2764:                placeholder="Tulis panduan atau tips taktis dari Trainer untuk agen di lapangan. Contoh: Awali pertemuan dengan pertanyaan terbuka untuk menggali kebutuhan nasabah..."></textarea>
+2771:                  target dengan baris baru. Akan menjadi checklist bagi agen.)</span>
+2779:                akan menjadi satu item centang pada checklist agen di lapangan.</small>
+2794:          <p>Desain dan atur posisi teks untuk sertifikat kelulusan agen secara dinamis.</p>
+2801:              <input type="text" placeholder="Contoh: Sertifikat Basic Keagenan" id="cert-title">
+2840:      <!-- ==================== EVALUASI NILAI UJIAN ==================== -->
+2841:      <section id="page-trainer-evaluasi" class="page-section">
+2843:          <h2>Evaluasi Nilai Ujian Agen</h2>
+2844:          <p>Tinjau hasil ujian sertifikasi keagenan dan putuskan kelulusan agen secara manual jika diperlukan.</p>
+2848:            <h3>Daftar Menunggu Evaluasi</h3>
+2854:                  <th>Nama Agen</th>
+2855:                  <th>Ujian/Modul</th>
+2857:                  <th>Tanggal Ujian</th>
+2858:                  <th>Aksi Evaluasi</th>
+2861:              <tbody id="trainer-evaluasi-rows">
+2868:                    <button class="btn-primary" style="padding:4px 8px; font-size:11px;" onclick="alert('Agen diluluskan oleh Trainer')">Luluskan</button>
+2869:                    <button class="btn-secondary" style="padding:4px 8px; font-size:11px;" onclick="alert('Agen tetap gagal, harus remidi')">Tolak</button>
+2891:          <p>Manajemen data akun agen & trainer, audit material, serta laporan eksekutif LMS.</p>
+3002:                  <option value="Agen">Agen</option>
+3009:                <label for="adm-usr-code">Kode Pegawai/Agen</label>
+3018:                peran adalah Kepala Cabang atau Agen Cabang Tertentu.</small>
+3204:      <!-- ==================== JADWAL TRAINING (AGEN) ==================== -->
+3205:      <section id="page-agen-training" class="page-section">
+3210:        <div class="training-grid" id="agen-training-grid"
+3215:        <!-- SILABUS TRAINING (AGEN) -->
+3218:          <p>Materi wajib untuk sertifikasi tiap tingkatan keagenan.</p>
+3221:          <div class="table-responsive" id="agen-syllabus-container">
+3232:            <input type="text" id="agen-input-token" placeholder="XXXX" maxlength="4"
+3244:            <h3 id="agen-quiz-title">Ujian Sertifikasi Training</h3>
+3247:              <span id="agen-quiz-attempts-left" style="font-size:12px; font-weight:600; color:var(--text-muted);">Sisa
+3250:            <div id="agen-quiz-questions-container">
+3276:        <p class="lvl-up-rank" id="lvl-up-rank-name">Agen Madya</p>

@@ -1,0 +1,72 @@
+30:function renderProductionChart() {
+120:window.renderHubPosts = function() {
+191:window.addCommentToPost = function(postId) {
+207:function updateAircraftPosition() {
+246:function onManifestChange() {
+251:window.fillLogin = function(email, password) {
+281:window.handleLogin = function(e) {
+332:            if (typeof navigateTo === 'function') navigateTo('trainer-dashboard');
+334:            if (typeof navigateTo === 'function') navigateTo('admin-dashboard');
+336:            if (typeof navigateTo === 'function') navigateTo('dashboard');
+342:        if (typeof renderProductionChart === 'function') {
+344:        } else if (typeof initCharts === 'function') {
+348:        if (typeof renderHubPosts === 'function') {
+350:        } else if (typeof initHub === 'function') {
+354:        if (typeof updateAircraftPosition === 'function') {
+356:        } else if (typeof renderGamification === 'function') {
+365:        if (typeof renderAgenTrainings === 'function') {
+369:        if (typeof renderTrainerTrainings === 'function') {
+372:        if (typeof renderTrainerMaterials === 'function') renderTrainerMaterials();
+373:        if (typeof renderTrainerCoaching === 'function') renderTrainerCoaching();
+374:        if (typeof renderTrainerProgress === 'function') renderTrainerProgress();
+375:        if (typeof renderTrainerClaims === 'function') renderTrainerClaims();
+383:window.handleLogout = function(e) {
+398:window.toggleNavDropdown = function(dropdownId) {
+409:window.navigateTo = function(pageId) {
+434:window.toggleSidebar = function() {
+444:function initTrainingData() {
+477:window.renderJadwalTrainingSection = function(userRole) {
+542:window.publishNewTraining = function() {
+578:window.renderAgenTrainings = function() {
+581:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+584:window.renderJadwalTrainingUntukAgen = function() {
+662:window.rsvpTraining = function(id) {
+673:window.openTokenModal = function(id) {
+680:window.renderSyllabusUI = function() {
+708:window.hideTrainingTokenModal = function() {
+712:window.submitTrainingToken = function() {
+731:window.openTrainingQuiz = function(id) {
+760:window.hideTrainingQuizModal = function() {
+764:window.submitTrainingQuiz = function() {
+811:    if (typeof window.renderAgenTrainings === 'function') {
+814:    if (typeof window.renderTrainerTrainings === 'function') {
+817:    if (typeof window.renderTrainerMaterials === 'function') window.renderTrainerMaterials();
+818:    if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching();
+819:    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+820:    if (typeof window.renderTrainerClaims === 'function') window.renderTrainerClaims();
+824:window.showCreateTrainingModal = function() {
+837:window.hideCreateTrainingModal = function() {
+842:window.saveTrainingEvent = function() {
+880:window.renderTrainerTrainings = function() {
+883:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+908:window.openEditTrainingQuizModal = function(id) {
+915:window.hideEditTrainingQuizModal = function() {
+921:window.renderQuizQuestionsList = function() {
+951:window.addQuizQuestion = function() {
+988:window.deleteQuizQuestion = function(index) {
+1004:window.switchTrainerTab = function(tabId) {
+1021:window.toggleMaterialQuizForm = function() {
+1029:window.showCreateMaterialModal = function() {
+1053:window.hideCreateMaterialModal = function() {
+1058:window.saveTrainerMaterial = function() {
+1091:window.renderTrainerMaterials = function() {
+1120:window.showCreateCoachingModal = function() {
+1128:window.hideCreateCoachingModal = function() {
+1133:window.saveTrainerCoaching = function() {
+1157:window.renderTrainerCoaching = function() {
+1186:window.renderTrainerProgress = function() {
+1207:window.renderTrainerClaims = function() {
+1221:window.filterTrainerClaims = function(status) {
+1225:window.addCustomReward = function(e) {
+1231:window.updateCertPreview = function() {
+1264:window.saveCertTemplate = function() {

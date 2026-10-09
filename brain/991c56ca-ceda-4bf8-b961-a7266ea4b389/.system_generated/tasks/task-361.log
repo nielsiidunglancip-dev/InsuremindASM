@@ -1,0 +1,5 @@
+3544:        alert("Nama item dan harga koin tidak boleh kosong/nol.");
+3626:            <span>Saldo Koin Anda:</span>
+3627:            <span style="color: var(--warning-gold); font-size: 20px; display: flex; align-items: center; gap: 8px;">🪙 ${coins} Koin</span>
+3638:    if (!confirm(`Apakah Anda yakin ingin membeli item ini seharga ${price} Koin?`)) return;
+3655:        alert("Maaf, saldo koin Anda tidak mencukupi untuk membeli item ini.");

@@ -1,0 +1,9 @@
+            sessionStorage.setItem('currentUserRole', activeAccount.role);
+    sessionStorage.removeItem('pa_active_user');
+    const role = sessionStorage.getItem('currentUserRole') || 'Agen';
+    const user = JSON.parse(sessionStorage.getItem('pa_active_user'));
+            const storedUser = sessionStorage.getItem('pa_active_user');
+            const user = JSON.parse(sessionStorage.getItem('pa_active_user'));
+        const activeUser = sessionStorage.getItem('pa_active_user') ? JSON.parse(sessionStorage.getItem('pa_active_user')) : { name: "Agen" };
+    const activeUser = JSON.parse(sessionStorage.getItem("pa_active_user"));
+    const activeUser = JSON.parse(sessionStorage.getItem("pa_active_user"));

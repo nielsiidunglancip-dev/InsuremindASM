@@ -1,0 +1,5 @@
+{
+  "summary": "Dokumen komprehensif yang berisi Product Requirement Document (PRD), alur kerja (flow), dan arsitektur terupdate dari chatbot InsureMind AI untuk agen Asuransi Sinar Mas. Dokumen ini mendefinisikan mode interaksi (Jualan vs Belajar), sistem RAG lokal dengan cache embedding, integrasi suara, portal umpan balik admin, alur eksekusi, serta diagram arsitektur.",
+  "updatedAt": "2026-07-09T05:40:44.163878600Z",
+  "userFacing": true
+}

@@ -1,0 +1,296 @@
+Starting FastAPI Backend...
+INFO:     Will watch for changes in these directories: ['D:\\AI 2\\DICKY\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [15972] using StatReload
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     Started server process [18296]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Error seeding database: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+INFO:     127.0.0.1:50397 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50409 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50418 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50418 - "GET /openapi.json HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 64, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 61, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1110, in openapi
+    schema = self.openapi()
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1086, in openapi
+    self.openapi_schema = get_openapi(
+                          ~~~~~~~~~~~^
+        title=self.title,
+        ^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        external_docs=self.openapi_external_docs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\openapi\utils.py", line 561, in get_openapi
+    field_mapping, definitions = get_definitions(
+                                 ~~~~~~~~~~~~~~~^
+        fields=all_fields,
+        ^^^^^^^^^^^^^^^^^^
+        model_name_map=model_name_map,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        separate_input_output_schemas=separate_input_output_schemas,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\_compat\v2.py", line 336, in get_definitions
+    field_mapping, definitions = schema_generator.generate_definitions(inputs=inputs)
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 386, in generate_definitions
+    self.generate_inner(schema)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 466, in generate_inner
+    if 'ref' in schema:
+       ^^^^^^^^^^^^^^^
+  File "<frozen _collections_abc>", line 801, in __contains__
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 41, in __getitem__
+    return self._get_built().__getitem__(key)
+           ~~~~~~~~~~~~~~~^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 58, in _get_built
+    raise PydanticUserError(self._error_message, code=self._code)
+pydantic.errors.PydanticUserError: `TypeAdapter[typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]]` is not fully defined; you should define `typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]` and all referenced types, then call `.rebuild()` on the instance.
+
+For further information visit https://errors.pydantic.dev/2.13/u/class-not-fully-defined
+INFO:     127.0.0.1:50419 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50419 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50433 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50441 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50445 - "GET /openapi.json HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 64, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 61, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1110, in openapi
+    schema = self.openapi()
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1086, in openapi
+    self.openapi_schema = get_openapi(
+                          ~~~~~~~~~~~^
+        title=self.title,
+        ^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        external_docs=self.openapi_external_docs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\openapi\utils.py", line 561, in get_openapi
+    field_mapping, definitions = get_definitions(
+                                 ~~~~~~~~~~~~~~~^
+        fields=all_fields,
+        ^^^^^^^^^^^^^^^^^^
+        model_name_map=model_name_map,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        separate_input_output_schemas=separate_input_output_schemas,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\_compat\v2.py", line 336, in get_definitions
+    field_mapping, definitions = schema_generator.generate_definitions(inputs=inputs)
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 386, in generate_definitions
+    self.generate_inner(schema)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 466, in generate_inner
+    if 'ref' in schema:
+       ^^^^^^^^^^^^^^^
+  File "<frozen _collections_abc>", line 801, in __contains__
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 41, in __getitem__
+    return self._get_built().__getitem__(key)
+           ~~~~~~~~~~~~~~~^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 58, in _get_built
+    raise PydanticUserError(self._error_message, code=self._code)
+pydantic.errors.PydanticUserError: `TypeAdapter[typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]]` is not fully defined; you should define `typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]` and all referenced types, then call `.rebuild()` on the instance.
+
+For further information visit https://errors.pydantic.dev/2.13/u/class-not-fully-defined
+INFO:     127.0.0.1:50446 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50447 - "GET /api/auth/login HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:50447 - "GET /api/users HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50447 - "GET /api/auth/users HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50472 - "GET /api/auth/register HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50496 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50496 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50503 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50509 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50509 - "GET /openapi.json HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 64, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\starlette\routing.py", line 61, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1110, in openapi
+    schema = self.openapi()
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\applications.py", line 1086, in openapi
+    self.openapi_schema = get_openapi(
+                          ~~~~~~~~~~~^
+        title=self.title,
+        ^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        external_docs=self.openapi_external_docs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\openapi\utils.py", line 561, in get_openapi
+    field_mapping, definitions = get_definitions(
+                                 ~~~~~~~~~~~~~~~^
+        fields=all_fields,
+        ^^^^^^^^^^^^^^^^^^
+        model_name_map=model_name_map,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        separate_input_output_schemas=separate_input_output_schemas,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\fastapi\_compat\v2.py", line 336, in get_definitions
+    field_mapping, definitions = schema_generator.generate_definitions(inputs=inputs)
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 386, in generate_definitions
+    self.generate_inner(schema)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\json_schema.py", line 466, in generate_inner
+    if 'ref' in schema:
+       ^^^^^^^^^^^^^^^
+  File "<frozen _collections_abc>", line 801, in __contains__
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 41, in __getitem__
+    return self._get_built().__getitem__(key)
+           ~~~~~~~~~~~~~~~^^
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 58, in _get_built
+    raise PydanticUserError(self._error_message, code=self._code)
+pydantic.errors.PydanticUserError: `TypeAdapter[typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]]` is not fully defined; you should define `typing.Annotated[typing.List[ForwardRef('Dict[str, Any]', owner=<function verify_ocr_data at 0x0000022D72EDBD70>)], FieldInfo(annotation=NoneType, required=True, alias='verified_data', alias_priority=2, json_schema_extra={})]` and all referenced types, then call `.rebuild()` on the instance.
+
+For further information visit https://errors.pydantic.dev/2.13/u/class-not-fully-defined
+WARNING:  StatReload detected changes in 'app\api\endpoints.py'. Reloading...
+ INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [18296]

@@ -1,0 +1,77 @@
+1:/* Import Google Font */
+5:  /* Palet Warna Navy & Biru Premium */
+16:  /* Status Warna */
+24:  /* Efek Glassmorphic & Shadow */
+39:/* Reset & Base Styles */
+57:/* Custom Scrollbar */
+73:/* ==================== LOGIN SCREEN STYLING ==================== */
+200:  border-bottom: 3px solid rgba(0, 0, 0, 0.2); /* Tebal di bawah gaya Duolingo */
+288:/* Modal Overlay */
+347:/* ==================== APP SHELL LAYOUT ==================== */
+354:/* Header Mobile */
+359:/* Sidebar Styling */
+399:/* User Profil di Sidebar */
+469:/* Sidebar Navigasi */
+488:/* Sidebar Dropdown Styles */
+567:/* Footer Sidebar / Logout */
+604:/* Area Konten Utama */
+644:/* ==================== [GAMIFIKASI] TOP BAR INDICATORS ==================== */
+682:/* ==================== WELCOME BOX & STATS ==================== */
+732:/* Grid Kartu Statistik */
+820:/* ==================== DASHBOARD ROWS & CARDS ==================== */
+855:/* [GAMIFIKASI] Daily Missions Dashboard Widget */
+903:.btn-claim-reward {
+915:.btn-claim-reward:hover {
+919:/* Recommend Card Box */
+967:/* Quick Features Grid */
+1014:/* Radial Progress (SVG) */
+1067:/* Badges Mini List */
+1088:/* ==================== MATERIALS GRID & FILTER ==================== */
+1223:/* ==================== SPA COURSE PLAYER ==================== */
+1392:/* ==================== PRODUCT CATALOGUE ==================== */
+1511:/* ==================== SIMULATOR PREMI ==================== */
+1574:/* Simulator add-on section label separator */
+1587:/* Add-on checklist group */
+1638:/* Breakdown divider line */
+1702:/* ==================== MENU MEMBUAT PENAWARAN ==================== */
+1755:/* Tabel UI */
+1784:/* Doc Download List */
+1818:/* ==================== COACHING AGEN LAYOUT ==================== */
+1936:/* ==================== SERTIFIKASI LSP ==================== */
+2024:/* ==================== TRYOUT / EXAM SIMULATOR ==================== */
+2067:/* Active Exam Layout */
+2186:/* ==================== EXAM RESULTS & REVIEW ==================== */
+2280:/* Discussion / Review List */
+2362:/* ==================== AI INSURANCE COACH ==================== */
+2485:/* ==================== PROGRESS BELAJAR ==================== */
+2586:/* ==================== [GAMIFIKASI] LEADERBOARD PAGE ==================== */
+2669:/* Kolom Balok Podium */
+2704:/* Baris List sisa peringkat */
+2775:/* ==================== [GAMIFIKASI] REWARDS STORE & MISSIONS ==================== */
+2776:.rewards-layout {
+2782:/* Quest item */
+2844:.quest-rewards-pill {
+2854:/* Shop Catalog Grid */
+2954:/* ==================== TRAINER & ADMIN STUFF ==================== */
+3011:/* ==================== [GAMIFIKASI] LEVEL UP ANIMATED POPUP ==================== */
+3085:/* ==================== SCREEN RESPONSIFNESS ==================== */
+3087:  .simulator-layout, .lsp-layout, .tryout-start-grid, .exam-active-layout, .progress-row, .dashboard-row, .rewards-layout {
+3139:  /* Sidebar drawer mode */
+3218:    display: none; /* Balok disembunyikan di mobile agar compact */
+3223:/* ==================== KELAS PRINT (PRINT STYLES) ==================== */
+3295:/* ==================== SERTIFIKAT TAMPILAN PREMIUM ==================== */
+3380:/* ==================== VIRTUAL REWARD STORE ENHANCEMENTS ==================== */
+3382:/* Toast Notification System */
+3467:/* Disabled Buy Button in Shop */
+3477:/* Gold Frame Profile Ring Glow Effect */
+3493:/* Mobile Avatar Gold Frame Glow Effect */
+3500:/* Claims Table Custom Spacing & Padding */
+3501:#trn-reward-mgmt .data-table th {
+3511:#trn-reward-mgmt .data-table td {
+3518:/* ==================== [MODUL 6] HEADER PROFILE WIDGET ==================== */
+3667:/* ==================== [MODUL 6] HALAMAN PROFIL AGEN ==================== */
+3847:/* ==================== [MODUL 4.3] ARENA GAME EDUKASI ==================== */
+3937:.game-reward-pill {
+4228:/* ==================== [MODUL 3.3] PPT BUILDER ==================== */
+4358:/* ==================== GAMIFIKASI KOKPIT PESAWAT ==================== */
+4545:/* ==================== RESPONSIVE ==================== */

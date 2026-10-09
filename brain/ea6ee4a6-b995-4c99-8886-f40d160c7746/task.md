@@ -1,0 +1,18 @@
+- [x] Konfigurasi backend (`app.js`):
+  - [x] Definisikan `SYSTEM_INSTRUCTION_BELAJAR` (fokus materi asuransi umum, PAYDI, surety bond, kuis akademis, pasif-responsif, tanpa cross-selling).
+  - [x] Definisikan `SYSTEM_INSTRUCTION_JUALAN` (fokus analisis risiko prospek, rekomendasi cross-selling komersial, penjelasan produk asuransi umum Sinar Mas, proaktif).
+  - [x] Perbarui endpoint `/api/chat` agar membaca parameter `mode` dan menginisialisasi/menggunakan model yang sesuai.
+- [x] Konfigurasi frontend UI (`public/index.html`):
+  - [x] Tambahkan kartu pemilih mode (Mode Belajar & Ujian vs Mode Asisten Jualan) di sidebar.
+  - [x] Tambahkan tombol mikrofon di samping input text.
+- [x] Logika frontend (`public/script.js`):
+  - [x] Kirim parameter `mode` ke backend API.
+  - [x] Reset riwayat chat saat berganti mode untuk mengisolasi memori konteks AI.
+  - [x] Integrasikan Web Speech API untuk fitur perekaman suara (Voice-to-Text) di kedua mode.
+- [x] Styling premium (`public/style.css`):
+  - [x] Buat desain kartu/tab pemilih mode dengan visual premium.
+  - [x] Desain tombol mikrofon dan animasi pulsasi/recording saat merekam suara.
+- [x] Pengujian manual dan verifikasi:
+  - [x] Uji isolasi konteks pada Mode Belajar & Ujian (tidak boleh jualan proaktif/cross-selling).
+  - [x] Uji proaktifitas dan profiling pada Mode Asisten Jualan.
+  - [x] Uji fitur voice-to-text (perekaman suara) di kedua mode.

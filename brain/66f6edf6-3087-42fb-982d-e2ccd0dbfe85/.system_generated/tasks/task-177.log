@@ -1,0 +1,10 @@
+[✅] Knowledge base loaded: 256 chunks.
+
+╔══════════════════════════════════════════════════╗
+║  🚀  InsureMind Agent Backend Server             ║
+║      Port : http://localhost:3001              ║
+║      API  : POST /api/generate-pptx              ║
+║      Ready to serve PPTX proposals! ✅           ║
+╚══════════════════════════════════════════════════╝
+  
+[✅] PPTX Generated: Proposal_Budi_Santoso.pptx (100.1 KB)

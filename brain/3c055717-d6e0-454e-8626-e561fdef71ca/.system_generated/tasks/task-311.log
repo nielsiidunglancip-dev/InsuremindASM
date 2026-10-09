@@ -1,0 +1,17 @@
+D:\AI\Antigravity\app.js:120
+window.renderHubPosts = function() {
+^
+
+ReferenceError: window is not defined
+    at Object.<anonymous> (D:\AI\Antigravity\app.js:120:1)
+    at Module._compile (node:internal/modules/cjs/loader:1854:14)
+    at Object..js (node:internal/modules/cjs/loader:1985:10)
+    at Module.load (node:internal/modules/cjs/loader:1577:32)
+    at Module._load (node:internal/modules/cjs/loader:1379:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1600:12)
+    at require (node:internal/modules/helpers:153:16)
+    at [eval]:1:1
+    at runScriptInThisContext (node:internal/vm:219:10)
+
+Node.js v24.16.0

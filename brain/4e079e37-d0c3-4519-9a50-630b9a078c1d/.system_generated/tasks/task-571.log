@@ -1,0 +1,165 @@
+
+> frontend@0.0.0 dev
+> vite
+
+
+  VITE v8.1.4  ready in 962 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+21.04.26 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.04.27 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7713:14)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+21.07.39 [vite] (client) hmr update /src/views/MarketingDashboard.jsx
+21.09.44 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.09.45 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7713:14)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+21.11.53 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.11.53 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7713:14)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+21.15.07 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.15.07 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7713:14)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+21.15.21 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.15.21 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at recursivelyTraverseAndDoubleInvokeEffectsInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8917:70)
+21.17.37 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.17.38 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at recursivelyTraverseReconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7688:5)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7713:14)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+21.22.23 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7618:22)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+    at commitPassiveMountOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7672:14)
+    at recursivelyTraversePassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7606:5)
+21.22.23 [vite] (client) [console.error] TypeError: Failed to fetch
+    at fetchProspects (http://localhost:5173/src/views/CommonDashboard.jsx:23:27)
+    at http://localhost:5173/src/views/CommonDashboard.jsx:35:3
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:12902:13)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at commitHookEffectListMount (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6617:153)
+    at commitHookPassiveMountEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:6652:55)
+    at reconnectPassiveEffects (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:7701:6)
+    at doubleInvokeEffectsOnFiber (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8924:125)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:851:66)
+    at recursivelyTraverseAndDoubleInvokeEffectsInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=96a66aaa:8917:70)
+Terminate batch job (Y/N)? 

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi Sistem - InsureMind Agent Platform</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Mermaid.js for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'dark',
+      themeVariables: {
+        background: '#1e293b',
+        primaryColor: '#0f172a',
+        primaryTextColor: '#f1f5f9',
+        lineColor: '#38bdf8'
+      }
+    });
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --bg-hover: #334155;
+      --primary-blue: #0284c7;
+      --sky-light: #38bdf8;
+      --text-light: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      
+      --success-green: #10b981;
+      --danger-red: #ef4444;
+      --warning-yellow: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      display: flex;
+    }
+
+    /* Sidebar Navigation */
+    aside {
+      width: 300px;
+      height: 100vh;
+      background-color: #0b0f19;
+      border-right: 1px solid var(--border-color);
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 30px 20px;
+      overflow-y: auto;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      color: var(--sky-light);
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-light);
+    }
+
+    .brand-title span {
+      color: var(--sky-light);
+    }
+
+    .nav-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin: 20px 0 10px 10px;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 10px 15px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      margin-bottom: 4px;
+    }
+
+    .nav-link:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-light);
+    }
+
+    .nav-link.active {
+      background-color: var(--primary-blue);
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* Main Content Area */
+    main {
+      margin-left: 300px;
+      flex: 1;
+      padding: 50px 80px;
+      max-width: 1200px;
+    }
+
+    header {
+      margin-bottom: 50px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    section {
+      margin-bottom: 60px;
+      scroll-margin-top: 50px;
+    }
+
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--sky-light);
+      margin-bottom: 25px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+      color: var(--text-light);
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      background-color: var(--bg-card);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #111827;
+      color: var(--sky-light);
+      font-weight: 600;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      border-bottom: 1px solid var(--border-color);
+      color: #e2e8f0;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Code Blocks */
+    pre, code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13.5px;
+    }
+
+    code:not(pre code) {
+      background-color: #090d16;
+      color: var(--sky-light);
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid #223147;
+    }
+
+    pre {
+      background-color: #090d16;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      overflow-x: auto;
+      margin-bottom: 25px;
+    }
+
+    pre code {
+      color: #e2e8f0;
+    }
+
+    /* Mermaid Diagrams */
+    .mermaid {
+      background-color: var(--bg-card) !important;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin: 25px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Alerts */
+    .alert {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid;
+    }
+
+    .alert-note {
+      background-color: #0c2035;
+      border-color: var(--primary-blue);
+      color: #93c5fd;
+    }
+
+    .alert-important {
+      background-color: #1c1c10;
+      border-color: var(--warning-yellow);
+      color: #fde047;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      aside {
+        display: none;
+      }
+      main {
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Nav -->
+  <aside>
+    <div class="brand-section">
+      <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <div class="brand-title">ASM <span>Academy</span></div>
+    </div>
+    
+    <div class="nav-section-title">Dokumen</div>
+    <a href="#overview" class="nav-link active">Ikhtisar</a>
+    <a href="#prd" class="nav-link">1. PRD Dokumen</a>
+    <a href="#flow" class="nav-link">2. Alur Sistem</a>
+    <a href="#architecture" class="nav-link">3. Arsitektur</a>
+    <a href="#design" class="nav-link">4. Teknikal Desain</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <header id="overview">
+      <h1>Dokumentasi Sistem</h1>
+      <div class="subtitle">InsureMind Agent Platform (ASM Academy)</div>
+    </header>
+
+    <!-- SECTION 1: PRD -->
+    <section id="prd">
+      <h2>1. Product Requirements Document (PRD)</h2>
+      
+      <h3>1.1 Latar Belakang & Tujuan</h3>
+      <p><strong>InsureMind Agent Platform</strong> (dikenal juga sebagai <strong>ASM Academy</strong>) adalah platform berbasis web terintegrasi (SPA) yang dirancang untuk meningkatkan kompetensi, kepatuhan regulasi, dan efektivitas penjualan agen asuransi umum di Indonesia.</p>
+      <p>Tujuan utama sistem ini adalah:</p>
+      <ul>
+        <li><strong>Gamifikasi Pelatihan</strong>: Menyediakan platform Learning Management System (LMS) mandiri dengan penghargaan koin karir, peringkat (leaderboard), dan lencana pencapaian.</li>
+        <li><strong>Sertifikasi LSP</strong>: Memfasilitasi pendaftaran sertifikasi lembaga sertifikasi profesi (LSP) dan latihan ujian (tryout) secara digital.</li>
+        <li><strong>Pendamping Kerja AI (AI Coach)</strong>: Membantu agen menemukan rekomendasi produk asuransi yang tepat berdasarkan data SOP internal perusahaan secara instan menggunakan teknologi RAG (Retrieval-Augmented Generation).</li>
+        <li><strong>Otomatisasi Penawaran (PPT Builder)</strong>: Mempercepat proses pembuatan proposal presentasi formal yang mematuhi regulasi tarif premi OJK secara dinamis.</li>
+      </ul>
+
+      <h3>1.2 Target Pengguna & Peran (Roles)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Peran (Role)</th>
+            <th>Deskripsi</th>
+            <th>Fitur Utama dalam Sistem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Agen (Agent)</strong></td>
+            <td>Pengguna akhir yang menjual produk asuransi.</td>
+            <td>Mengikuti modul LMS, kuis, pendaftaran kelas live training (RSVP), latihan tryout LSP, simulator premi OJK, AI Coach, pembuatan proposal PPTX, dan penukaran reward.</td>
+          </tr>
+          <tr>
+            <td><strong>Trainer</strong></td>
+            <td>Pengajar/fasilitator kompetensi.</td>
+            <td>Manajemen kelas training, pembuatan token absensi, publikasi kuis training, verifikasi nilai kuis, dan penerbitan sertifikat pelatihan resmi.</td>
+          </tr>
+          <tr>
+            <td><strong>Admin</strong></td>
+            <td>Pengelola sistem dan operasional.</td>
+            <td>Manajemen katalog produk asuransi dinamis (FAQ, link brosur), manajemen stok reward toko virtual, pengelolaan akun pengguna, pemantauan log transaksi, dan persetujuan klaim hadiah.</td>
+          </tr>
+          <tr>
+            <td><strong>Pimpinan (Management)</strong></td>
+            <td>Pemantau kinerja tingkat tinggi.</td>
+            <td>Dashboard monitoring total produksi agen, grafik performa bulanan, laporan sertifikasi LSP agen, status penyerapan reward, serta peringkat nasional/cabang.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>1.3 Ruang Lingkup Fitur (Feature Scope)</h3>
+      <ul>
+        <li><strong>Modul LMS Mandiri (Gamified Learning)</strong>: Pembagian materi belajar dalam 3 tingkatan kesulitan (Basic, Intermediate, Advanced) berformat artikel, video, PDF rujukan, ringkasan, dan kuis kelulusan (skor >= 70%) untuk mendapatkan koin karir.</li>
+        <li><strong>Sertifikasi LSP & Tryout</strong>: Pendaftaran tryout ujian sertifikasi profesi, player kuis latihan interaktif dengan pengatur waktu, riwayat skor, serta lencana tanda kelulusan aktif ("Certified") di halaman profil agen.</li>
+        <li><strong>Sesi Live Training (LMS Kelas)</strong>: Pendaftaran kehadiran (RSVP), verifikasi kehadiran real-time menggunakan Token Absensi (4 digit angka) yang diterbitkan oleh Trainer kelas, serta penerbitan sertifikat digital resmi.</li>
+        <li><strong>Toko Reward Virtual (Gamification Store)</strong>: Penukaran koin agen dengan voucher virtual terproses otomatis (e-wallet, pulsa), voucher fisik (menunggu persetujuan admin), atau item kosmetik profil (Bingkai Emas Premium).</li>
+        <li><strong>AI Insurance Coach & Product Finder (RAG)</strong>: 
+          <ul>
+            <li><em>Client-side RAG</em>: Pengguna mengunggah berkas PDF pendukung yang disimpan di IndexedDB browser untuk disematkan dalam prompt chat dengan Gemini secara langsung.</li>
+            <li><em>Server-side RAG</em>: Pencarian produk asuransi berbasis data SOP internal dari database <code>materi_pdf_text.json</code> melalui API backend.</li>
+          </ul>
+        </li>
+        <li><strong>Auto Proposal PPTX Builder & Simulator</strong>: Perhitungan premi asuransi kendaraan bermotor dan properti sesuai tarif standar Surat Edaran OJK No. 6/SEOJK.05/2017, serta ekspor file PowerPoint (.pptx) rincian quotation.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 2: FLOW -->
+    <section id="flow">
+      <h2>2. Alur Sistem (System Flow)</h2>
+      
+      <h3>2.1 Alur Autentikasi & Login Cepat (Bypass)</h3>
+      <div class="mermaid">
+        graph TD
+            A[Buka Aplikasi] --> B{Apakah Sesi Login Aktif?}
+            B -- Ya --> C[Tampilkan Halaman Utama Sesuai Role]
+            B -- Tidak --> D[Tampilkan Login Screen]
+            D --> E[Input Email & Password Manual]
+            D --> F[Pilih Tombol Login Cepat Demo: Agen/Trainer/Admin]
+            F --> G[Auto-fill form inputs]
+            E --> H[Submit Form & Jalankan handleLogin]
+            G --> H
+            H --> I{Kredensial Valid?}
+            I -- Ya --> J[Simpan Sesi ke sessionStorage & Refresh Page]
+            I -- Tidak --> K[Tampilkan Peringatan Error]
+            J --> C
+      </div>
+
+      <h3>2.2 Alur Evaluasi Materi LMS & Gamifikasi Koin</h3>
+      <div class="mermaid">
+        graph TD
+            A[Masuk Halaman Belajar] --> B[Pilih Tingkat Kesulitan: Basic/Inter/Advanced]
+            B --> C[Klik Modul Materi Belajar]
+            C --> D[Pelajari Tab: Artikel, Video, PDF]
+            D --> E[Klik 'Tandai Selesai' di Ringkasan]
+            E --> F[Kunci Kuis Terbuka]
+            F --> G[Kerjakan Kuis Modul]
+            G --> H[Hitung Skor Kuis]
+            H --> I{Apakah Skor >= 70%?}
+            I -- Ya --> J[Simpan Status Lulus ke LocalStorage]
+            J --> K[Tambahkan Koin Karir Agen & Buka Lencana Baru]
+            I -- Tidak --> L[Tampilkan Peringatan Gagal & Riwayat Skor]
+            L --> M[Bisa Mengulang Kuis Kapan Saja]
+      </div>
+
+      <h3>2.3 Alur Asisten AI Coach & RAG</h3>
+      <div class="mermaid">
+        flowchart TD
+            A[Membuka Menu AI Coach] --> B[Input Gemini API Key & Simpan di LocalStorage]
+            B --> C[Unggah PDF SOP/Produk Baru]
+            C --> D[FileReader memproses PDF menjadi Base64]
+            D --> E[Simpan Base64 PDF ke IndexedDB 'AICoachDB/pdfStore']
+            E --> F[Agen Mengirimkan Pertanyaan / Chat]
+            F --> G[Load PDF Base64 dari IndexedDB]
+            G --> H[Kirim Payload ke Gemini 1.5 API: Chat Prompt + PDF inlineData]
+            H --> I[Gemini Memproses dengan Context Stuffing PDF]
+            I --> J[Tampilkan Respons AI Terformat di Chat Area]
+      </div>
+
+      <h3>2.4 Alur Pembuatan Proposal & Unduh PPTX</h3>
+      <div class="mermaid">
+        flowchart TD
+            A[Agen Buka Tab PPT Builder] --> B{Ada data Quotation Baru?}
+            B -- Ya --> C[Auto-import data nasabah & premi]
+            B -- Tidak --> D[Agen isi form secara manual]
+            C --> E[Klien kirim POST ke /api/generate-pptx]
+            D --> E
+            E --> F[Server buat Slide 1 - Cover]
+            F --> G[Server buat Slide 2 - Rincian & OJK Disclaimer]
+            G --> H[Kompilasi Buffer biner pptx]
+            H --> I[Kirim file biner kembali ke klien]
+            I --> J[Browser trigger unduhan berkas .pptx]
+      </div>
+    </section>
+
+    <!-- SECTION 3: ARCHITECTURE -->
+    <section id="architecture">
+      <h2>3. Arsitektur Sistem (System Architecture)</h2>
+      <p>Sistem ini menggunakan arsitektur <strong>Client-Server terpisah (Decoupled Architecture)</strong>. Sisi klien bertindak sebagai Single Page Application (SPA) mandiri yang menanggung rendering dan penyimpanan data sementara (LocalStorage & IndexedDB). Sisi server (Express API Server) beroperasi tanpa state (stateless) untuk melayani kalkulasi dokumen (.pptx) dan pembungkusan API kecerdasan buatan.</p>
+      
+      <h3>3.1 Diagram Arsitektur</h3>
+      <pre>
+       +--------------------------------------------------------+
+       |                  CLIENT WEB BROWSER                     |
+       |  +--------------------------------------------------+  |
+       |  |                    UI/UX Layer                   |  |
+       |  |  (index.html, asm-style.css, Vanilla CSS Grid)    |  |
+       |  +--------------------------------------------------+  |
+       |  |                 Controller Layer                 |  |
+       |  |      (app.js, ai-coach.js, canvas-confetti)      |  |
+       |  +-------------------------------------+------------+  |
+       |  |          State & Storage Layer      |            |  |
+       |  |  (LocalStorage)                     | (IndexedDB)|  |
+       |  +---------+---------------------------+------+-----+  |
+       +------------|----------------------------------|--------+
+                    |                                  |
+                    | (Request API Server)             | (Direct API Key Call)
+                    v                                  v
+       +------------+------------+           +---------+---------+
+       |   BACKEND API SERVER    |           |   GOOGLE GEMINI   |
+       |       (server.js)       |           |    1.5 FLASH      |
+       |  +-------------------+  |           |   CLOUD API       |
+       |  |  Express Engine   |  |           +-------------------+
+       |  +-------------------+  |                     ^
+       |  |    pptxgenjs      |  |                     | (RAG API Call)
+       |  +-------------------+  |                     |
+       |  |  materi_pdf_text  |  +---------------------+
+       |  |      (.json)      |  |
+       |  +-------------------+  |
+       +-------------------------+
+      </pre>
+
+      <h3>3.2 Komponen Teknologi</h3>
+      <ul>
+        <li><strong>Frontend</strong>: HTML5 (struktur SPA berbasis section display toggling), Vanilla CSS (tata letak grid modern premium, tema navy gelap, visual glassmorphism), dan Vanilla JS (logika DOM, routing, IndexedDB, dan LocalStorage).</li>
+        <li><strong>Backend</strong>: Node.js, Express.js (API routing), CORS middleware, dan PptxGenJS (PowerPoint file composer).</li>
+        <li><strong>AI Core</strong>: Google Gemini 1.5 Flash API (Model generatif teks-ke-teks dengan dukungan multi-media untuk stuffing PDF).</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 4: TECHNICAL DESIGN -->
+    <section id="design">
+      <h2>4. Teknikal Desain (Technical Design)</h2>
+      
+      <h3>4.1 Struktur Folder Proyek</h3>
+      <ul>
+        <li><code>server.js</code>: Backend API server Express.js untuk endpoint generate PPTX dan RAG produk asuransi.</li>
+        <li><code>app.js</code>: Pengendali utama frontend (SPA router, logic kuis, live training, reward virtual).</li>
+        <li><code>ai-coach.js</code>: Pengendali RAG client-side (IndexedDB file parser & integrasi Gemini SDK).</li>
+        <li><code>data.js</code>: Database lokal mock (materi default, riwayat, toko reward).</li>
+        <li><code>index.html</code>: Antarmuka tunggal pengguna web (layout desktop & mobile).</li>
+        <li><code>asm-style.css</code>: Berkas CSS utama tema premium navy & glassmorphism.</li>
+        <li><code>materi_pdf_text.json</code>: Dataset teks penawaran / RAG server-side.</li>
+      </ul>
+
+      <h3>4.2 Detail API Backend (server.js)</h3>
+      
+      <h4>1. Health Check</h4>
+      <ul>
+        <li><strong>Endpoint</strong>: <code>GET /api/health</code></li>
+        <li><strong>Response</strong>:
+          <pre><code>{
+  "status": "ok",
+  "message": "InsureMind Agent Backend Running ✅",
+  "timestamp": "2026-06-27T12:00:00.000Z"
+}</code></pre>
+        </li>
+      </ul>
+
+      <h4>2. Generate PPTX Proposal</h4>
+      <ul>
+        <li><strong>Endpoint</strong>: <code>POST /api/generate-pptx</code></li>
+        <li><strong>Request Body</strong>:
+          <pre><code>{
+  "namaNasabah": "Budi Santoso",
+  "namaAgen": "Rian Aditya",
+  "jenisAsuransi": "ASM Auto Protection (Comprehensive)",
+  "totalPremi": 4500000,
+  "nilaiPertanggungan": 200000000,
+  "catatanTambahan": "Diskon 10% termasuk."
+}</code></pre>
+        </li>
+        <li><strong>Response</strong>: PowerPoint file (.pptx) biner (<code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>).</li>
+      </ul>
+
+      <h4>3. AI Product Finder (RAG)</h4>
+      <ul>
+        <li><strong>Endpoint</strong>: <code>POST /api/ai-product-finder</code></li>
+        <li><strong>Request Headers</strong>: <code>Authorization: Bearer &lt;GEMINI_API_KEY&gt;</code></li>
+        <li><strong>Response</strong>:
+          <pre><code>{
+  "result": "&lt;h4&gt;🎯 Produk yang Direkomendasikan:&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;ASM Auto Protection&lt;/strong&gt;...&lt;/li&gt;&lt;/ul&gt;"
+}</code></pre>
+        </li>
+      </ul>
+
+      <div class="alert alert-important">
+        <div class="alert-title">
+          <span>🛡️</span> Integrasi Klien Selesai
+        </div>
+        Seluruh fungsi frontend (<code>downloadProposalPptx()</code>, <code>openPptxBuilderTab()</code>, <code>switchProposalTab()</code>) telah diintegrasikan di dalam <strong>app.js</strong>. Fitur ini mengambil data quotation dari simulator, memperbarui thumbnail preview slide secara real-time, dan mengunduh file presentasi PowerPoint siap guna langsung ke perangkat pengguna.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scroll navigation and link active updates
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section, header');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 80)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

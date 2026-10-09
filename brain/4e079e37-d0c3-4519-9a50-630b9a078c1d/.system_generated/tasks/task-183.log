@@ -1,0 +1,36 @@
+INFO:     Will watch for changes in these directories: ['D:\\AI 2\\DICKY\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7932] using StatReload
+INFO:     Started server process [2752]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:51124 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51124 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51139 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51139 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51140 - "POST /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51140 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51140 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51146 - "OPTIONS /api/prospects/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51146 - "GET /api/prospects/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "OPTIONS /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63443 - "OPTIONS /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "OPTIONS /api/prospects/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "GET /api/prospects/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "OPTIONS /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52160 - "OPTIONS /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "GET /api/prospects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55795 - "POST /api/auth/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app\db\models.py'. Reloading...
+ INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2752]
+INFO:     Started server process [21748]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

@@ -1,0 +1,15 @@
+[✅] Knowledge base loaded: 256 chunks.
+
+╔══════════════════════════════════════════════════╗
+║  🚀  InsureMind Agent Backend Server             ║
+║      Port : http://localhost:3001              ║
+║      API  : POST /api/generate-pptx              ║
+║      Ready to serve PPTX proposals! ✅           ║
+╚══════════════════════════════════════════════════╝
+  
+[❌] Error in AI Product Finder: Error: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at D:\AI\Antigravity\server.js:369:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[❌] Error in AI Product Finder: Error: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at D:\AI\Antigravity\server.js:369:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

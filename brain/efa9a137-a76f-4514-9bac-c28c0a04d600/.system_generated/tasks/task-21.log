@@ -1,0 +1,22 @@
+
+
+    Directory: D:\AI\Antigravity
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d----l         5/31/2026  10:53 PM                brain                                                                
+d-----         5/31/2026  11:46 PM                materi_pdf                                                           
+d-----         6/16/2026   9:58 PM                node_modules                                                         
+-a----         6/20/2026  12:09 AM          90497 app.js                                                               
+-a----         6/19/2026   9:24 PM          74371 data.js                                                              
+-a----         6/13/2026  10:03 PM          15753 fix_app.py                                                           
+-a----         6/20/2026  12:09 AM         169259 index.html                                                           
+-a----          6/6/2026  10:30 PM         162975 materi_pdf_text.js                                                   
+-a----          6/6/2026  10:23 PM         168841 materi_pdf_text.json                                                 
+-a----         6/16/2026   9:58 PM          46182 package-lock.json                                                    
+-a----         6/16/2026   9:58 PM            442 package.json                                                         
+-a----         6/10/2026   3:26 PM          11976 server.js                                                            
+-a----         6/20/2026  12:14 AM          97810 style.css                                                            
+
+

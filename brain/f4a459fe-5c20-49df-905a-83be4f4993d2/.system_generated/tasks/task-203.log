@@ -1,0 +1,30 @@
+// data.js
+// Database Lokal untuk InsureMind Agent + Gamifikasi
+
+// 1. Kategori Materi Belajar Asuransi
+const STUDY_MATERIALS_DEFAULT = [
+  {
+    id: "dasar-asuransi",
+    title: "Dasar-Dasar Asuransi Umum",
+    category: "Dasar Asuransi",
+    icon: "shield-check",
+    shortDesc: "Konsep dasar pengalihan risiko, hukum asuransi, dan 6 prinsip dasar (Insurable Interest, Indemnity, dll.).",
+    article: `Asuransi Umum (General Insurance) adalah mekanisme proteksi finansial terhadap kerusakan harta benda, kerugian finansial, atau tanggung jawab hukum kepada pihak ketiga.
+
+Asuransi bekerja menggunakan hukum bilangan besar (Law of Large Numbers), di mana risiko dari banyak peserta digabungkan untuk menutupi kerugian dari segelintir peserta yang tertimpa musibah.
+
+6 Prinsip Utama Asuransi:
+1. **Insurable Interest**: Hubungan keuangan yang sah antara tertanggung dan objek asuransi.
+2. **Utmost Good Faith**: Kewajiban bagi penanggung dan tertanggung untuk memaparkan semua fakta material secara jujur.
+3. **Indemnity**: Pemulihan kondisi finansial tertanggung tepat seperti sesaat sebelum kerugian terjadi (tidak mencari keuntungan).
+4. **Subrogation**: Pengalihan hak tuntut dari tertanggung kepada penanggung setelah klaim dibayarkan.
+5. **Contribution**: Pembagian kontribusi pembayaran klaim secara proporsional jika objek diasuransikan di beberapa perusahaan.
+6. **Proximate Cause**: Penyebab aktif, efisien, dan terdekat yang memicu rantai kejadian kerugian.`,
+    summary: "Asuransi umum melindungi aset dari kerugian finansial dengan mengalihkan risiko kepada perusahaan asuransi menggunakan 6 prinsip dasar universal.",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Mock video
+    pdfName: "Panduan_Dasar_Asuransi_Umum.pdf",
+    quiz: [
+      {
+        question: "Manakah prinsip asuransi yang melarang tertanggung mengambil keuntungan dari klaim asuransi?",
+        options: ["Insurable Interest", "Indemnity", "Subrogation", "Utmost Good Faith"],
+        correctAnswer: 1,

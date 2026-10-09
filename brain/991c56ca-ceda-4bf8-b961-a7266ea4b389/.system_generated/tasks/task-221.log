@@ -1,0 +1,3 @@
+1201:const SHOP_ITEMS_DEFAULT = [
+1255:  const defaultIds = SHOP_ITEMS_DEFAULT.map(i => i.id);
+1261:    localStorage.setItem("daftar_katalog_reward", JSON.stringify([...SHOP_ITEMS_DEFAULT, ...customItems]));

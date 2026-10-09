@@ -1,0 +1,7 @@
+370:    sessionStorage.removeItem('pa_active_user');
+1220:    const user = JSON.parse(sessionStorage.getItem('pa_active_user'));
+1309:            const storedUser = sessionStorage.getItem('pa_active_user');
+1432:            const user = JSON.parse(sessionStorage.getItem('pa_active_user'));
+3437:        const activeUser = sessionStorage.getItem('pa_active_user') ? JSON.parse(sessionStorage.getItem('pa_active_user')) : { name: "Agen" };
+3590:    const activeUser = JSON.parse(sessionStorage.getItem("pa_active_user"));
+3631:    const activeUser = JSON.parse(sessionStorage.getItem("pa_active_user"));

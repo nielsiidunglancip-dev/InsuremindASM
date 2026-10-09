@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Dokumen lengkap berisi semua fitur yang sudah ada dalam kode aplikasi InsureMind Agent (web development) namun belum tercantum dalam blueprint revisi pengguna. Mencakup:\n- Sistem Gamifikasi lengkap (XP, Level, Daily Streak, Misi Harian, Badges, Toko Reward, Leaderboard)\n- Fitur Agen tambahan (Kalkulator Premi OJK, Buat Quotation, Coaching, Progress Belajar, Bank Soal & Tryout detail)\n- Fitur Trainer tambahan (CRUD Materi, CRUD Coaching, Laporan Progres, Kelola Reward & Klaim)\n- Fitur Admin tambahan (CRUD User, Log Audit, Laporan LMS)\n- Detail AI Coach (Mode Online/Offline, sistem RAG, konfigurasi API Key)\n- Fitur teknis umum (SPA, LocalStorage, Responsive, Session Management, dll)\n- Rekomendasi konkret untuk ditambahkan ke blueprint flow diagram",
+  "updatedAt": "2026-06-08T10:33:07.207156700Z"
+}

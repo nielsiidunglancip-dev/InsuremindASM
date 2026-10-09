@@ -1,0 +1,3 @@
+858:window.submitAgenMaterialQuiz = function(agentId, moduleId, score) {
+973:window.submitAgenMaterialQuizForm = function(moduleId) {
+989:    window.submitAgenMaterialQuiz(agentId, moduleId, score);

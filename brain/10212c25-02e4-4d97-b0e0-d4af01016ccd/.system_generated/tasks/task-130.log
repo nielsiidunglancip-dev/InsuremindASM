@@ -1,0 +1,30 @@
+    
+    if (typeof window.applyCosmetics === 'function') {
+        window.applyCosmetics();
+    }
+};
+
+window.applyCosmetics = function() {
+    let activeUser = JSON.parse(sessionStorage.getItem("pa_active_user"));
+    if (!activeUser || activeUser.role !== 'Agen') return;
+    
+    let progData = JSON.parse(localStorage.getItem("pa_agent_progress")) || {};
+    let userProgress = progData["progress_" + activeUser.email] || progData["progress_agen@insuremind.id"] || {};
+    let rewardsOwned = userProgress.rewardsOwned || [];
+    
+    const profileContainers = document.querySelectorAll('.user-profile-summary, .mobile-user-avatar');
+    
+    // Check if the user owns Bingkai Emas Premium (id: gold_profile)
+    if (rewardsOwned.includes('gold_profile')) {
+        profileContainers.forEach(el => el.classList.add('gold-frame'));
+    } else {
+        profileContainers.forEach(el => el.classList.remove('gold-frame'));
+    }
+};
+
+// Pastikan dipanggil saat awal buka jika sesi tersimpan
+document.addEventListener("DOMContentLoaded", function() {
+    if (typeof window.applyCosmetics === 'function') {
+        window.applyCosmetics();
+    }
+});

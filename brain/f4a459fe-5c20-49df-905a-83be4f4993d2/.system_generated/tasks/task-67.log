@@ -1,0 +1,7 @@
+dir : Cannot find path 'D:\AI\Antigravity\app.js' because it does not exist.
+At line:1 char:1
++ dir app.js
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\AI\Antigravity\app.js:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 

@@ -1,0 +1,30 @@
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : <!DOCTYPE html>
+                    <html lang="id">
+                    <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <title>InsureMind AI - Sinar Mas Sales Coach</title>
+                      <link...
+RawContent        : HTTP/1.1 200 OK
+                    Access-Control-Allow-Origin: *
+                    Connection: keep-alive
+                    Keep-Alive: timeout=5
+                    Accept-Ranges: bytes
+                    Content-Length: 2585
+                    Cache-Control: public, max-age=0
+                    Content-Type: text/html; c...
+Forms             : {chatForm}
+Headers           : {[Access-Control-Allow-Origin, *], [Connection, keep-alive], [Keep-Alive, timeout=5], 
+                    [Accept-Ranges, bytes]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 2585
+
+
+

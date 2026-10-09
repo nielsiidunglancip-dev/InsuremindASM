@@ -1,0 +1,30 @@
+    if (typeof window.renderTrainerTrainings === 'function') {
+        window.renderTrainerTrainings();
+    }
+    if (typeof window.renderTrainerEvaluasi === 'function') {
+        window.renderTrainerEvaluasi();
+    }
+    if (typeof window.renderTrainerMaterials === 'function') window.renderTrainerMaterials();
+    if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching();
+    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+    if (typeof window.renderTrainerClaims === 'function') window.renderTrainerClaims();
+});
+
+// ==================== FUNGSI PERSISTENSI DATA STORAGE ====================
+window.modules = [];
+window.pa_agent_module_progress = {};
+
+window.loadDataFromStorage = function() {
+    const savedMaterials = localStorage.getItem("pa_materials");
+    if (savedMaterials) {
+        window.modules = JSON.parse(savedMaterials);
+    } else {
+        // Mock data awal jika kosong
+        window.modules = []; 
+    }
+    
+    const savedProgress = localStorage.getItem("pa_agent_module_progress");
+    if (savedProgress) {
+        window.pa_agent_module_progress = JSON.parse(savedProgress);
+    } else {
+        window.pa_agent_module_progress = {};

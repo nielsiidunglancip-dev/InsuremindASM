@@ -1,0 +1,152 @@
+30:function renderProductionChart() {
+120:window.renderHubPosts = function() {
+191:window.addCommentToPost = function(postId) {
+207:function updateAircraftPosition() {
+246:function onManifestChange() {
+254:window.handleLogin = function(e) {
+256:        if (e && typeof e.preventDefault === 'function') e.preventDefault(); 
+311:            if (typeof navigateTo === 'function') navigateTo('trainer-dashboard');
+313:            if (typeof navigateTo === 'function') navigateTo('admin-dashboard');
+315:            if (typeof navigateTo === 'function') navigateTo('dashboard');
+321:        if (typeof renderProductionChart === 'function') {
+323:        } else if (typeof initCharts === 'function') {
+327:        if (typeof renderHubPosts === 'function') {
+329:        } else if (typeof initHub === 'function') {
+333:        if (typeof renderGamification === 'function') {
+335:        } else if (typeof updateAircraftPosition === 'function') {
+344:        if (typeof renderAgenTrainings === 'function') {
+348:        if (typeof renderTrainerTrainings === 'function') {
+351:        if (typeof renderRecommendationBar === 'function') renderRecommendationBar();
+352:        if (typeof renderBelajarAsuransi === 'function') renderBelajarAsuransi("Basic", "");
+353:        if (typeof renderTrainerProgress === 'function') renderTrainerProgress();
+354:        if (typeof renderTrainerClaims === 'function') renderTrainerClaims();
+366:window.handleLogout = function(e) {
+378:window.toggleNavDropdown = function(dropdownId) {
+389:window.navigateTo = function(pageId) {
+415:        if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+417:        if (typeof window.renderTrainerTrainings === 'function') window.renderTrainerTrainings();
+419:        if (typeof window.renderCoachingCategories === 'function') window.renderCoachingCategories();
+421:        if (typeof window.renderProductCatalog === 'function') window.renderProductCatalog();
+423:        if (typeof window.renderAdminProducts === 'function') window.renderAdminProducts();
+427:    if (pageId === 'progress' && typeof window.renderAgentProgressPage === 'function') {
+479:window.renderProductCatalog = function() {
+532:window.showProductDetail = function(productId) {
+582:window.findAIProduct = async function() {
+668:window.renderAdminProducts = function() {
+691:window.showAdminProductModal = function(id = null) {
+726:window.addAdminProdFaq = function(q = '', a = '') {
+740:window.addAdminProdDoc = function(name = '', link = '') {
+754:window.saveAdminProduct = function() {
+818:window.deleteAdminProduct = function(id) {
+829:window.renderCoachingCategories = function() {
+923:window.renderCoachingDetail = function(module, activeBtn) {
+1045:window.submitCoachingReport = function(moduleId) {
+1058:window.toggleSidebar = function() {
+1068:function initTrainingData() {
+1101:window.renderJadwalTrainingSection = function(userRole) {
+1166:window.publishNewTraining = function() {
+1202:window.renderAgenTrainings = function() {
+1205:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+1208:window.renderJadwalTrainingUntukAgen = function() {
+1296:window.rsvpTraining = function(id) {
+1330:        if (typeof window.renderAgenTrainings === 'function') {
+1340:window.markTrainingCompleted = function(id) {
+1347:        if (typeof renderTrainerTrainings === 'function') renderTrainerTrainings();
+1352:window.openTokenModal = function(id) {
+1369:window.renderSyllabusUI = function() {
+1413:window.hideTrainingTokenModal = function() {
+1417:window.submitTrainingToken = function(e) {
+1443:            if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+1453:window.openTrainingQuiz = function(id) {
+1483:window.hideTrainingQuizModal = function() {
+1487:window.submitTrainingQuiz = function(e) {
+1537:        if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+1544:    if (typeof window.loadDataFromStorage === 'function') {
+1548:    if (typeof window.renderBelajarAsuransi === 'function') {
+1552:    if (typeof window.renderRecommendationBar === 'function') {
+1556:    if (typeof window.renderAgenTrainings === 'function') {
+1559:    if (typeof window.evaluateAgentCertificates === 'function') {
+1562:    if (typeof window.renderTrainerTrainings === 'function') {
+1565:    if (typeof window.renderTrainerEvaluasi === 'function') {
+1568:    if (typeof window.renderTrainerMaterials === 'function') window.renderTrainerMaterials();
+1569:    if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching();
+1570:    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+1571:    if (typeof window.renderTrainerClaims === 'function') window.renderTrainerClaims();
+1578:window.loadDataFromStorage = function() {
+1595:window.saveDataToStorage = function() {
+1603:window.switchLevelTab = function(level) {
+1619:window.filterMaterials = function() {
+1625:window.setupMaterialTabs = function() {
+1636:            tab.addEventListener('click', function() {
+1660:window.loadModuleDetail = function(moduleId) {
+1757:            if (typeof window.renderAgenMaterialQuiz === 'function') {
+1774:window.openMaterialDetail = function(id) {
+1776:    window.navigateTo('belajar-detail');
+1780:window.markActiveChapterDone = function() {
+1815:            if (typeof window.triggerConfetti === 'function') window.triggerConfetti();
+1819:            if (typeof window.evaluateAgentCertificates === 'function') {
+1822:            if (typeof window.renderRecommendationBar === 'function') {
+1825:            if (typeof window.renderBelajarAsuransi === 'function') {
+1829:            window.navigateTo('belajar');
+1838:window.getLatestAgentRecommendation = function() {
+1895:window.renderRecommendationBar = function() {
+1917:        clickAction = `window.navigateTo('dashboard')`;
+1943:window.renderBelajarAsuransi = function(selectedLevel, searchQuery) {
+1972:        if (typeof window.initAgentModuleProgress === 'function') {
+2018:window.initAgentModuleProgress = function(agentId, moduleId, method = "Mandiri") {
+2036:window.markMaterialAsRead = function(agentId, moduleId) {
+2044:window.submitAgenMaterialQuiz = function(agentId, moduleId, score) {
+2068:        if (typeof window.triggerConfetti === 'function') window.triggerConfetti();
+2086:window.triggerConfetti = function() {
+2087:    if (typeof confetti === 'function') {
+2091:        function fire(particleRatio, opts) {
+2105:window.issueCertificate = function(agentId, moduleId) {
+2115:window.renderAgenMaterialQuiz = function(moduleId) {
+2175:window.submitAgenMaterialQuizForm = function(moduleId) {
+2195:window.evaluateAgentCertificates = function() {
+2236:    if (typeof window.renderAgentProgressPage === 'function') {
+2241:window.renderAgentProgressPage = function() {
+2429:window.renderTrainerEvaluasi = function() {
+2469:window.resetKesempatanAgen = function(agentId, moduleId) {
+2480:window.overrideLuluskanAgen = function(agentId, moduleId) {
+2488:            if (typeof window.issueCertificate === 'function') {
+2498:window.showCreateTrainingModal = function() {
+2511:window.hideCreateTrainingModal = function() {
+2516:window.saveTrainingEvent = function() {
+2555:window.renderTrainerTrainings = function() {
+2558:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+2611:window.openEditTrainingQuizModal = function(id) {
+2618:window.hideEditTrainingQuizModal = function() {
+2623:window.renderQuizQuestionsList = function() {
+2653:window.addQuizQuestion = function() {
+2696:window.deleteQuizQuestion = function(index) {
+2712:window.switchTrainerTab = function(tabId) {
+2729:window.toggleMaterialQuizForm = function() {
+2739:window.addQuizQuestionBlock = function() {
+2774:window.showCreateMaterialModal = function() {
+2828:window.hideCreateMaterialModal = function() {
+2835:window.saveTrainerMaterial = function() {
+2907:window.renderTrainerMaterials = function() {
+2942:window.showCreateCoachingModal = function() {
+2955:window.hideCreateCoachingModal = function() {
+2960:window.saveTrainerCoaching = function() {
+2999:window.renderTrainerCoaching = function() {
+3029:window.renderTrainerProgress = function() {
+3050:window.renderTrainerClaims = function() {
+3064:window.filterTrainerClaims = function(status) {
+3068:window.addCustomReward = function(e) {
+3074:window.updateCertPreview = function() {
+3107:window.saveCertTemplate = function() {
+3117:window.autoLogin = function(email, password) {
+3132:            if (typeof window.handleLogin === 'function') {
+3167:        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+3178:        btnSubmitQuiz.addEventListener('click', function(e) {
+3206:    if (typeof window.renderCategoryDropdowns === 'function') {
+3222:window.initInsuranceCategories = function() {
+3235:window.renderCategoryDropdowns = function() {
+3259:window.addNewCategory = function() {
+3275:window.hideLevelUpModal = function() { const el = document.getElementById('modal-level-up'); if (el) el.style.display = 'none'; };
+3284:window.updateManifestData = function() {
+3314:window.showDestinationModal = function(destName, imgUrl, desc) {
+3321:window.renderGamification = function() {
+3399:window.updateAircraftPosition = function() {

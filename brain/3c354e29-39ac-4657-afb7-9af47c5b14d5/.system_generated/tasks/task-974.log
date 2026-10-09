@@ -1,0 +1,112 @@
+39:            <a href="#" onclick="showResetModal(event)" class="forgot-link">Lupa Password?</a>
+66:  <!-- Modal Lupa Password -->
+67:  <div id="reset-modal" class="modal-overlay">
+68:    <div class="modal-card">
+76:      <div class="modal-actions">
+77:        <button onclick="hideResetModal()" class="btn-secondary">Batal</button>
+158:              Jadwal Training
+331:            Kelola Jadwal Training & Kuis
+1072:                <label for="motor-tpl">Limit Tambahan TJH (di atas paket bawaan Rp 10 jt)</label>
+1074:                  <option value="0">Tanpa Perluasan TJH Tambahan</option>
+1406:                    <label for="pptx-catatan">Catatan / Keterangan Tambahan</label>
+1470:        <div id="proposal-preview-modal" class="modal-overlay">
+1471:          <div class="modal-card print-preview-card">
+1479:            <div class="modal-actions no-print">
+1811:        <!-- Modal Hasil Game -->
+1812:        <div id="game-result-modal" class="modal-overlay">
+1813:          <div class="modal-card" style="text-align:center; max-width: 400px;">
+1819:            <div class="modal-actions"
+1822:              <button class="btn-secondary" onclick="closeGameResultModal(); navigateTo('arena-game')">🏠 Kembali ke
+1828:        <!-- Modal Kuota Habis -->
+1829:        <div id="game-quota-modal" class="modal-overlay">
+1830:          <div class="modal-card" style="text-align:center; max-width: 380px;">
+1836:            <div class="modal-actions" style="justify-content:center;">
+1837:              <button class="btn-secondary" onclick="closeGameQuotaModal()">Tutup</button>
+1838:              <button class="btn-primary" onclick="closeGameQuotaModal(); navigateTo('rewards')">🛒 Beli Tiket (5
+2188:        <!-- Modal Setting Gemini Key -->
+2189:        <div id="ai-settings-modal" class="modal-overlay">
+2190:          <div class="modal-card">
+2203:            <div class="modal-actions" style="margin-top: 20px;">
+2383:        <!-- Modal Tampilan Sertifikat untuk Dicetak -->
+2384:        <div id="cert-print-modal" class="modal-overlay">
+2385:          <div class="modal-card print-cert-card"
+2390:            <div class="modal-actions no-print" style="margin-top: 20px;">
+2489:              <button class="btn-primary" onclick="showCreateMaterialModal()"
+2490:                style="width: auto; padding: 6px 12px; font-size: 12px;">+ Tambah Modul Baru</button>
+2520:              <button class="btn-primary" onclick="showCreateCoachingModal()"
+2521:                style="width: auto; padding: 6px 12px; font-size: 12px; white-space:nowrap;">+ Tambah Taktik
+2573:                <h3>Tambah Reward Baru ke Katalog</h3>
+2598:                <button type="submit" class="btn-primary" style="margin-top: 10px;">Tambah ke Katalog</button>
+2629:        <!-- Modal Tambah/Edit Modul Materi -->
+2630:        <div id="trainer-material-modal" class="modal-overlay">
+2631:          <div class="modal-card modal-wide">
+2632:            <h3 id="trn-modal-title">Tambah Modul Belajar Baru</h3>
+2730:              <button onclick="addQuizQuestionBlock()" type="button" class="btn-secondary" style="width:100%; border-style:dashed;">+ Tambah Soal Lain</button>
+2734:            <div class="modal-actions" style="margin-top: 20px;">
+2735:              <button onclick="hideCreateMaterialModal()" class="btn-secondary">Batal</button>
+2741:        <!-- Modal Tambah/Edit Taktik Coaching -->
+2742:        <div id="trainer-coaching-modal" class="modal-overlay">
+2743:          <div class="modal-card modal-wide">
+2755:              <h3 id="trn-coaching-modal-title" style="margin:0;">Tambah Taktik Coaching Baru</h3>
+2789:            <div class="modal-actions" style="margin-top: 20px;">
+2790:              <button onclick="hideCreateCoachingModal()" class="btn-secondary">Batal</button>
+2911:              <button class="btn-primary" onclick="showCreateUserModal()"
+2912:                style="width: auto; padding: 6px 12px; font-size: 12px;">+ Tambah Akun</button>
+2985:        <!-- Modal Tambah Akun Pengguna -->
+2986:        <div id="admin-user-modal" class="modal-overlay">
+2987:          <div class="modal-card">
+2988:            <h3 id="adm-user-modal-title">Tambah Pengguna Baru</h3>
+3028:            <div class="modal-actions" style="margin-top: 20px;">
+3029:              <button onclick="hideCreateUserModal()" class="btn-secondary">Batal</button>
+3036:      <!-- ==================== MANAJEMEN JADWAL TRAINING (TRAINER) ==================== -->
+3039:          <h2>Jadwal & Training Management</h2>
+3045:            <button class="btn-primary" onclick="showCreateTrainingModal()"
+3046:              style="width: auto; padding: 6px 12px; font-size: 12px;">+ Buat Jadwal Training Baru</button>
+3075:        <!-- Modal Buat Training -->
+3076:        <div id="modal-create-training" class="modal-overlay">
+3077:          <div class="modal-card">
+3078:            <h3>Buat Jadwal Training Baru</h3>
+3122:            <div class="modal-actions" style="margin-top: 20px;">
+3123:              <button onclick="hideCreateTrainingModal()" class="btn-secondary">Batal</button>
+3124:              <button onclick="saveTrainingEvent()" class="btn-primary">Simpan Jadwal</button>
+3129:        <!-- Modal Edit Training Kuis -->
+3130:        <div id="modal-edit-training-quiz" class="modal-overlay">
+3131:          <div class="modal-card" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+3133:            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Tambahkan atau edit pertanyaan kuis untuk jadwal training ini.</p>
+3140:                <h4 style="margin-top: 0; margin-bottom: 12px; font-size: 14px;">+ Tambah Pertanyaan Baru</h4>
+3160:                <button class="btn-primary" onclick="addQuizQuestion()" style="margin-top: 10px; width: 100%;">Tambahkan Pertanyaan</button>
+3163:            <div class="modal-actions">
+3164:              <button onclick="hideEditTrainingQuizModal()" class="btn-secondary">Tutup</button>
+3169:        <!-- Modal Kelola Kuis -->
+3170:        <div id="modal-manage-quiz" class="modal-overlay">
+3171:          <div class="modal-card" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
+3178:            <button class="btn-secondary" onclick="addQuizQuestionRow()" style="margin-top:16px; width:100%;">[+] Tambah
+3180:            <div class="modal-actions" style="margin-top: 20px;">
+3181:              <button onclick="hideManageQuizModal()" class="btn-secondary">Batal</button>
+3187:        <!-- Modal Certificate Builder -->
+3188:        <div id="modal-cert-builder" class="modal-overlay">
+3189:          <div class="modal-card">
+3203:            <div class="modal-actions" style="margin-top: 20px;">
+3204:              <button onclick="hideCertBuilderModal()" class="btn-secondary">Batal</button>
+3211:      <!-- ==================== JADWAL TRAINING (AGEN) ==================== -->
+3214:          <h2>Jadwal Training Tersedia</h2>
+3233:        <!-- Modal Input Token Absensi -->
+3234:        <div id="modal-training-token" class="modal-overlay">
+3235:          <div class="modal-card" style="max-width:400px; text-align:center;">
+3241:            <div class="modal-actions" style="margin-top: 20px; justify-content:center;">
+3242:              <button onclick="hideTrainingTokenModal()" class="btn-secondary">Batal</button>
+3248:        <!-- Modal Player Kuis -->
+3249:        <div id="modal-training-quiz" class="modal-overlay">
+3250:          <div class="modal-card" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+3260:            <div class="modal-actions" style="margin-top: 20px;">
+3261:              <button onclick="hideTrainingQuizModal()" class="btn-secondary">Keluar</button>
+3272:  <!-- [GAMIFIKASI] Modal Level-up Animasi (Duolingo Style) -->
+3273:  <div id="level-up-modal" class="modal-overlay">
+3274:    <div class="modal-card level-up-card">
+3286:      <div class="modal-actions" style="justify-content: center; margin-top: 24px;">
+3287:        <button onclick="hideLevelUpModal()" class="btn-primary"
+3295:  <!-- [GAMIFIKASI] Modal Konfirmasi Beli Toko -->
+3296:  <div id="shop-confirm-modal" class="modal-overlay">
+3297:    <div class="modal-card">
+3301:      <div class="modal-actions">
+3302:        <button onclick="hideShopConfirmModal()" class="btn-secondary">Batal</button>

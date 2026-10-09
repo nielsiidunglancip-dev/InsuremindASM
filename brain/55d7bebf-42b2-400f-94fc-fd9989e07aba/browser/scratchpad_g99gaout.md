@@ -1,0 +1,12 @@
+# Verification Checklist
+- [ ] Log in as Rian Aditya
+- [ ] Verify header displays '40 Koin' initially
+- [ ] Navigate to 'Toko Reward' (Rewards) page
+- [ ] Click 'Beli' under 'Tiket Main Lagi'
+- [ ] Verify custom modal and click confirm
+- [ ] Verify custom toast message
+- [ ] Verify coins balance updates to '35 Koin' (shop & header)
+- [ ] Navigate to 'Profil Agen Saya' page and verify balance '35 Koin'
+- [ ] Navigate to 'Arena Game Edukasi' and verify quota text displays '3 Sesi Tersisa (Bonus Tiket)'
+- [ ] Play Swipe Match game, verify quota decrements to 2
+- [ ] Take screenshots at key points

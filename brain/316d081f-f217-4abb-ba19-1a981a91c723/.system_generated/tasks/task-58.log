@@ -1,0 +1,36 @@
+Memulai inisialisasi RAG (Membaca PDF)...
+Loading RAG embeddings from cache...
+Loaded 50 chunks from cache.
+==================================================
+🚀 InsureMind AI Web Server berjalan di: http://localhost:3000
+==================================================
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:103:20 {
+  status: 503,
+  statusText: 'Service Unavailable',
+  errorDetails: undefined
+}
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:103:20 {
+  status: 503,
+  statusText: 'Service Unavailable',
+  errorDetails: undefined
+}
+Error in /api/chat: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at _makeRequestInternal (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:353:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateContent (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:752:22)
+    at async ChatSession.sendMessage (D:\AI\CHATBOT AI\node_modules\@google\generative-ai\dist\index.js:1027:9)
+    at async D:\AI\CHATBOT AI\app.js:103:20 {
+  status: 503,
+  statusText: 'Service Unavailable',
+  errorDetails: undefined
+}

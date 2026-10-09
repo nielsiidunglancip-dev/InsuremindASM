@@ -1,0 +1,4 @@
+2692:            <div id="trn-mat-quiz-container" style="display: none; padding: 16px; background-color: #F8FAFC; border: 2px dashed #cbd5e1; border-radius: 8px; margin-bottom: 16px;">
+2695:                <div class="quiz-question-item" style="border:1px dashed #cbd5e1; padding:16px; margin-bottom:16px; border-radius:8px; background-color:#ffffff;">
+2730:              <button onclick="addQuizQuestionBlock()" type="button" class="btn-secondary" style="width:100%; border-style:dashed;">+ Tambah Soal Lain</button>
+2832:            <div id="cert-preview-canvas" style="width:100%; aspect-ratio:1.414; background:linear-gradient(135deg, #e0f2fe, #bae6fd); border-radius:8px; border:2px dashed #cbd5e1; margin-top:16px; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; transition: all 0.3s ease;">

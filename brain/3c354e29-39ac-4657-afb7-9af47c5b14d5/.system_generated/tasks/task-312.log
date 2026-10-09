@@ -1,0 +1,3 @@
+374:        if (typeof renderTrainerProgress === 'function') renderTrainerProgress();
+819:    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+1364:window.renderTrainerProgress = function() {

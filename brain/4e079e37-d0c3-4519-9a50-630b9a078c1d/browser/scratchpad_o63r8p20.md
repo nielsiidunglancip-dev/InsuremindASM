@@ -1,0 +1,23 @@
+# Task Progress
+
+- [x] STEP 1: MARKETING - Create Prospect
+  - [x] Login as marketing (or confirm already logged in)
+  - [x] Click "Buat Pengajuan"
+  - [x] Fill form details
+  - [x] Submit and click OK on success alert
+  - [x] Take screenshot of the prospect list
+- [x] STEP 2: LOGOUT and login as ANALIS
+  - [x] Click "Keluar"
+  - [x] Login as analis/analis123
+  - [x] Take screenshot of the Analis Dashboard
+- [ ] STEP 3: ANALYST - Review Prospect
+  - [ ] Find "PT Maju Bersama Jaya"
+  - [ ] Click "Tinjau Detail"
+  - [ ] Scroll to "Keputusan Analis" panel
+  - [ ] Take screenshot of decision panel
+- [ ] STEP 4: ANALYST - Make Decision
+  - [ ] Select "Kembalikan ke Marketing"
+  - [ ] Type notes: "Laporan keuangan tahun 2022 belum dilampirkan. Mohon lengkapi dokumen sebelum diproses ulang."
+  - [ ] Click submit
+  - [ ] Confirm alert
+  - [ ] Take final screenshot

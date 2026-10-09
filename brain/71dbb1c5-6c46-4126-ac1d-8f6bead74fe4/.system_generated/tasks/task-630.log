@@ -1,0 +1,8 @@
+Select-String : The string status: \ is not a valid regular expression: parsing "status: \" - Illegal \ at end of 
+pattern.
+At line:1 char:48
++ ... y\app.js" | Select-String -Pattern "status: \"Scheduled\"" -Context 1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ArgumentException
+    + FullyQualifiedErrorId : InvalidRegex,Microsoft.PowerShell.Commands.SelectStringCommand
+ 

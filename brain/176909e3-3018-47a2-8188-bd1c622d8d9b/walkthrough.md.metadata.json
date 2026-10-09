@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Updated image paths to resolve via the workspace junction link (/AI/Antigravity/brain/...) to pass Windows cross-drive validation.",
+  "updatedAt": "2026-05-31T15:53:48.721375700Z"
+}

@@ -1,0 +1,6 @@
+- [x] Add the stats card container and "Tampilkan Semua" button to `index.html`
+- [x] Initialize the `currentClaimsFilter` variable in `app.js`
+- [x] Add display logic for `.trainer-stats-bar` in `initUserSession()` in `app.js`
+- [x] Implement stats count updating and filtering in `renderTrainerClaimsTable()` in `app.js`
+- [x] Add `filterTrainerClaims()` helper function in `app.js`
+- [x] Verify visibility, filter trigger, and data sync

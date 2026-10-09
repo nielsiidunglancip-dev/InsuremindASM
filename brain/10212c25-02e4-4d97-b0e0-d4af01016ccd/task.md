@@ -1,0 +1,8 @@
+- `[x]` Update `index.html`: Tambah section Materi Pembelajaran (Baca & Unduh).
+- `[x]` Update `index.html`: Tambah tombol Daftar Ikut Uji Kompetensi.
+- `[x]` Update `index.html`: Tambah tabel/section pendaftaran di Dashboard Admin & Trainer.
+- `[x]` Update `app.js`: Buat fungsi `selectQualification(level)` dengan data dinamis.
+- `[x]` Update `app.js`: Tambah logika pengecekan status sertifikasi agen.
+- `[x]` Update `app.js`: Buat fungsi `daftarUjiKompetensi()`.
+- `[x]` Update `app.js` / `data.js`: Tambahkan logika array/localstorage untuk pendaftaran Uji Kompetensi.
+- `[x]` Verifikasi hasil: Modifikasi HTML/JS selesai.

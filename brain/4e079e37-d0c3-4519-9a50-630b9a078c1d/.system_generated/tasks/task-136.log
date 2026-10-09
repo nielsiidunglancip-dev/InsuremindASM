@@ -1,0 +1,7 @@
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\AI 2\DICKY\backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+Error seeding database: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])

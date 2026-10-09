@@ -1,0 +1,36 @@
+334:          <button class="sidebar-link" id="nav-trainer-sertifikat" onclick="navigateTo('trainer-sertifikat')">
+340:            Template Sertifikat Builder
+623:                Klaim hadiah berupa XP dan Koin segera setelah misi selesai.</p>
+696:          <!-- Area Kiri: Pelatihan Sedang Berlangsung & Rekomendasi -->
+1856:              <p>Klik salah satu modul pelatihan di samping kiri untuk membaca tips taktis dan daftar checklist praktek.
+2256:          <p>Pantau rekam jejak, skor kuis bab, koleksi lencana luhur, dan klaim sertifikat kelulusan.</p>
+2276:          <!-- Kiri: Lencana & Sertifikat -->
+2285:            <!-- Sertifikat Kelulusan Cetak -->
+2287:              <h3>Klaim Sertifikat Pelatihan</h3>
+2289:              <h4 style="margin-top:16px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">A. Sertifikat Akademi
+2292:                Sertifikat kelulusan ASM Insurance Academy dapat dicetak apabila Anda telah menyelesaikan minimal 80%
+2301:                  Cetak Sertifikat Kelulusan
+2305:              <h4 style="margin-top:16px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">B. Sertifikat Live
+2308:                Daftar sertifikat dari kelas training interaktif yang Anda ikuti.
+2351:        <!-- Modal Tampilan Sertifikat untuk Dicetak -->
+2360:              <button onclick="window.print()" class="btn-primary">Cetak Sertifikat</button>
+2437:              <span class="stat-lbl">Antrean Klaim</span>
+2438:              <h3 class="stat-number" id="stats-pending-count">0 Pending Klaim</h3>
+2449:          <button class="trn-tab-btn" onclick="switchTrainerTab('trn-reward-mgmt')">Kelola Reward & Klaim</button>
+2535:        <!-- Tab 3: Kelola Reward & Klaim (Katalog & Transaksi) -->
+2573:                <h3>Daftar Klaim Hadiah Agen</h3>
+2583:                      <th>Tanggal Klaim</th>
+2759:      <!-- ==================== TEMPLATE SERTIFIKAT BUILDER ==================== -->
+2760:      <section id="page-trainer-sertifikat" class="page-section">
+2762:          <h2>Template Sertifikat Builder</h2>
+2763:          <p>Desain dan atur posisi teks untuk sertifikat kelulusan agen secara dinamis.</p>
+2769:              <label>Judul Template Sertifikat</label>
+2770:              <input type="text" placeholder="Contoh: Sertifikat Basic Keagenan" id="cert-title">
+2793:            <h3>Live Preview Sertifikat</h3>
+2795:                <div style="font-size:32px; font-weight:bold; font-family:serif; color:#0f172a; margin-bottom:10px; transition: color 0.3s ease;" id="preview-cert-title">Sertifikat Kelulusan</div>
+2798:                <div style="font-size:14px; color:#475569;">Atas keberhasilannya menyelesaikan program pelatihan dengan predikat sangat memuaskan.</div>
+3030:            <h3>Kurikulum & Silabus Pelatihan</h3>
+3152:            <h3>Kustomisasi Templat Sertifikat</h3>
+3154:              <label>Judul Sertifikat</label>
+3186:          <h2>Kurikulum & Silabus Pelatihan</h2>
+3246:        <p class="lvl-up-desc">Anda kini memiliki akses ke lebih banyak materi pelatihan dan prioritas sertifikasi.</p>

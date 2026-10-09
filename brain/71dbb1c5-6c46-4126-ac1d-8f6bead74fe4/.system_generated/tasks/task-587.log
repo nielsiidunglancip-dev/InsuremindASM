@@ -1,0 +1,72 @@
+
+    text-decoration: underline;
+  }
+  
+> .btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2); /* Tebal di bawah gaya Duolingo */
+  }
+  
+> .btn-primary:hover:not([disabled]) {
+    background-color: var(--primary-blue-hover);
+    box-shadow: 0 4px 12px rgba(0, 141, 218, 0.25);
+    transform: translateY(1px);
+    border-bottom-width: 2px;
+  }
+  
+> .btn-primary:active:not([disabled]) {
+    transform: translateY(3px);
+    border-bottom-width: 0;
+  }
+  
+> .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-bottom: none;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    margin-top: 14px;
+  }
+  
+> .btn-primary {
+    background: var(--primary-blue);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 141, 218, 0.2);
+
+

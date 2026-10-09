@@ -1,0 +1,93 @@
+12:  <title>InsureMind Agent - LMS & AI Coach</title>
+33:        <p class="login-subtitle">LMS & Sertifikasi Agen Asuransi Umum Indonesia</p>
+150:          <!-- AKADEMI & TRAINING -->
+152:            AKADEMI & TRAINING
+182:              Bank Soal & Tryout
+205:          <!-- SALES KIT & PRODUK -->
+207:            SALES KIT & PRODUK
+258:          <!-- OPERASIONAL & GAMIFIKASI -->
+260:            OPERASIONAL & GAMIFIKASI
+337:            Kelola Jadwal Training & Kuis
+402:            Manajemen User (Akun Agen & Trainer)
+412:            Master Data Modul & Produk
+421:            Log Audit Sistem & Akses
+453:            Executive Dashboard (Analitik & Statistik)
+465:            Laporan Kelulusan & Sertifikasi Agen
+531:          title="Profil & Akun Anda">
+605:        <!-- [GAMIFIKASI] Widget Progress Level & Misi Harian di Dashboard -->
+626:            <!-- HUB & INFORMASI TERBARU -->
+627:            <div class="content-card" id="hub-container" style="margin-bottom: 20px;">
+629:                <h3>Hub & Informasi Terbaru <span
+637:              <div id="hub-post-form-container"
+640:                <textarea id="hub-input-text" placeholder="Tulis pengumuman atau berita..."
+642:                <input type="text" id="hub-input-image" placeholder="URL Gambar (Opsional)"
+644:                <input type="text" id="hub-input-video"
+647:                <button class="btn-primary" onclick="submitHubPost()"
+652:              <div id="hub-feed-list" class="hub-feed-list">
+671:            <!-- WIDGET KIRI: Grafik Tren Produksi & Komisi -->
+674:                <h3>Grafik Tren Produksi & Komisi</h3>
+1068:          <button class="sim-tab-btn" onclick="switchSimulator('sim-property')">Properti & Kebakaran</button>
+1086:                  <option value="2">Kat. 2 – Mobil Penumpang (UP &gt; 125 jt – 200 jt)</option>
+1087:                  <option value="3" selected>Kat. 3 – Mobil Penumpang (UP &gt; 200 jt – 400 jt)</option>
+1088:                  <option value="4">Kat. 4 – Mobil Penumpang (UP &gt; 400 jt – 800 jt)</option>
+1089:                  <option value="5">Kat. 5 – Kendaraan Mewah (UP &gt; 800 jt)</option>
+1112:                  <option value="1">Wilayah I – Sumatera &amp; Kepulauan Sekitarnya</option>
+1122:                  usia &gt;5 thn &nbsp;|&nbsp; TLO: +0.75% jika usia &gt;10 thn</small>
+1130:                    <span>Banjir &amp; Angin Topan</span>
+1137:                    <span>Gempa Bumi &amp; Tsunami</span>
+1144:                    <span>Huru-Hara &amp; SRCC (Kerusuhan)</span>
+1151:                    <span>Terorisme &amp; Sabotase</span>
+1173:                <label for="prop-value">Nilai Bangunan & Perabot</label>
+1194:                <label for="prop-flood">Perluasan Jaminan Banjir & Badai</label>
+1279:                  <span>Premi Banjir &amp; Angin Topan:</span>
+1283:                  <span>Premi Gempa Bumi &amp; Tsunami:</span>
+1287:                  <span>Premi Huru-Hara &amp; SRCC:</span>
+1291:                  <span>Premi Terorisme &amp; Sabotase:</span>
+1305:                  <span>Biaya Polis &amp; Administrasi:</span>
+1337:          <h2>Buat Proposal & SPPA</h2>
+1344:          <button class="prop-tab-btn" onclick="switchProposalTab('prop-templates')">Unduh Dokumen & SPPA</button>
+1352:            <h3>Form Pengisian Quotation & SPPA Agen</h3>
+1366:                  <option value="ASM Home Shield & Business">ASM Home Shield & Business (Properti)</option>
+1385:              Daftarkan Penawaran & Cetak Quotation
+1393:            <h3>Daftar Quotation & SPPA yang Dibuat</h3>
+1526:                          RINGKASAN MANFAAT & PREMI</div>
+1536:                      <span>Slide 2 — Tabel Manfaat & Disclaimer</span>
+1643:          <!-- Kolom Kanan: Statistik & Galeri Medali -->
+1706:                <h3>🏅 Galeri Medali & Lencana</h3>
+1736:        <!-- Game Selection Hub -->
+1737:        <div class="game-hub-grid" id="game-hub-grid">
+1739:          <div class="game-hub-card" onclick="startSwipeGame()">
+1740:            <div class="game-hub-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+1750:            <div class="game-reward-pill">🏆 Hadiah: +50 XP & +10 Koin per 10 streak!</div>
+1754:          <div class="game-hub-card" onclick="startWordDuelGame()">
+1755:            <div class="game-hub-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+1765:            <div class="game-difficulty-badge easy">🚀 Cepat &amp; Seru</div>
+1935:          <h2>Coaching Agen & Teknik Penjualan</h2>
+2000:          <!-- Tips Ujian & Action Card -->
+2020:      <!-- ==================== PAGE: BANK SOAL & TRYOUT WELCOME ==================== -->
+2054:          <!-- Papan Nilai & Riwayat -->
+2100:          <!-- Kiri: Area Pertanyaan & Opsi -->
+2120:              Akhiri Ujian & Kumpulkan Lembar Jawaban
+2188:                Lihat Pembahasan & Pembahasan
+2333:      <!-- ==================== [GAMIFIKASI] PAGE: MISI & TOKO REWARD ==================== -->
+2336:          <h2>Toko Karir & Reward Virtual</h2>
+2347:                Katalog Karir & Reward</h3>
+2359:          <h2>Progress Belajar & Pencapaian</h2>
+2372:            <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Gabungan modul mandiri & kelas live.</p>
+2381:          <!-- Kiri: Lencana & Sertifikat -->
+2432:                Training & Zoom</h4>
+2576:          <button class="trn-tab-btn" onclick="switchTrainerTab('trn-reward-mgmt')">Kelola Reward & Klaim</button>
+2641:            <h3>Laporan Belajar & Tryout Agen</h3>
+2661:        <!-- Tab 3: Kelola Reward & Klaim (Katalog & Transaksi) -->
+2779:              <button onclick="saveTrainerCoaching()" class="btn-primary">💾 Simpan & Publikasikan</button>
+2801:                <option value="blue-gold">Blue & Gold Elegant</option>
+2886:          <p>Manajemen data akun agen & trainer, audit material, serta laporan eksekutif LMS.</p>
+3024:      <!-- ==================== ADMIN: MASTER DATA MODUL & PRODUK ==================== -->
+3027:          <h2>Manajemen Master Data Modul & Produk</h2>
+3057:          <h2>Jadwal & Training Management</h2>
+3086:            <h3>Kurikulum & Silabus Pelatihan</h3>
+3217:          <h2>Kurikulum & Silabus Pelatihan</h2>
+3402:      <button onclick="hideCreateTrainingModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; font-size: 24px; cursor: pointer; color: #64748b; padding: 4px 8px; line-height: 1;">&times;</button>
+3475:      <button onclick="hideEditTrainingQuizModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; font-size: 24px; cursor: pointer; color: #64748b; padding: 4px 8px; line-height: 1;">&times;</button>
+3539:      <button class="modal-close" onclick="document.getElementById('modal-product-detail').classList.remove('active')" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:#64748b;">&times;</button>
+3554:      <button class="modal-close" onclick="document.getElementById('modal-admin-product').classList.remove('active')" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:#64748b;">&times;</button>

@@ -1,0 +1,25 @@
+
+index.html:199:          <!-- SALES KIT & PRODUK -->
+index.html:201:            SALES KIT & PRODUK
+index.html:205:            <button class="sidebar-link" id="nav-produk" onclick="navigateTo('produk')">
+index.html:213:              Produk Asuransi
+index.html:388:            Master Data Modul & Produk
+index.html:434:            Monitoring Produktivitas Cabang
+index.html:550:            <p>Ayo persiapkan diri Anda dan pantau progres kompetensi produk asuransi hari ini.</p>
+index.html:647:                <!-- Slot 1: Grafik Tren Produksi & Komisi -->
+index.html:650:                        <h3 style="font-size: 14px; margin: 0;">Grafik Tren Produksi & Komisi</h3>
+index.html:938:      <!-- ==================== PAGE: MENU PRODUK ASURANSI ==================== -->
+index.html:939:      <section id="page-produk" class="page-section">
+index.html:941:          <h2>Katalog Produk Asuransi</h2>
+index.html:1132:                  <span>Nama Produk:</span>
+index.html:1249:                <label for="sim-api-product">Pilihan Produk Asuransi</label>
+index.html:1289:                <label for="prop-product-select">Produk Asuransi</label>
+index.html:1326:                    <th>Produk</th>
+index.html:1404:                    <label for="pptx-jenis-asuransi">Jenis / Produk Asuransi</label>
+index.html:1454:                          <div class="mini-row"><span>Produk</span><strong 
+id="prev-prod">-</strong></div>
+index.html:2158:                  <li>Menjelaskan detail jaminan produk (misal FLEXAS atau ICC A).</li>
+index.html:2682:                placeholder="Contoh: Teknik Presentasi Produk kepada Calon Nasabah" required>
+index.html:2699:Simulasikan presentasi produk di depan cermin selama 15 menit
+
+

@@ -1,0 +1,7 @@
+
+app.js:602:            btnRsvp = `<button class="btn-primary" style="width:100%; margin-bottom:8px;" 
+onclick="rsvpTraining('${t.id}')">Daftar (RSVP) Sekarang</button>`;
+app.js:661:window.rsvpTraining = function(id) {
+fix_app.py:75:function rsvpTraining(id) {
+
+

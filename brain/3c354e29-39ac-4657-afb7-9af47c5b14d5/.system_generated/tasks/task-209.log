@@ -1,0 +1,73 @@
+455:                quiz: [
+468:                quiz: [
+565:        quiz: [] // Kuis dapat diatur di menu lain
+594:    const attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+635:                btnKuis = `<button class="btn-primary" style="width:100%;" onclick="openTrainingQuiz('${t.id}')">Ikuti Kuis Singkat</button>`;
+730:let currentQuizEvId = null;
+731:window.openTrainingQuiz = function(id) {
+734:    if (!ev || !ev.quiz) return;
+735:    currentQuizEvId = id;
+738:    const attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+741:    document.getElementById("agen-quiz-attempts-left").innerText = `Sisa Kesempatan: ${2 - myAtt.attempts}x`;
+742:    const container = document.getElementById("agen-quiz-questions-container");
+745:    ev.quiz.forEach((q, i) => {
+757:    document.getElementById("modal-training-quiz").classList.add("active");
+760:window.hideTrainingQuizModal = function() {
+761:    document.getElementById("modal-training-quiz").classList.remove("active");
+764:window.submitTrainingQuiz = function() {
+766:    const ev = trainings.find(t => t.id === currentQuizEvId);
+769:    ev.quiz.forEach((q, i) => {
+774:    const score = Math.round((correctCount / ev.quiz.length) * 100);
+776:    let attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+778:    if (!attemptsData[email][currentQuizEvId]) attemptsData[email][currentQuizEvId] = { attempts: 0, passed: false };
+780:    let rec = attemptsData[email][currentQuizEvId];
+786:        localStorage.setItem("pa_training_quiz_attempts", JSON.stringify(attemptsData));
+803:        localStorage.setItem("pa_training_quiz_attempts", JSON.stringify(attemptsData));
+806:    hideTrainingQuizModal();
+868:        quiz: [] 
+899:                <button class="btn-primary" style="padding:4px 8px; font-size:11px;" onclick="openEditTrainingQuizModal('${t.id}')">Edit / Kuis</button>
+908:window.openEditTrainingQuizModal = function(id) {
+910:    renderQuizQuestionsList();
+911:    const modal = document.getElementById("modal-edit-training-quiz");
+915:window.hideEditTrainingQuizModal = function() {
+916:    const modal = document.getElementById("modal-edit-training-quiz");
+921:window.renderQuizQuestionsList = function() {
+922:    const listContainer = document.getElementById("quiz-questions-list");
+928:    if (!training || !training.quiz || training.quiz.length === 0) {
+934:    training.quiz.forEach((q, i) => {
+943:            <button onclick="deleteQuizQuestion(${i})" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: var(--danger-red); cursor: pointer; padding: 4px;">
+951:window.addQuizQuestion = function() {
+954:    const q = document.getElementById("new-quiz-q").value.trim();
+955:    const a = document.getElementById("new-quiz-a").value.trim();
+956:    const b = document.getElementById("new-quiz-b").value.trim();
+957:    const c = document.getElementById("new-quiz-c").value.trim();
+958:    const d = document.getElementById("new-quiz-d").value.trim();
+959:    const correct = document.getElementById("new-quiz-correct").value;
+970:        if (!trainings[trainingIndex].quiz) {
+971:            trainings[trainingIndex].quiz = [];
+973:        trainings[trainingIndex].quiz.push({ q, a, b, c, d, correct });
+977:        document.getElementById("new-quiz-q").value = "";
+978:        document.getElementById("new-quiz-a").value = "";
+979:        document.getElementById("new-quiz-b").value = "";
+980:        document.getElementById("new-quiz-c").value = "";
+981:        document.getElementById("new-quiz-d").value = "";
+982:        document.getElementById("new-quiz-correct").value = "a";
+984:        renderQuizQuestionsList();
+988:window.deleteQuizQuestion = function(index) {
+996:    if (trainingIndex > -1 && trainings[trainingIndex].quiz) {
+997:        trainings[trainingIndex].quiz.splice(index, 1);
+999:        renderQuizQuestionsList();
+1021:window.toggleMaterialQuizForm = function() {
+1022:    const isChecked = document.getElementById("trn-mat-has-quiz").checked;
+1023:    const container = document.getElementById("trn-mat-quiz-container");
+1038:    if (document.getElementById("trn-mat-has-quiz")) {
+1039:        document.getElementById("trn-mat-has-quiz").checked = false;
+1040:        document.getElementById("trn-mat-quiz-container").style.display = "none";
+1069:    let quizCount = 0;
+1070:    const hasQuizEl = document.getElementById("trn-mat-has-quiz");
+1071:    if (hasQuizEl && hasQuizEl.checked) {
+1073:        if (q) quizCount = 1;
+1082:        quizCount: quizCount
+1098:            { id: "mat-1", title: "Asuransi Jiwa Dasar", cat: "Dasar Asuransi", quizCount: 5 },
+1099:            { id: "mat-2", title: "Asuransi Properti Komersial", cat: "Asuransi Properti", quizCount: 10 }
+1110:                <td>${m.quizCount} Soal</td>

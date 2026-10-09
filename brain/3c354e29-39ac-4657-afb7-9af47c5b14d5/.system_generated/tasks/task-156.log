@@ -1,0 +1,2 @@
+1021:window.showCreateMaterialModal = function() {
+1037:window.saveTrainerMaterial = function() {

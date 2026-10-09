@@ -1,0 +1,20 @@
+        } else if (profitPct < flightPct) {
+            fuelLevel.classList.add('yellow');
+            fuelLevel.style.background = 'var(--warning-gold)';
+            fuelLevel.style.boxShadow = 'none';
+        } else {
+            fuelLevel.classList.add('green');
+            fuelLevel.style.background = 'var(--success-green)';
+            fuelLevel.style.boxShadow = '0 0 15px var(--success-green)';
+        }
+    }
+    if (fuelPercentage) fuelPercentage.innerText = Math.round(profitPct) + '%';
+    
+    const globalProgress = document.getElementById('contest-progress-path');
+    const globalProgressText = document.getElementById('contest-pct-text');
+    if (globalProgressText) globalProgressText.innerText = Math.round(flightPct) + '%';
+    if (globalProgress) {
+        const offset = 314 - (314 * flightRenderPct / 100);
+        globalProgress.style.strokeDashoffset = offset;
+    }
+};

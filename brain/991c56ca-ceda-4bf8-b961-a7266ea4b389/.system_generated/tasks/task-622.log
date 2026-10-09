@@ -1,0 +1,4 @@
+index.html:2903:          <button class="adm-tab-btn active" onclick="switchAdminTab('adm-user-mgmt')">Kelola Pengguna</button>
+index.html:2904:          <button class="adm-tab-btn" onclick="switchAdminTab('adm-sys-report')">Laporan Ringkasan LMS</button>
+index.html:2905:          <button class="adm-tab-btn" onclick="switchAdminTab('adm-logs')">Log Aktivitas</button>
+index.html:2906:          <button class="adm-tab-btn" onclick="switchAdminTab('adm-hub-mgmt')">Feed Sosial</button>

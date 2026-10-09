@@ -1,0 +1,35 @@
+144:          <!-- AKADEMI & TRAINING -->
+145:          <button class="sidebar-dropdown-btn" onclick="toggleNavDropdown('dropdown-akademi')">
+146:            AKADEMI & TRAINING
+149:          <div class="sidebar-dropdown-container" id="dropdown-akademi">
+334:          <button class="sidebar-link" id="nav-trainer-sertifikat" onclick="navigateTo('trainer-sertifikat')">
+340:            Template Sertifikat Builder
+2256:          <p>Pantau rekam jejak, skor kuis bab, koleksi lencana luhur, dan klaim sertifikat kelulusan.</p>
+2276:          <!-- Kiri: Lencana & Sertifikat -->
+2285:            <!-- Sertifikat Kelulusan Cetak -->
+2287:              <h3>Klaim Sertifikat Pelatihan</h3>
+2289:              <h4 style="margin-top:16px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">A. Sertifikat Akademi (LMS)</h4>
+2291:                Sertifikat kelulusan ASM Insurance Academy dapat dicetak apabila Anda telah menyelesaikan 100% modul belajar dan kuis pada masing-masing tingkatan.
+2296:                <h5 style="margin-top:0; margin-bottom:12px; font-size:14px;">Sertifikat Akademi - Level Basic</h5>
+2301:                <button class="btn-primary" id="btn-cert-basic" disabled onclick="openPrintCertificate('Sertifikat Akademi - Level Basic')" style="width: 100%;">
+2302:                  Cetak Sertifikat Level Basic
+2308:                <h5 style="margin-top:0; margin-bottom:12px; font-size:14px;">Sertifikat Akademi - Level Intermediate</h5>
+2313:                <button class="btn-primary" id="btn-cert-int" disabled onclick="openPrintCertificate('Sertifikat Akademi - Level Intermediate')" style="width: 100%;">
+2314:                  Cetak Sertifikat Level Intermediate
+2320:                <h5 style="margin-top:0; margin-bottom:12px; font-size:14px;">Sertifikat Akademi - Level Advanced</h5>
+2325:                <button class="btn-primary" id="btn-cert-adv" disabled onclick="openPrintCertificate('Sertifikat Akademi - Level Advanced')" style="width: 100%;">
+2326:                  Cetak Sertifikat Level Advanced
+2330:              <h4 style="margin-top:16px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">B. Sertifikat Live
+2333:                Daftar sertifikat dari kelas training interaktif yang Anda ikuti.
+2376:        <!-- Modal Tampilan Sertifikat untuk Dicetak -->
+2385:              <button onclick="window.print()" class="btn-primary">Cetak Sertifikat</button>
+2790:      <!-- ==================== TEMPLATE SERTIFIKAT BUILDER ==================== -->
+2791:      <section id="page-trainer-sertifikat" class="page-section">
+2793:          <h2>Template Sertifikat Builder</h2>
+2794:          <p>Desain dan atur posisi teks untuk sertifikat kelulusan agen secara dinamis.</p>
+2800:              <label>Judul Template Sertifikat</label>
+2801:              <input type="text" placeholder="Contoh: Sertifikat Basic Keagenan" id="cert-title">
+2824:            <h3>Live Preview Sertifikat</h3>
+2826:                <div style="font-size:32px; font-weight:bold; font-family:serif; color:#0f172a; margin-bottom:10px; transition: color 0.3s ease;" id="preview-cert-title">Sertifikat Kelulusan</div>
+3183:            <h3>Kustomisasi Templat Sertifikat</h3>
+3185:              <label>Judul Sertifikat</label>

@@ -1,0 +1,25 @@
+
+LineNumber Line                                                                                        Filename
+---------- ----                                                                                        --------
+       938     if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching(); app.js  
+      2076 // ==================== DASHBOARD TRAINER (MATERI & COACHING) ====================          app.js  
+      2306 // -- Kelola Coaching --                                                                    app.js  
+      2307 window.showCreateCoachingModal = function() {                                               app.js  
+      2311     const modal = document.getElementById("trainer-coaching-modal");                        app.js  
+      2315 window.hideCreateCoachingModal = function() {                                               app.js  
+      2316     const modal = document.getElementById("trainer-coaching-modal");                        app.js  
+      2320 window.saveTrainerCoaching = function() {                                                   app.js  
+      2330     let coachings = JSON.parse(localStorage.getItem('pa_coachings')) || [];                 app.js  
+      2331     coachings.unshift({                                                                     app.js  
+      2337     localStorage.setItem('pa_coachings', JSON.stringify(coachings));                        app.js  
+      2339     alert("Taktik Coaching Berhasil Disimpan!");                                            app.js  
+      2340     hideCreateCoachingModal();                                                              app.js  
+      2341     renderTrainerCoaching();                                                                app.js  
+      2344 window.renderTrainerCoaching = function() {                                                 app.js  
+      2345     const tbody = document.getElementById('trainer-coaching-rows');                         app.js  
+      2348     let coachings = JSON.parse(localStorage.getItem('pa_coachings')) || [];                 app.js  
+      2349     if (coachings.length === 0) {                                                           app.js  
+      2350         coachings = [                                                                       app.js  
+      2353         localStorage.setItem('pa_coachings', JSON.stringify(coachings));                    app.js  
+
+

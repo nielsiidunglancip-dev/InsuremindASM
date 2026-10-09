@@ -1,0 +1,18 @@
+525:        <div class="gamify-widget" title="Koin Karir untuk Toko Reward">
+527:          <span class="g-val" id="top-coins-txt">40 Koin</span>
+665:                Klaim hadiah berupa XP dan Koin segera setelah misi selesai.</p>
+1578:          <p>Kartu identitas digital, galeri pencapaian, dan dompet koin karir Anda.</p>
+1623:            <!-- Dompet Koin Karir -->
+1626:                <span>🪙 Dompet Koin Karir</span>
+1627:                <div class="coin-balance-big" id="profil-coin-balance">40 Koin</div>
+1629:              <p style="font-size: 12px; color: var(--text-muted); margin: 8px 0 16px;">Gunakan koin untuk menukarkan
+1732:            🎟️ Beli Tiket (5 Koin)
+1750:            <div class="game-reward-pill">🏆 Hadiah: +50 XP & +10 Koin per 10 streak!</div>
+1921:              gratis hari ini. Beli Tiket Main Lagi seharga <strong>5 Koin</strong> di Toko Reward, atau kembali besok!
+1926:                Koin)</button>
+2337:          <p>Tukarkan Koin emas yang Anda peroleh dari belajar dengan item reward virtual untuk meningkatkan karir Anda.
+2675:                  <label for="new-reward-price">Harga (Koin)</label>
+3166:            <p>Kelola item virtual yang bisa ditukarkan agen dengan Koin emas mereka.</p>
+3179:                  <th>Harga Koin</th>
+3210:            <label style="font-weight:600; font-size:14px; margin-bottom:6px; display:block;">Harga (Koin Emas)</label>
+3322:        <button onclick="confirmPurchaseRewardItem()" class="btn-primary" id="btn-confirm-buy">Beli (50 Koin)</button>

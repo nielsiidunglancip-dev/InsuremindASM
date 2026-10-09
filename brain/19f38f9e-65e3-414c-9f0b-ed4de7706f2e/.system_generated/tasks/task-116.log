@@ -1,0 +1,29 @@
+
+> app.js:311:            if (typeof navigateTo === 'function') navigateTo('trainer-dashboard');
+  app.js:312:        } else if (activeAccount.role === 'Admin') {
+> app.js:313:            if (typeof navigateTo === 'function') navigateTo('admin-dashboard');
+  app.js:314:        } else {
+> app.js:315:            if (typeof navigateTo === 'function') navigateTo('dashboard');
+  app.js:316:        }
+  app.js:317:        
+  app.js:318:        // WAJIB PANGGIL ULANG SEMUA FUNGSI INISIALISASI UNTUK MEMBANGUNKAN DASHBOARD
+  app.js:319:        console.log("Memicu render ulang seluruh komponen dashboard...");
+  app.js:320:        
+  app.js:321:        if (typeof renderProductionChart === 'function') {
+  app.js:322:            renderProductionChart();
+  app.js:323:        } else if (typeof initCharts === 'function') {
+  app.js:324:            initCharts();
+  app.js:325:        }
+> app.js:389:window.navigateTo = function(pageId) {
+  app.js:390:    // Sembunyikan semua section
+  app.js:391:    const sections = document.querySelectorAll('.page-section');
+  app.js:392:    sections.forEach(sec => sec.classList.remove('active'));
+  app.js:393:    
+  app.js:394:    // Tampilkan target section
+  app.js:395:    const target = document.getElementById('page-' + pageId);
+  app.js:396:    if (target) target.classList.add('active');
+  app.js:397:    
+  app.js:398:    // Update link aktif di sidebar
+  app.js:399:    const links = document.querySelectorAll('.sidebar-link');
+
+

@@ -1,0 +1,27 @@
+# Task List - Gamification Implementation
+
+- `[x]` 1. Database & Local Storage Seed Updates (`data.js`)
+  - `[x]` Extend `pa_agent_progress` schema with gamification fields (XP, Coins, Level, Streak, LastActiveDate, OwnedRewards)
+  - `[x]` Pre-populate Daily Missions list (Misi Harian)
+  - `[x]` Seed mock data for National & Branch Leaderboards (10 entries each)
+  - `[x]` Define Virtual Rewards Store catalog
+- `[x]` 2. HTML Interface for Gamification (`index.html`)
+  - `[x]` Insert top-bar widgets for Level (👑), XP (⚡), Streak (🔥), and Coins (🪙)
+  - `[x]` Build "Misi Harian" dashboard widget card
+  - `[x]` Create SPA sections for Leaderboards (`page-leaderboard`) and Reward Store (`page-rewards`)
+  - `[x]` Add Level Up modal (confetti ready) and Shop Buy Confirmation modal
+- `[x]` 3. CSS Stylings for Gamification Aesthetics (`style.css`)
+  - `[x]` Style gamification status badges in the top-bar header
+  - `[x]` Implement visual list ranking layout with podium graphics (Rank 1, 2, 3)
+  - `[x]` Style Duolingo-like button highlights, Daily Mission checkbox states, and reward items
+  - `[x]` Add Level Up slide-down modal animations
+- `[x]` 4. Gamification Application Logic (`app.js`)
+  - `[x]` Write dynamic XP & Coin allocation functions with event triggers (quiz completion, premi simulation, etc.)
+  - `[x]` Implement daily login checker for Streak calculation
+  - `[x]` Write Daily Quest validator and reward claim triggers
+  - `[x]` Write Reward Store transaction engine (coin deductions, asset additions)
+  - `[x]` Dynamize Leaderboards so they update user rank based on earned XP
+- `[x]` 5. Verification & Walkthrough Update
+  - `[x]` Validate XP awards, Level Ups, Shop transactions, and Leaderboard updates
+  - `[x]` Generate preview image of the new Leaderboard UI
+  - `[x]` Update `walkthrough.md` with gamification steps and credentials

@@ -1,0 +1,5 @@
+Successfully scheduled one-shot timer.
+Expected to fire at: 2026-06-06T22:23:44+07:00
+Prompt: Wait for PDF extraction task to finish
+
+[2026-06-06T22:23:27+07:00] Timer cancelled: agent received a message during wait.

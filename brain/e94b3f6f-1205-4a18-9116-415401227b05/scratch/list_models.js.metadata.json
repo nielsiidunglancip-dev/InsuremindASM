@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_OTHER",
+  "summary": "Use native Node.js https module to list available Gemini models using the key in env",
+  "updatedAt": "2026-05-27T12:45:57.527062700Z"
+}

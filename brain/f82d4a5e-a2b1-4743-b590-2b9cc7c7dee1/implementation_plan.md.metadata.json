@@ -1,0 +1,6 @@
+{
+  "summary": "Update implementation plan to redesign Dashboard page layout for 100% LMS focus, hiding sales metrics and rearranging learning stats/feeds/quick links, with safety checks in app.js.",
+  "updatedAt": "2026-07-04T15:51:03.193969600Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

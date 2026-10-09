@@ -1,0 +1,30 @@
+    });
+    saveAgentProgress();
+
+    // Reward XP untuk membuat proposal PPTX
+    addXpAndCoins(15, 5, "Membuat Proposal PPTX");
+
+  } catch (error) {
+    console.error("[PPTX Error]", error);
+    showToast("error", "�?O Gagal Generate PPTX", `${error.message}. Pastikan server backend berjalan: node server.js`);
+  } finally {
+    if (btn) btn.classList.remove("loading");
+    if (btnText) btnText.textContent = "dYs? Download File PPTX Penawaran";
+  }
+}
+
+// Helper untuk getXpLevelDef jika belum ada di app.js
+// (Fungsi ini merujuk ke definisi yang sudah ada di app.js yang lebih awal)
+// Pastikan fungsi ini ada �?" jika tidak ditemukan, fallback sederhana
+if (typeof getXpLevelDef === "undefined") {
+  function getXpLevelDef(level) {
+    const levels = [
+      { level: 1, name: "Pratama", minXp: 0 },
+      { level: 2, name: "Madya", minXp: 500 },
+      { level: 3, name: "Utama", minXp: 1200 },
+      { level: 4, name: "Senior", minXp: 2500 },
+      { level: 5, name: "Master", minXp: 4500 },
+    ];
+    return levels.find(l => l.level === level) || levels[levels.length - 1];
+  }
+}

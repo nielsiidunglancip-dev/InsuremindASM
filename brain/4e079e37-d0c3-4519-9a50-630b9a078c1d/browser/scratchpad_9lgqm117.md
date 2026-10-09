@@ -1,0 +1,12 @@
+# Test Plan
+- [x] STEP 1: Open http://localhost:5173
+- [x] STEP 2: Login as MARKETING (marketing/marketing123) and take screenshot
+- [x] STEP 3: Click "Buat Pengajuan" and fill form
+- [x] STEP 4: Submit form and take screenshot of the prospect list
+- [x] STEP 5: Logout
+- [x] STEP 6: Login as ANALIS (analis/analis123)
+- [x] STEP 7: Take screenshot of Analyst Dashboard
+- [ ] STEP 8: Click "Tinjau Detail" on "PT Maju Bersama Jaya"
+- [ ] STEP 9: Scroll to "Keputusan Analis" and take screenshot
+- [ ] STEP 10: Select "Kembalikan ke Marketing", input note, submit
+- [ ] STEP 11: Take final screenshot post-submit

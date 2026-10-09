@@ -1,0 +1,83 @@
+8:    content="ASM Insurance Academy - Platform Pembelajaran Mandiri, Uji Sertifikasi LSP, dan Pendamping Kerja Digital untuk Agen Asuransi Umum Indonesia dengan Sistem Gamifikasi.">
+161:            <button class="sidebar-link" id="nav-belajar" onclick="navigateTo('belajar')">
+167:              Belajar Asuransi
+195:              Progress Belajar
+388:            Master Data Modul & Produk
+475:        <div class="gamify-widget" title="Total Poin XP Belajar">
+479:        <div class="gamify-widget text-orange" id="top-streak-widget" title="Daily Streak: Hari Berturut-turut Belajar">
+487:        <!-- [MODUL 6] Profile Header Widget -->
+584:            <!-- HUB & INFORMASI TERBARU -->
+587:                <h3>Hub & Informasi Terbaru <span
+597:                <h4 style="font-size: 13px; margin-bottom: 8px;">+ Buat Informasi Baru</h4>
+622:              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px;">Misi diperbarui setiap 24 jam.
+642:              <span class="stat-lbl">Progres Belajar</span>
+724:          <!-- Area Kanan: Grafik Progres Belajar Sederhana & Badges -->
+837:      <!-- ==================== PAGE: MENU BELAJAR ASURANSI ==================== -->
+838:      <section id="page-belajar" class="page-section">
+840:          <h2>Belajar Asuransi Umum</h2>
+841:          <p>Materi pembelajaran interaktif untuk menguasai polis asuransi umum Indonesia.</p>
+863:      <section id="page-belajar-detail" class="page-section">
+865:          <button class="btn-back" onclick="navigateTo('belajar')">
+877:            <h2 id="player-title">Judul Materi Pembelajaran</h2>
+884:            <button class="player-tab-btn" onclick="switchPlayerTab('tab-video')">Video Pembelajaran</button>
+941:              Tandai Selesai Belajar
+1061:                <label for="motor-tpl">Limit Tambahan TJH (di atas paket bawaan Rp 10 jt)</label>
+1063:                  <option value="0">Tanpa Perluasan TJH Tambahan</option>
+1244:          <button class="prop-tab-btn active" onclick="switchProposalTab('prop-generator')">Buat Quotation Baru</button>
+1352:        <!-- [MODUL 3.3] Tab 4: PPT Builder - Auto Proposal System -->
+1395:                    <label for="pptx-catatan">Catatan / Keterangan Tambahan</label>
+1476:      <!-- ==================== [MODUL 6] PAGE: PROFIL AGEN ==================== -->
+1611:                aktif belajar, menyelesaikan misi, dan memenangkan game edukasi.</p>
+1620:      <!-- ==================== [MODUL 4.3] PAGE: ARENA GAME EDUKASI ==================== -->
+1855:              <h3>Pilih Modul Coaching Agen</h3>
+1856:              <p>Klik salah satu modul pelatihan di samping kiri untuk membaca tips taktis dan daftar checklist praktek.
+1867:          <p>Modul belajar terarah berdasarkan SKKNI untuk menghadapi ujian sertifikasi keagenan resmi.</p>
+1881:          <!-- Modul per unit kompetensi -->
+1893:            <!-- Video Pembelajaran LSP -->
+1895:              <h4>Video Pembelajaran Unit Kompetensi</h4>
+2077:              <h4>Rekomendasi Review Belajar:</h4>
+2233:          <p>Tukarkan Koin emas yang Anda peroleh dari belajar dengan item reward virtual untuk meningkatkan karir Anda.
+2252:      <!-- ==================== PAGE: PROGRESS BELAJAR ==================== -->
+2255:          <h2>Progress Belajar & Pencapaian</h2>
+2293:                modul belajar dan lulus tryout minimal 70.
+2337:                      <th>Bab / Modul</th>
+2370:          <p>Pantau ringkasan performa, progres belajar, dan papan peringkat agen khusus di cabang Anda (View-Only).</p>
+2396:                    <th>Progres Modul</th>
+2421:          <p>Kelola materi pembelajaran asuransi, perbarui kuis bab, dan evaluasi laporan progres agen.</p>
+2446:            Belajar</button>
+2452:        <!-- Tab 1: Manajemen Materi Belajar -->
+2456:              <h3>Daftar Modul Pembelajaran</h3>
+2458:                style="width: auto; padding: 6px 12px; font-size: 12px;">+ Tambah Modul Baru</button>
+2489:                style="width: auto; padding: 6px 12px; font-size: 12px; white-space:nowrap;">+ Tambah Taktik
+2490:                Baru</button>
+2498:                    <th>Judul Taktik / Modul Coaching</th>
+2515:            <h3>Laporan Belajar & Tryout Agen</h3>
+2522:                    <th>Progress Belajar</th>
+2538:            <!-- Kolom Kiri: Form Input Reward Baru -->
+2541:                <h3>Tambah Reward Baru ke Katalog</h3>
+2566:                <button type="submit" class="btn-primary" style="margin-top: 10px;">Tambah ke Katalog</button>
+2597:        <!-- Modal Tambah/Edit Modul Materi -->
+2600:            <h3 id="trn-modal-title">Tambah Modul Belajar Baru</h3>
+2606:                <label for="trn-mat-title">Judul Modul</label>
+2628:              <input type="text" id="trn-mat-desc" placeholder="Penjelasan singkat modul..." required>
+2632:              <label for="trn-mat-article">Artikel Isi Pembelajaran</label>
+2644:                <input type="text" id="trn-mat-pdf" placeholder="Modul_Lanjutan_Asuransi.pdf">
+2650:              <button onclick="saveTrainerMaterial()" class="btn-primary">Simpan Modul</button>
+2655:        <!-- Modal Tambah/Edit Taktik Coaching -->
+2669:              <h3 id="trn-coaching-modal-title" style="margin:0;">Tambah Taktik Coaching Baru</h3>
+2677:              <label for="trn-coach-title">Judul Taktik / Modul Coaching</label>
+2692:                  target dengan baris baru. Akan menjadi checklist bagi agen.)</span>
+2776:                  <th>Ujian/Modul</th>
+2826:                style="width: auto; padding: 6px 12px; font-size: 12px;">+ Tambah Akun</button>
+2872:                  <span class="stat-lbl">Jumlah Modul Materi</span>
+2890:              <h3>Log Audit Aktivitas Terbaru</h3>
+2899:        <!-- Modal Tambah Akun Pengguna -->
+2902:            <h3 id="adm-user-modal-title">Tambah Pengguna Baru</h3>
+2960:              style="width: auto; padding: 6px 12px; font-size: 12px;">+ Buat Jadwal Training Baru</button>
+2992:            <h3>Buat Jadwal Training Baru</h3>
+3047:            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Tambahkan atau edit pertanyaan kuis untuk jadwal training ini.</p>
+3054:                <h4 style="margin-top: 0; margin-bottom: 12px; font-size: 14px;">+ Tambah Pertanyaan Baru</h4>
+3074:                <button class="btn-primary" onclick="addQuizQuestion()" style="margin-top: 10px; width: 100%;">Tambahkan Pertanyaan</button>
+3092:            <button class="btn-secondary" onclick="addQuizQuestionRow()" style="margin-top:16px; width:100%;">[+] Tambah
+3093:              Soal Baru</button>
+3203:          Lanjutkan Belajar

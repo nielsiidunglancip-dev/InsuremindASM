@@ -1,0 +1,42 @@
+
+    position: relative;
+    z-index: 10;
+>   pointer-events: auto;
+  }
+  
+    opacity: 1;
+    visibility: visible;
+>   pointer-events: auto !important;
+  }
+  
+    gap: 10px;
+    z-index: 9999;
+>   pointer-events: none;
+  }
+  
+  .toast {
+>   pointer-events: auto;
+    min-width: 320px;
+    max-width: 420px;
+    min-width: 220px;
+    opacity: 0;
+>   pointer-events: none;
+    transform: translateY(-8px) scale(0.97);
+    transform-origin: top right;
+  .profile-dropdown.open {
+    opacity: 1;
+>   pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+    opacity: 0;
+    transition: opacity 0.2s ease;
+>   pointer-events: none;
+  }
+  
+  }
+  
+> .pptx-download-btn.loading { pointer-events: none; opacity: 0.8; }
+  
+  /* ==================== GAMIFIKASI KOKPIT PESAWAT ==================== */
+
+

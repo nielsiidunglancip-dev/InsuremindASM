@@ -1,0 +1,166 @@
+30:function renderProductionChart() {
+120:window.renderHubPosts = function() {
+195:window.submitHubPost = function(rolePrefix) {
+253:window.addComment = function(e, postId) {
+277:function updateAircraftPosition() {
+316:function onManifestChange() {
+324:window.handleLogin = function(e) {
+326:        if (e && typeof e.preventDefault === 'function') e.preventDefault(); 
+382:            if (typeof navigateTo === 'function') navigateTo('trainer-dashboard');
+384:            if (typeof navigateTo === 'function') navigateTo('admin-dashboard');
+386:            if (typeof navigateTo === 'function') navigateTo('dashboard');
+392:        if (typeof renderProductionChart === 'function') {
+394:        } else if (typeof initCharts === 'function') {
+398:        if (typeof renderHubPosts === 'function') {
+400:        } else if (typeof initHub === 'function') {
+404:        if (typeof renderGamification === 'function') {
+406:        } else if (typeof updateAircraftPosition === 'function') {
+415:        if (typeof renderAgenTrainings === 'function') {
+419:        if (typeof renderTrainerTrainings === 'function') {
+422:        if (typeof renderRecommendationBar === 'function') renderRecommendationBar();
+423:        if (typeof renderBelajarAsuransi === 'function') renderBelajarAsuransi("Basic", "");
+424:        if (typeof renderTrainerProgress === 'function') renderTrainerProgress();
+425:        if (typeof renderTrainerClaims === 'function') renderTrainerClaims();
+426:        if (typeof window.applyCosmetics === 'function') window.applyCosmetics();
+438:window.handleLogout = function(e) {
+450:window.toggleNavDropdown = function(dropdownId) {
+461:window.navigateTo = function(pageId) {
+487:        if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+489:        if (typeof window.renderTrainerTrainings === 'function') window.renderTrainerTrainings();
+491:        if (typeof window.renderCoachingCategories === 'function') window.renderCoachingCategories();
+493:        if (typeof window.renderProductCatalog === 'function') window.renderProductCatalog();
+495:        if (typeof window.renderAdminProducts === 'function') window.renderAdminProducts();
+497:        if (typeof window.renderAdminRewards === 'function') window.renderAdminRewards();
+499:        if (typeof window.renderRewardsShop === 'function') window.renderRewardsShop();
+503:    if (pageId === 'progress' && typeof window.renderAgentProgressPage === 'function') {
+555:window.renderProductCatalog = function() {
+608:window.showProductDetail = function(productId) {
+658:window.findAIProduct = async function() {
+744:window.renderAdminProducts = function() {
+767:window.showAdminProductModal = function(id = null) {
+802:window.addAdminProdFaq = function(q = '', a = '') {
+816:window.addAdminProdDoc = function(name = '', link = '') {
+830:window.saveAdminProduct = function() {
+894:window.deleteAdminProduct = function(id) {
+905:window.renderCoachingCategories = function() {
+999:window.renderCoachingDetail = function(module, activeBtn) {
+1121:window.submitCoachingReport = function(moduleId) {
+1134:window.toggleSidebar = function() {
+1144:function initTrainingData() {
+1177:window.renderJadwalTrainingSection = function(userRole) {
+1242:window.publishNewTraining = function() {
+1278:window.renderAgenTrainings = function() {
+1281:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+1284:window.renderJadwalTrainingUntukAgen = function() {
+1372:window.rsvpTraining = function(id) {
+1406:        if (typeof window.renderAgenTrainings === 'function') {
+1416:window.markTrainingCompleted = function(id) {
+1423:        if (typeof renderTrainerTrainings === 'function') renderTrainerTrainings();
+1428:window.openTokenModal = function(id) {
+1445:window.renderSyllabusUI = function() {
+1489:window.hideTrainingTokenModal = function() {
+1493:window.submitTrainingToken = function(e) {
+1519:            if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+1529:window.openTrainingQuiz = function(id) {
+1559:window.hideTrainingQuizModal = function() {
+1563:window.submitTrainingQuiz = function(e) {
+1613:        if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
+1620:    if (typeof window.loadDataFromStorage === 'function') {
+1624:    if (typeof window.renderBelajarAsuransi === 'function') {
+1628:    if (typeof window.renderRecommendationBar === 'function') {
+1632:    if (typeof window.renderAgenTrainings === 'function') {
+1635:    if (typeof window.evaluateAgentCertificates === 'function') {
+1638:    if (typeof window.renderTrainerTrainings === 'function') {
+1641:    if (typeof window.renderTrainerEvaluasi === 'function') {
+1644:    if (typeof window.renderTrainerMaterials === 'function') window.renderTrainerMaterials();
+1645:    if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching();
+1646:    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+1647:    if (typeof window.renderTrainerClaims === 'function') window.renderTrainerClaims();
+1654:window.loadDataFromStorage = function() {
+1671:window.saveDataToStorage = function() {
+1679:window.switchLevelTab = function(level) {
+1695:window.filterMaterials = function() {
+1701:window.setupMaterialTabs = function() {
+1712:            tab.addEventListener('click', function() {
+1736:window.loadModuleDetail = function(moduleId) {
+1833:            if (typeof window.renderAgenMaterialQuiz === 'function') {
+1850:window.openMaterialDetail = function(id) {
+1856:window.markActiveChapterDone = function() {
+1891:            if (typeof window.triggerConfetti === 'function') window.triggerConfetti();
+1895:            if (typeof window.evaluateAgentCertificates === 'function') {
+1898:            if (typeof window.renderRecommendationBar === 'function') {
+1901:            if (typeof window.renderBelajarAsuransi === 'function') {
+1914:window.getLatestAgentRecommendation = function() {
+1971:window.renderRecommendationBar = function() {
+2019:window.renderBelajarAsuransi = function(selectedLevel, searchQuery) {
+2048:        if (typeof window.initAgentModuleProgress === 'function') {
+2094:window.initAgentModuleProgress = function(agentId, moduleId, method = "Mandiri") {
+2112:window.markMaterialAsRead = function(agentId, moduleId) {
+2120:window.submitAgenMaterialQuiz = function(agentId, moduleId, score) {
+2144:        if (typeof window.triggerConfetti === 'function') window.triggerConfetti();
+2162:window.triggerConfetti = function() {
+2163:    if (typeof confetti === 'function') {
+2167:        function fire(particleRatio, opts) {
+2181:window.issueCertificate = function(agentId, moduleId) {
+2191:window.renderAgenMaterialQuiz = function(moduleId) {
+2251:window.submitAgenMaterialQuizForm = function(moduleId) {
+2271:window.evaluateAgentCertificates = function() {
+2312:    if (typeof window.renderAgentProgressPage === 'function') {
+2317:window.renderAgentProgressPage = function() {
+2505:window.renderTrainerEvaluasi = function() {
+2545:window.resetKesempatanAgen = function(agentId, moduleId) {
+2556:window.overrideLuluskanAgen = function(agentId, moduleId) {
+2564:            if (typeof window.issueCertificate === 'function') {
+2574:window.showCreateTrainingModal = function() {
+2587:window.hideCreateTrainingModal = function() {
+2592:window.saveTrainingEvent = function() {
+2631:window.renderTrainerTrainings = function() {
+2634:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+2687:window.openEditTrainingQuizModal = function(id) {
+2694:window.hideEditTrainingQuizModal = function() {
+2699:window.renderQuizQuestionsList = function() {
+2729:window.addQuizQuestion = function() {
+2772:window.deleteQuizQuestion = function(index) {
+2788:window.switchTrainerTab = function(tabId) {
+2805:window.toggleMaterialQuizForm = function() {
+2815:window.addQuizQuestionBlock = function() {
+2850:window.showCreateMaterialModal = function() {
+2904:window.hideCreateMaterialModal = function() {
+2911:window.saveTrainerMaterial = function() {
+2983:window.renderTrainerMaterials = function() {
+3018:window.showCreateCoachingModal = function() {
+3031:window.hideCreateCoachingModal = function() {
+3036:window.saveTrainerCoaching = function() {
+3075:window.renderTrainerCoaching = function() {
+3105:window.renderTrainerProgress = function() {
+3126:window.renderTrainerClaims = function() {
+3156:window.completeClaim = function(claimId) {
+3166:window.filterTrainerClaims = function(status) {
+3172:window.updateCertPreview = function() {
+3205:window.saveCertTemplate = function() {
+3215:window.autoLogin = function(email, password) {
+3230:            if (typeof window.handleLogin === 'function') {
+3231:                window.handleLogin(mockEvent);
+3265:        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+3276:        btnSubmitQuiz.addEventListener('click', function(e) {
+3301:        formLogin.onsubmit = window.handleLogin;
+3304:    if (typeof window.renderCategoryDropdowns === 'function') {
+3320:window.initInsuranceCategories = function() {
+3333:window.renderCategoryDropdowns = function() {
+3357:window.addNewCategory = function() {
+3373:window.hideLevelUpModal = function() { const el = document.getElementById('modal-level-up'); if (el) el.style.display = 'none'; };
+3382:window.updateManifestData = function() {
+3412:window.showDestinationModal = function(destName, imgUrl, desc) {
+3419:window.renderGamification = function() {
+3497:window.updateAircraftPosition = function() {
+3577:window.renderAdminRewards = function() {
+3609:window.openAdminRewardModal = function(id = null) {
+3632:window.saveAdminReward = function() {
+3671:window.deleteAdminReward = function(id) {
+3680:window.renderRewardsShop = function() {
+3738:window.buyReward = function(id, price) {
+3797:    if (typeof window.renderGamification === 'function') {
+3801:    if (typeof window.applyCosmetics === 'function') {
+3806:window.applyCosmetics = function() {
+3825:document.addEventListener("DOMContentLoaded", function() {
+3826:    if (typeof window.applyCosmetics === 'function') {

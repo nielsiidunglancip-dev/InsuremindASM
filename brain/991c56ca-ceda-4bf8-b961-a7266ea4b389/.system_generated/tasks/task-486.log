@@ -1,0 +1,4 @@
+254:window.handleLogin = function(e) {
+3159:            if (typeof window.handleLogin === 'function') {
+3160:                window.handleLogin(mockEvent);
+3230:        formLogin.onsubmit = window.handleLogin;

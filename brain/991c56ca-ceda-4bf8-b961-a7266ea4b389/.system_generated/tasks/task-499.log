@@ -1,0 +1,8 @@
+353:        if (typeof renderBelajarAsuransi === 'function') renderBelajarAsuransi("Basic", "");
+1553:    if (typeof window.renderBelajarAsuransi === 'function') {
+1554:        window.renderBelajarAsuransi(window.currentActiveLevel, "");
+1621:    window.renderBelajarAsuransi(window.currentActiveLevel, searchTerm);
+1627:    window.renderBelajarAsuransi(window.currentActiveLevel, searchTerm);
+1830:            if (typeof window.renderBelajarAsuransi === 'function') {
+1831:                window.renderBelajarAsuransi(window.currentActiveLevel || "Basic", "");
+1948:window.renderBelajarAsuransi = function(selectedLevel, searchQuery) {

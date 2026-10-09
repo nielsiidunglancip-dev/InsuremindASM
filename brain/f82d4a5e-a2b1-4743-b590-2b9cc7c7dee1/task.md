@@ -1,0 +1,24 @@
+- `[x]` Inisialisasi progress baru di `initAgentModuleProgress`
+- `[x]` Buat helper `getModuleQuestions(module)` untuk menormalisasi format kuis
+- `[x]` Buat fungsi `addAgentXpAndCoins` untuk integrasi gamifikasi
+- `[x]` Modifikasi `loadModuleDetail` untuk merender halaman secara dinamis berdasarkan fase aktif
+- `[x]` Implementasikan UI & logika Fase 2: Pre-test
+- `[x]` Implementasikan UI & logika Sesi Belajar (dengan tombol Selesai Belajar & Ambil Post-test)
+- `[x]` Implementasikan UI & logika Fase 4: Post-test & hitung KKM
+- `[x]` Implementasikan UI & logika Fase 5: Hasil kelulusan, sertifikat, remedial (maksimal 2x), dan reset dari awal jika gagal permanen
+- `[x]` Verifikasi manual semua skenario di browser
+- `[x]` Tambah tab baru '📖 Belajar Mandiri' di dashboard Admin (`page-admin-master`)
+- `[x]` Buat kontainer tabel modul belajar mandiri untuk Admin & selaraskan tabel Trainer
+- `[x]` Desain ulang modal `modal-create-module-fixed` dengan lebar besar dan 3 tab (Info, Pre-Test, Post-Test)
+- `[x]` Buat logika tab form modal `switchModuleFormTab` di `app.js`
+- `[x]` Buat logika dynamic form builder `addPreTestQuestionBlock` & `addPostTestQuestionBlock` dengan limit 10 soal
+- `[x]` Implementasikan fungsi rendering tabel Admin dan Trainer `renderTrainerMaterials`
+- `[x]` Implementasikan logika simpan `saveTrainerMaterial` (simpan ke global `window.modules` dan `window.masterBankSoal` di localStorage)
+- `[x]` Implementasikan logika edit `showCreateMaterialModal` & hapus `deleteTrainerMaterial`
+- `[x]` Verifikasi manual seluruh alur manajemen modul di browser
+- `[x]` Ganti tombol 'Kembali ke Daftar Materi' dengan struktur yang lebih ringkas dan modern
+- `[x]` Perbarui teks label kategori sidebar 'OPERASIONAL & GAMIFIKASI' menjadi 'PUSAT AKTIVITAS'
+- `[x]` Tambah safe return checks di `app.js` untuk `updateManifestData` dan `updateAircraftPosition`
+- `[x]` Sembunyikan elemen sales ('Grafik Tren Produksi & Komisi', 'Target Kontes Wisata', 'Detail Pencapaian Kontes', 'Kokpit Pencapaian Agen') di `index.html` dengan komentar HTML
+- `[x]` Tata ulang halaman dashboard di `index.html` (Hero, Progress Karir, 4 kartu belajar horizontal, layout 70% : 30% untuk Feed dan Misi + Fitur Cepat)
+- `[x]` Verifikasi visual dashboard baru dan kebersihan konsol pengembang di browser

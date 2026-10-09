@@ -1,0 +1,6 @@
+369:        if (typeof renderTrainerTrainings === 'function') {
+370:            renderTrainerTrainings();
+770:    if (typeof window.renderTrainerTrainings === 'function') {
+771:        window.renderTrainerTrainings();
+829:    renderTrainerTrainings();
+832:window.renderTrainerTrainings = function() {

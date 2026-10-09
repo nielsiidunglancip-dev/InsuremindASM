@@ -1,0 +1,694 @@
+2:const demoAccounts = {
+31:    const container = document.getElementById('production-bars');
+34:    container.innerHTML = '';
+36:    const data = [
+45:    const maxVal = 120;
+47:    data.forEach(item => {
+48:        const heightPct = (item.val / maxVal) * 100;
+49:        const barCol = document.createElement('div');
+50:        barCol.style.display = 'flex';
+51:        barCol.style.flexDirection = 'column';
+52:        barCol.style.justifyContent = 'flex-end';
+53:        barCol.style.alignItems = 'center';
+54:        barCol.style.flex = '1';
+55:        barCol.style.height = '100%';
+57:        const bar = document.createElement('div');
+58:        bar.style.width = '30px';
+59:        bar.style.height = '0%'; 
+60:        bar.style.background = 'linear-gradient(to top, #1a4f8a, #007bff)';
+61:        bar.style.borderRadius = '4px 4px 0 0';
+62:        bar.style.transition = 'height 1s ease-out';
+64:        const label = document.createElement('span');
+65:        label.innerText = item.month;
+66:        label.style.fontSize = '11px';
+67:        label.style.marginTop = '8px';
+68:        label.style.color = '#666';
+74:        setTimeout(() => {
+75:            bar.style.height = heightPct + '%';
+81:const hubPostsData = [
+114:        mediaUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop",
+120:window.renderHubPosts = function() {
+121:    const hubContainer = document.getElementById('hub-feed-container'); // Pastikan ID container di index.html sesuai
+124:    hubContainer.innerHTML = '';
+126:    hubPostsData.forEach(post => {
+127:        const postCard = document.createElement('div');
+128:        postCard.style.cssText = "border-bottom: 1px solid #eee; padding: 20px 0; font-family: sans-serif;";
+131:        let mediaHtml = '';
+132:        if (post.mediaType === 'image' && post.mediaUrl) {
+133:            mediaHtml = `
+134:                <div style="margin: 10px 0 12px 46px; max-width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #eaedf1;">
+135:                    <img src="${post.mediaUrl}" alt="Post Media" style="width: 100%; height: auto; display: block;">
+138:        } else if (post.mediaType === 'video' && post.mediaUrl) {
+139:            mediaHtml = `
+140:                <div style="margin: 10px 0 12px 46px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #eaedf1; background: #000;">
+141:                    <iframe src="${post.mediaUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+147:        let commentsHtml = '';
+148:        post.comments.forEach(cmt => {
+149:            commentsHtml += `
+150:                <div style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; margin-top: 5px; font-size: 12px;">
+151:                    <strong>${cmt.user}:</strong> <span style="color: #555;">${cmt.text}</span>
+157:        postCard.innerHTML = `
+158:            <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px;">
+159:                <div style="width: 36px; height: 36px; border-radius: 50%; background: ${post.avatarColor}; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">
+163:                    <h5 style="margin: 0; font-size: 14px; color: #333;">${post.author}</h5>
+164:                    <span style="font-size: 11px; color: #999;">${post.time}</span>
+169:            <p style="margin: 0 0 10px 46px; font-size: 13px; color: #444; line-height: 1.4;">${post.content}</p>
+175:            <div style="margin-left: 46px; border-top: 1px dashed #f0f0f0; padding-top: 10px;">
+176:                <div id="comments-list-${post.id}">${commentsHtml}</div>
+179:                <div style="display: flex; gap: 8px; margin-top: 10px;">
+180:                    <input type="text" id="input-${post.id}" placeholder="Tulis komentar..." style="flex: 1; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; outline: none;">
+181:                    <button onclick="addCommentToPost('${post.id}')" style="padding: 6px 12px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: bold;">Kirim</button>
+191:window.addCommentToPost = function(postId) {
+192:    const inputField = document.getElementById(`input-${postId}`);
+195:    const post = hubPostsData.find(p => p.id === postId);
+208:    const dropdown = document.getElementById('manifest-select');
+211:    const planeAvatar = document.getElementById('plane-avatar');
+212:    const flightPathFill = document.getElementById('flight-path-fill');
+213:    const fuelLevelFill = document.getElementById('fuel-level-fill');
+214:    const fuelPctText = document.getElementById('fuel-pct-text');
+216:    const manifestData = {
+222:    const val = dropdown.value;
+223:    const target = manifestData[val] || manifestData['non-ssc'];
+226:        planeAvatar.style.transition = 'bottom 1.5s ease-in-out';
+227:        planeAvatar.style.bottom = target.planePct + '%';
+230:        flightPathFill.style.transition = 'height 1.5s ease-in-out';
+231:        flightPathFill.style.height = target.planePct + '%';
+234:        fuelLevelFill.style.transition = 'height 1.5s ease-in-out, background 1.5s';
+235:        fuelLevelFill.style.height = target.fuelPct + '%';
+237:        if (target.fuelPct > 80) fuelLevelFill.style.background = '#10b981';
+238:        else if (target.fuelPct > 40) fuelLevelFill.style.background = '#f59e0b';
+239:        else fuelLevelFill.style.background = '#ef4444';
+242:        fuelPctText.innerText = target.fuelPct + '%';
+251:window.fillLogin = function(email, password) {
+252:    let realEmail = email;
+253:    let realPassword = password;
+254:    if (email === 'agen@asm.id') {
+255:        realEmail = demoAccounts.agen.email;
+256:        realPassword = demoAccounts.agen.password;
+257:    } else if (email === 'trainer@asm.id') {
+258:        realEmail = demoAccounts.trainer.email;
+259:        realPassword = demoAccounts.trainer.password;
+260:    } else if (email === 'admin@asm.id') {
+261:        realEmail = demoAccounts.admin.email;
+262:        realPassword = demoAccounts.admin.password;
+265:    const emailField = document.getElementById('login-email');
+266:    const passwordField = document.getElementById('login-password');
+269:        emailField.value = realEmail;
+270:        passwordField.value = realPassword;
+271:        emailField.style.borderColor = "#28a745";
+272:        passwordField.style.borderColor = "#28a745";
+273:        setTimeout(() => {
+274:            emailField.style.borderColor = "";
+275:            passwordField.style.borderColor = "";
+281:window.handleLogin = function(e) {
+284:    const emailField = document.getElementById('login-email');
+285:    const passwordField = document.getElementById('login-password');
+292:    let activeAccount = demoAccounts.agen;
+293:    if (emailField.value === demoAccounts.trainer.email) {
+294:        activeAccount = demoAccounts.trainer;
+295:    } else if (emailField.value === demoAccounts.admin.email) {
+296:        activeAccount = demoAccounts.admin;
+297:    } else if (emailField.value === demoAccounts.agen.email) {
+298:        activeAccount = demoAccounts.agen;
+304:    const setHtml = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+316:    const agenMenu = document.getElementById('agen-menu-group');
+317:    const trainerMenu = document.getElementById('trainer-menu-group');
+318:    const adminMenu = document.getElementById('admin-menu-group');
+319:    if (agenMenu) agenMenu.style.display = activeAccount.role === 'Agen' ? 'block' : 'none';
+320:    if (trainerMenu) trainerMenu.style.display = activeAccount.role === 'Trainer' ? 'block' : 'none';
+321:    if (adminMenu) adminMenu.style.display = activeAccount.role === 'Admin' ? 'block' : 'none';
+324:    const loginPageElement = document.getElementById('login-screen'); 
+325:    const dashboardPageElement = document.getElementById('app-shell'); 
+328:        loginPageElement.style.display = 'none';
+329:        dashboardPageElement.style.display = '';
+331:        if (activeAccount.role === 'Trainer') {
+332:            if (typeof navigateTo === 'function') navigateTo('trainer-dashboard');
+333:        } else if (activeAccount.role === 'Admin') {
+334:            if (typeof navigateTo === 'function') navigateTo('admin-dashboard');
+336:            if (typeof navigateTo === 'function') navigateTo('dashboard');
+342:        if (typeof renderProductionChart === 'function') {
+344:        } else if (typeof initCharts === 'function') {
+348:        if (typeof renderHubPosts === 'function') {
+350:        } else if (typeof initHub === 'function') {
+354:        if (typeof updateAircraftPosition === 'function') {
+356:        } else if (typeof renderGamification === 'function') {
+359:            const manifestDropdown = document.getElementById('manifest-dropdown');
+365:        if (typeof renderAgenTrainings === 'function') {
+369:        if (typeof renderTrainerTrainings === 'function') {
+372:        if (typeof renderTrainerMaterials === 'function') renderTrainerMaterials();
+373:        if (typeof renderTrainerCoaching === 'function') renderTrainerCoaching();
+374:        if (typeof renderTrainerProgress === 'function') renderTrainerProgress();
+375:        if (typeof renderTrainerClaims === 'function') renderTrainerClaims();
+383:window.handleLogout = function(e) {
+387:    const dashboardPageElement = document.getElementById('app-shell'); 
+388:    const loginPageElement = document.getElementById('login-screen');
+391:        dashboardPageElement.style.display = 'none';
+392:        loginPageElement.style.display = ''; // Menghapus display none agar kembali ke CSS bawaan (flex)
+398:window.toggleNavDropdown = function(dropdownId) {
+399:    const dropdown = document.getElementById(dropdownId);
+403:    const btn = dropdown.previousElementSibling;
+409:window.navigateTo = function(pageId) {
+411:    const sections = document.querySelectorAll('.page-section');
+412:    sections.forEach(sec => sec.classList.remove('active'));
+415:    const target = document.getElementById('page-' + pageId);
+419:    const links = document.querySelectorAll('.sidebar-link');
+420:    links.forEach(link => link.classList.remove('active'));
+422:    const activeLink = document.getElementById('nav-' + pageId);
+426:    const sidebar = document.getElementById('app-sidebar');
+427:    const overlay = document.querySelector('.sidebar-overlay');
+434:window.toggleSidebar = function() {
+435:    const sidebar = document.getElementById('app-sidebar');
+436:    const overlay = document.querySelector('.sidebar-overlay');
+441:// ==================== FUNGSI JADWAL TRAINING (AGEN) ====================
+446:        const defaultTrainings = [
+477:window.renderJadwalTrainingSection = function(userRole) {
+478:    const trainingContainer = document.getElementById('agen-training-grid'); 
+481:    if (userRole === 'Trainer' || userRole === 'Admin') {
+482:        const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+484:        let activeClassesHtml = '';
+485:        trainings.forEach(t => {
+487:            const attendance = JSON.parse(localStorage.getItem("pa_training_attendance")) || {};
+488:            let registeredCount = 0;
+494:            const dateObj = new Date(t.time);
+495:            const dateStr = dateObj.toLocaleDateString('id-ID') + ', ' + dateObj.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit'}) + ' WIB';
+497:            activeClassesHtml += `
+498:                <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;">
+499:                    <h5 style="margin: 0 0 10px 0; font-size: 15px;">${t.title}</h5>
+500:                    <p style="margin: 3px 0; font-size: 12px; color: #555;">📅 ${dateStr}</p>
+501:                    <p style="margin: 3px 0; font-size: 12px; color: #555;">📍 Media: ${t.method}</p>
+502:                    <p style="margin: 3px 0; font-size: 12px; color: #555;">👥 Terdaftar: ${registeredCount} / ${t.quota}</p>
+503:                    <div style="margin-top: 15px; background: #e8f4fd; padding: 8px; border-radius: 4px; text-align: center;">
+504:                        <span style="font-size: 11px; color: #0056b3; display: block;">TOKEN KEHADIRAN AKTIF:</span>
+505:                        <strong style="font-size: 16px; color: #0056b3;">${t.token}</strong>
+511:        trainingContainer.innerHTML = `
+512:            <div style="padding: 20px; font-family: sans-serif; grid-column: 1 / -1;">
+513:                <h3 style="margin-bottom: 5px;">Manajemen Jadwal Training (Mode ${userRole})</h3>
+514:                <p style="color: #666; font-size: 13px; margin-bottom: 20px;">Buat jadwal kelas, tentukan kuota, dan generate token kehadiran untuk agen.</p>
+517:                <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 25px; max-width: 600px;">
+518:                    <h4 style="margin-top: 0; margin-bottom: 15px;">+ Buat Kelas Training Baru</h4>
+519:                    <div style="display: flex; flex-direction: column; gap: 12px;">
+520:                        <input type="text" id="new-tr-title" placeholder="Nama Topik Training (Contoh: Produk Surety Bond Level 4)" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+521:                        <div style="display: flex; gap: 10px;">
+522:                            <input type="datetime-local" id="new-tr-time" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+523:                            <input type="text" id="new-tr-method" placeholder="Metode (Zoom / Tatap Muka)" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+525:                        <input type="number" id="new-tr-quota" placeholder="Kuota Peserta" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+526:                        <button style="padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;" onclick="publishNewTraining()">Publikasikan Jadwal</button>
+532:                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+542:window.publishNewTraining = function() {
+543:    const title = document.getElementById('new-tr-title').value;
+544:    const timeStr = document.getElementById('new-tr-time').value;
+545:    const method = document.getElementById('new-tr-method').value;
+546:    const quota = document.getElementById('new-tr-quota').value;
+553:    const time = new Date(timeStr).getTime();
+554:    const token = Math.floor(1000 + Math.random() * 9000).toString(); // Generate random 4 digit token
+555:    const id = "tr-" + Math.floor(Math.random() * 100000);
+557:    const newTraining = {
+568:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+578:window.renderAgenTrainings = function() {
+579:    const role = sessionStorage.getItem('currentUserRole') || 'Agen';
+581:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+584:window.renderJadwalTrainingUntukAgen = function() {
+586:    const grid = document.getElementById("agen-training-grid");
+588:    grid.innerHTML = "";
+590:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+591:    const attendance = JSON.parse(localStorage.getItem("pa_training_attendance")) || {};
+592:    const email = "demo@agen.com"; 
+593:    const myAttendance = attendance[email] || {};
+594:    const attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+595:    const myAttempts = attemptsData[email] || {};
+597:    trainings.forEach(t => {
+598:        let isRSVP = myAttendance[t.id] && myAttendance[t.id].status === "RSVP";
+599:        let isHadir = myAttendance[t.id] && myAttendance[t.id].status === "Hadir";
+600:        let attemptData = myAttempts[t.id] || { attempts: 0, passed: false };
+602:        let btnRsvp = "", btnToken = "", btnMateri = "", btnKuis = "", btnCert = "";
+606:            btnRsvp = `<button class="btn-primary" style="width:100%; margin-bottom:8px; background:#10b981; border:none; cursor:default;" disabled>✅ RSVP Berhasil</button>`;
+608:            btnRsvp = `<button class="btn-primary" style="width:100%; margin-bottom:8px;" onclick="rsvpTraining('${t.id}')">Daftar (RSVP) Sekarang</button>`;
+613:            btnToken = `<button class="btn-primary" style="width:100%; margin-bottom:8px; background:#10b981; border:none; cursor:default;" disabled>✅ Hadir Terkonfirmasi</button>`;
+615:            btnToken = `<button class="btn-primary" style="width:100%; margin-bottom:8px;" onclick="openTokenModal('${t.id}')">Konfirmasi Kehadiran</button>`;
+617:            btnToken = `<button class="btn-secondary" style="width:100%; margin-bottom:8px; opacity:0.5; cursor:not-allowed;" disabled>Konfirmasi Kehadiran (Terkunci)</button>`;
+622:            btnMateri = `<button class="btn-primary" style="width:100%; margin-bottom:8px; background:#3b82f6; border:none;" onclick="alert('Materi PDF diunduh.')">Unduh Materi PDF</button>`;
+624:            btnMateri = `<button class="btn-secondary" style="width:100%; margin-bottom:8px; opacity:0.5; cursor:not-allowed;" disabled>Unduh Materi PDF</button>`;
+630:                btnKuis = `<button class="btn-primary" style="width:100%; background:#10b981; border:none; cursor:default;" disabled>✅ Kuis Lulus (${attemptData.bestScore}%)</button>`;
+631:                btnCert = `<button class="btn-primary" style="width:100%; background:#f59e0b; border:none; margin-top:8px;" onclick="alert('Download Sertifikat')">🏆 Download Sertifikat Resmi</button>`;
+632:            } else if (attemptData.attempts >= 2) {
+633:                btnKuis = `<button class="btn-secondary" style="width:100%; opacity:0.5; cursor:not-allowed;" disabled>Ikuti Kuis Singkat</button><small style='color:red; display:block; text-align:center; font-weight:bold; margin-top:8px;'>Kesempatan habis.</small>`;
+635:                btnKuis = `<button class="btn-primary" style="width:100%;" onclick="openTrainingQuiz('${t.id}')">Ikuti Kuis Singkat</button>`;
+638:            btnKuis = `<button class="btn-secondary" style="width:100%; opacity:0.5; cursor:not-allowed;" disabled>Ikuti Kuis Singkat</button>`;
+641:        let actionBtnHTML = btnRsvp + btnToken + btnMateri + btnKuis + btnCert;
+643:        const card = document.createElement("div");
+644:        card.className = "content-card";
+645:        card.style.display = "flex";
+646:        card.style.flexDirection = "column";
+647:        card.innerHTML = `
+648:        <div style="flex:1;">
+649:            <h3 style="font-size:15px; color:var(--primary-navy); margin-bottom:8px;">${t.title}</h3>
+650:            <p style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">📅 ${new Date(t.time).toLocaleString()}</p>
+651:            <p style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">🎥 ${t.method}</p>
+652:            <p style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">👥 Kuota: ${t.quota}</p>
+654:        <div style="margin-top:12px; border-top:1px solid #e2e8f0; padding-top:12px;">
+662:window.rsvpTraining = function(id) {
+663:    const email = "demo@agen.com";
+664:    let att = JSON.parse(localStorage.getItem("pa_training_attendance")) || {};
+665:    if (!att[email]) att[email] = {};
+666:    att[email][id] = { status: "RSVP", attendedAt: Date.now() };
+672:let currentTokenEvId = null;
+673:window.openTokenModal = function(id) {
+674:    currentTokenEvId = id;
+675:    document.getElementById("agen-input-token").value = "";
+679:// ==================== FUNGSI RENDER SILABUS ====================
+680:window.renderSyllabusUI = function() {
+681:    const syllabusData = JSON.parse(localStorage.getItem("pa_syllabus")) || [];
+682:    let html = '<table class="data-table" style="width:100%; border-collapse:collapse; font-size:13px; text-align:left;">';
+683:    html += '<thead style="background:#f1f5f9;"><tr><th style="padding:10px; border-bottom:2px solid #cbd5e1;">No</th><th style="padding:10px; border-bottom:2px solid #cbd5e1;">Materi</th><th style="padding:10px; border-bottom:2px solid #cbd5e1; text-align:center;">Mandiri</th><th style="padding:10px; border-bottom:2px solid #cbd5e1; text-align:center;">Online</th><th style="padding:10px; border-bottom:2px solid #cbd5e1; text-align:center;">Kuis</th></tr></thead>';
+684:    html += '<tbody>';
+686:    syllabusData.forEach(lvl => {
+687:        html += `<tr style="background-color:#e2e8f0;"><td colspan="5" style="padding:10px; font-weight:800; color:var(--primary-navy); font-size:14px;">LEVEL ${lvl.level.toUpperCase()}</td></tr>`;
+688:        lvl.materials.forEach(item => {
+689:            html += `<tr style="border-bottom:1px solid #e2e8f0;">
+690:                <td style="padding:10px;">${item.no}</td>
+691:                <td style="padding:10px; font-weight:500;">${item.title}</td>
+692:                <td style="padding:10px; text-align:center;">${item.mandiri ? 'Ya' : 'Tidak'}</td>
+693:                <td style="padding:10px; text-align:center;">${item.online ? 'Ya' : 'Tidak'}</td>
+694:                <td style="padding:10px; text-align:center;">${item.kuis ? 'Ya' : 'Tidak'}</td>
+699:    html += '</tbody></table>';
+701:    const agenContainer = document.getElementById('agen-syllabus-container');
+702:    if (agenContainer) agenContainer.innerHTML = html;
+704:    const trainerContainer = document.getElementById('trainer-syllabus-container');
+705:    if (trainerContainer) trainerContainer.innerHTML = html;
+708:window.hideTrainingTokenModal = function() {
+712:window.submitTrainingToken = function() {
+713:    const token = document.getElementById("agen-input-token").value;
+714:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+715:    const ev = trainings.find(t => t.id === currentTokenEvId);
+716:    if (ev && ev.token === token) {
+717:        const email = "demo@agen.com";
+718:        let att = JSON.parse(localStorage.getItem("pa_training_attendance")) || {};
+719:        if (!att[email]) att[email] = {};
+720:        att[email][currentTokenEvId] = { status: "Hadir", attendedAt: Date.now() };
+730:let currentQuizEvId = null;
+731:window.openTrainingQuiz = function(id) {
+732:    const trainings = JSON.parse(localStorage.getItem("pa_trainings"));
+733:    const ev = trainings.find(t => t.id === id);
+735:    currentQuizEvId = id;
+737:    const email = "demo@agen.com";
+738:    const attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+739:    const myAtt = attemptsData[email] && attemptsData[email][id] ? attemptsData[email][id] : { attempts: 0 };
+741:    document.getElementById("agen-quiz-attempts-left").innerText = `Sisa Kesempatan: ${2 - myAtt.attempts}x`;
+742:    const container = document.getElementById("agen-quiz-questions-container");
+743:    container.innerHTML = "";
+745:    ev.quiz.forEach((q, i) => {
+746:        const div = document.createElement("div");
+747:        div.style.marginBottom = "15px";
+748:        div.innerHTML = `
+749:        <p style="font-weight:600; margin-bottom:8px; font-size:13px;">${i+1}. ${q.q}</p>
+750:        <label style="display:block; margin-bottom:4px; font-size:12.5px; cursor:pointer;"><input type="radio" name="q_${i}" value="a"> A. ${q.a}</label>
+751:        <label style="display:block; margin-bottom:4px; font-size:12.5px; cursor:pointer;"><input type="radio" name="q_${i}" value="b"> B. ${q.b}</label>
+752:        <label style="display:block; margin-bottom:4px; font-size:12.5px; cursor:pointer;"><input type="radio" name="q_${i}" value="c"> C. ${q.c}</label>
+753:        <label style="display:block; margin-bottom:4px; font-size:12.5px; cursor:pointer;"><input type="radio" name="q_${i}" value="d"> D. ${q.d}</label>
+760:window.hideTrainingQuizModal = function() {
+764:window.submitTrainingQuiz = function() {
+765:    const trainings = JSON.parse(localStorage.getItem("pa_trainings"));
+766:    const ev = trainings.find(t => t.id === currentQuizEvId);
+768:    let correctCount = 0;
+769:    ev.quiz.forEach((q, i) => {
+770:        const selected = document.querySelector(`input[name="q_${i}"]:checked`);
+771:        if (selected && selected.value === q.correct) correctCount++;
+774:    const score = Math.round((correctCount / ev.quiz.length) * 100);
+775:    const email = "demo@agen.com";
+776:    let attemptsData = JSON.parse(localStorage.getItem("pa_training_quiz_attempts")) || {};
+777:    if (!attemptsData[email]) attemptsData[email] = {};
+778:    if (!attemptsData[email][currentQuizEvId]) attemptsData[email][currentQuizEvId] = { attempts: 0, passed: false };
+780:    let rec = attemptsData[email][currentQuizEvId];
+783:    if (score >= 70) {
+784:        rec.passed = true;
+785:        rec.bestScore = score;
+790:            let progressData = JSON.parse(localStorage.getItem("pa_agent_progress")) || {};
+791:            const userKey = "progress_agen@insuremind.id"; // Atau sesuaikan dengan email user aktif jika login diimplementasi penuh
+793:            if (!progressData[userKey]) progressData[userKey] = {};
+794:            if (!progressData[userKey].levelProgress) progressData[userKey].levelProgress = { Basic: 0, Intermediate: 0, Advanced: 0 };
+796:            progressData[userKey].levelProgress[ev.level] = (progressData[userKey].levelProgress[ev.level] || 0) + 1;
+810:window.addEventListener('DOMContentLoaded', () => {
+811:    if (typeof window.loadDataFromStorage === 'function') {
+815:    if (typeof window.renderAgenTrainings === 'function') {
+818:    if (typeof window.evaluateAgentCertificates === 'function') {
+821:    if (typeof window.renderTrainerTrainings === 'function') {
+824:    if (typeof window.renderTrainerEvaluasi === 'function') {
+827:    if (typeof window.renderTrainerMaterials === 'function') window.renderTrainerMaterials();
+828:    if (typeof window.renderTrainerCoaching === 'function') window.renderTrainerCoaching();
+829:    if (typeof window.renderTrainerProgress === 'function') window.renderTrainerProgress();
+830:    if (typeof window.renderTrainerClaims === 'function') window.renderTrainerClaims();
+833:// ==================== FUNGSI PERSISTENSI DATA STORAGE ====================
+834:window.modules = [];
+835:window.pa_agent_module_progress = {};
+837:window.loadDataFromStorage = function() {
+838:    const savedMaterials = localStorage.getItem("pa_materials");
+840:        window.modules = JSON.parse(savedMaterials);
+843:        window.modules = []; 
+846:    const savedProgress = localStorage.getItem("pa_agent_module_progress");
+848:        window.pa_agent_module_progress = JSON.parse(savedProgress);
+850:        window.pa_agent_module_progress = {};
+854:window.saveDataToStorage = function() {
+859:// ==================== LOGIKA PELACAKAN PROGRES AGEN & KUIS MODUL ====================
+860:window.initAgentModuleProgress = function(agentId, moduleId, method = "Mandiri") {
+861:    let key = `${agentId}_${moduleId}`;
+864:        window.pa_agent_module_progress[key] = {
+878:window.markMaterialAsRead = function(agentId, moduleId) {
+879:    let key = `${agentId}_${moduleId}`;
+880:    if (window.pa_agent_module_progress[key] && window.pa_agent_module_progress[key].statusMateri !== "SELESAI") {
+881:        window.pa_agent_module_progress[key].statusMateri = "Selesai Baca";
+886:window.submitAgenMaterialQuiz = function(agentId, moduleId, score) {
+887:    let key = `${agentId}_${moduleId}`;
+890:        window.pa_agent_module_progress[key] = {
+901:    let rec = window.pa_agent_module_progress[key];
+903:    if (score >= 70) {
+904:        rec.statusKuis = "Lulus";
+905:        rec.skorKuis = score;
+906:        rec.statusMateri = "SELESAI";
+914:            rec.statusKuis = "Gagal";
+915:            rec.skorKuis = score;
+919:            rec.statusKuis = "Gagal Permanen";
+920:            rec.skorKuis = score;
+927:window.issueCertificate = function(agentId, moduleId) {
+928:    let certs = JSON.parse(localStorage.getItem("pa_agent_certificates")) || [];
+937:window.renderAgenMaterialQuiz = function(moduleId) {
+938:    const container = document.getElementById("player-quiz-container");
+939:    let isExisting = false;
+940:    for (let i = 0; i < window.modules.length; i++) {
+941:        if (window.modules[i].id === newMat.id) {
+942:            window.modules[i] = newMat;
+943:            isExisting = true;
+957:    const mat = window.modules.find(m => m.id === moduleId);
+959:    if (!mat || !mat.wajibKuis || !mat.soalKuis || mat.soalKuis.length === 0) {
+960:        container.innerHTML = `<p style="text-align:center; color:var(--text-muted);">Tidak ada kuis wajib untuk materi ini.</p>`;
+964:    const agentId = "AGN-001"; 
+965:    let progressData = window.initAgentModuleProgress(agentId, moduleId, "Mandiri");
+967:    if (progressData.statusKuis === "Lulus") {
+968:        container.innerHTML = `
+969:            <div style="text-align:center; padding: 20px;">
+970:                <h3 style="color:var(--success-color); margin-bottom:12px;">✅ Anda Telah Lulus Kuis Ini</h3>
+971:                <p style="margin-bottom:16px;">Skor Anda: <strong>${progressData.skorKuis}%</strong></p>
+972:                <button class="btn-secondary" disabled style="opacity:0.8; cursor:not-allowed;">Sertifikat Diterbitkan</button>
+978:    if (progressData.sisaRemedial <= 0) {
+979:        container.innerHTML = `
+980:            <div style="text-align:center; padding: 20px;">
+981:                <h3 style="color:var(--danger-red); margin-bottom:12px;">❌ Kesempatan Ujian Habis</h3>
+982:                <p style="margin-bottom:16px; font-weight:600;">Kesempatan ujian habis. Silakan hubungi Trainer untuk reset evaluasi manual.</p>
+983:                <button class="btn-primary" disabled style="background:#ccc; cursor:not-allowed;">Mulai Kuis Terkunci</button>
+989:    let html = `
+990:        <div style="margin-bottom: 20px; padding: 12px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+991:            <p style="margin:0; font-size: 14px;"><strong>Perhatian:</strong> Sisa kesempatan mengulang kuis ini: <span style="color:var(--danger-red); font-weight:bold;">${progressData.sisaRemedial} kali</span></p>
+995:    html += `<form id="form-agen-mat-quiz">`;
+996:    mat.soalKuis.forEach((soal, i) => {
+997:        html += `
+998:            <div class="quiz-question-box" style="margin-bottom: 20px; padding: 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+999:                <p style="font-weight: 600; margin-bottom: 12px;">${i + 1}. ${soal.q}</p>
+1000:                <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="q${i}" value="a"> A. ${soal.a}</label>
+1001:                <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="q${i}" value="b"> B. ${soal.b}</label>
+1002:                <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="q${i}" value="c"> C. ${soal.c}</label>
+1003:                <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="q${i}" value="d"> D. ${soal.d}</label>
+1007:    html += `<button type="button" class="btn-primary" onclick="submitAgenMaterialQuizForm('${moduleId}')" style="width:100%; padding:12px;">Kirim Jawaban Kuis</button>`;
+1008:    html += `</form>`;
+1010:    container.innerHTML = html;
+1013:window.submitAgenMaterialQuizForm = function(moduleId) {
+1014:    let materials = JSON.parse(localStorage.getItem('pa_materials')) || [];
+1015:    const mat = materials.find(m => m.id === moduleId);
+1018:    let correctCount = 0;
+1019:    mat.soalKuis.forEach((soal, i) => {
+1020:        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+1021:        if (selected && selected.value === soal.correct) {
+1026:    const score = Math.round((correctCount / mat.soalKuis.length) * 100);
+1027:    const agentId = "AGN-001";
+1030:    window.renderAgenMaterialQuiz(moduleId);
+1033:window.evaluateAgentCertificates = function() {
+1034:    let progressData = JSON.parse(localStorage.getItem("pa_agent_module_progress")) || {};
+1035:    let materials = JSON.parse(localStorage.getItem('pa_materials')) || [];
+1037:    let targets = { Basic: 4, Intermediate: 13, Advanced: 14 };
+1038:    let completed = { Basic: 0, Intermediate: 0, Advanced: 0 };
+1040:    materials.forEach(mat => {
+1041:        let key = `AGN-001_${mat.id}`; 
+1042:        let rec = progressData[key];
+1043:        if (rec && rec.statusMateri === "SELESAI") {
+1044:            if (mat.level === "Basic") completed.Basic++;
+1045:            if (mat.level === "Intermediate") completed.Intermediate++;
+1046:            if (mat.level === "Advanced") completed.Advanced++;
+1050:    const updateUI = (lvlId, target, count) => {
+1051:        const progEl = document.getElementById(`cert-prog-${lvlId}`);
+1052:        const statEl = document.getElementById(`cert-stat-${lvlId}`);
+1053:        const btnEl = document.getElementById(`btn-cert-${lvlId}`);
+1057:        progEl.innerText = `${count}/${target}`;
+1059:        if (count >= target) {
+1060:            statEl.innerText = "Memenuhi Syarat";
+1061:            statEl.style.color = "var(--success-color)";
+1062:            btnEl.disabled = false;
+1064:            statEl.innerText = "Belum Memenuhi Syarat";
+1065:            statEl.style.color = "var(--danger-red)";
+1066:            btnEl.disabled = true;
+1075:window.renderTrainerEvaluasi = function() {
+1076:    const tbody = document.getElementById("trainer-evaluasi-rows");
+1079:    let progressData = JSON.parse(localStorage.getItem("pa_agent_module_progress")) || {};
+1080:    let materials = JSON.parse(localStorage.getItem('pa_materials')) || [];
+1082:    let html = "";
+1084:        const rec = progressData[key];
+1085:        if (rec.sisaRemedial <= 0 && (rec.statusKuis === "Gagal" || rec.statusKuis === "Gagal Permanen")) {
+1086:            const mat = materials.find(m => m.id === rec.moduleId);
+1087:            const judulModul = mat ? (mat.judul || mat.title) : rec.moduleId;
+1089:            html += `
+1093:                <td><span style="color:var(--danger-red); font-weight:600;">Kehabisan Kesempatan Kuis</span></td>
+1096:                  <button class="btn-primary" style="padding:4px 8px; font-size:11px; margin-right:4px;" onclick="overrideLuluskanAgen('${rec.agentId}', '${rec.moduleId}')">Luluskan</button>
+1097:                  <button class="btn-secondary" style="padding:4px 8px; font-size:11px; margin-right:4px;" onclick="alert('Tindakan ditolak.')">Tolak</button>
+1098:                  <button class="btn-secondary" style="padding:4px 8px; font-size:11px; color:#D97706; border-color:#FCD34D;" onclick="resetKesempatanAgen('${rec.agentId}', '${rec.moduleId}')">Reset Kesempatan</button>
+1105:    if (html === "") {
+1106:        html = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:20px;">Tidak ada agen yang menunggu evaluasi (Kehabisan Kesempatan Kuis) saat ini.</td></tr>`;
+1108:    tbody.innerHTML = html;
+1111:window.resetKesempatanAgen = function(agentId, moduleId) {
+1112:    let key = `${agentId}_${moduleId}`;
+1114:        window.pa_agent_module_progress[key].sisaRemedial = 2;
+1115:        window.pa_agent_module_progress[key].statusKuis = "Belum Ikut";
+1122:window.overrideLuluskanAgen = function(agentId, moduleId) {
+1124:        let key = `${agentId}_${moduleId}`;
+1126:            window.pa_agent_module_progress[key].statusKuis = "Lulus";
+1127:            window.pa_agent_module_progress[key].statusMateri = "SELESAI";
+1130:            if (typeof window.issueCertificate === 'function') {
+1139:// ==================== FUNGSI JADWAL TRAINING (TRAINER) ====================
+1140:window.showCreateTrainingModal = function() {
+1141:    document.getElementById("trn-ev-title").value = "";
+1142:    document.getElementById("trn-ev-time").value = "";
+1143:    document.getElementById("trn-ev-method").value = "Tatap Muka";
+1144:    if(document.getElementById("trn-ev-level")) document.getElementById("trn-ev-level").value = "Basic";
+1145:    document.getElementById("trn-ev-link").value = "";
+1146:    document.getElementById("trn-ev-pdf").value = "";
+1147:    document.getElementById("trn-ev-quota").value = "";
+1148:    document.getElementById("trn-ev-token").value = "";
+1149:    const modal = document.getElementById("modal-create-training");
+1153:window.hideCreateTrainingModal = function() {
+1154:    const modal = document.getElementById("modal-create-training");
+1158:window.saveTrainingEvent = function() {
+1159:    const title = document.getElementById("trn-ev-title").value;
+1160:    const timeStr = document.getElementById("trn-ev-time").value;
+1161:    const method = document.getElementById("trn-ev-method").value;
+1162:    const levelEl = document.getElementById("trn-ev-level");
+1163:    const level = levelEl ? levelEl.value : "Basic";
+1164:    const link = document.getElementById("trn-ev-link").value;
+1165:    const pdf = document.getElementById("trn-ev-pdf").value;
+1166:    const quota = document.getElementById("trn-ev-quota").value;
+1167:    const token = document.getElementById("trn-ev-token").value;
+1174:    const newTraining = {
+1187:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+1196:window.renderTrainerTrainings = function() {
+1197:    const tbody = document.getElementById("trainer-training-rows");
+1199:    if (typeof window.renderSyllabusUI === 'function') window.renderSyllabusUI();
+1203:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+1204:    tbody.innerHTML = "";
+1206:    trainings.forEach(t => {
+1207:        const tr = document.createElement("tr");
+1208:        const dateStr = new Date(t.time).toLocaleString('id-ID');
+1209:        tr.innerHTML = `
+1214:                <span style="font-size:11px; padding:4px 8px; border-radius:4px; background:#e0f2fe; color:#0284c7; font-weight:bold; margin-right:8px;">Token: ${t.token}</span>
+1215:                <button class="btn-primary" style="padding:4px 8px; font-size:11px;" onclick="openEditTrainingQuizModal('${t.id}')">Edit / Kuis</button>
+1222:let currentEditTrainingId = null;
+1224:window.openEditTrainingQuizModal = function(id) {
+1225:    currentEditTrainingId = id;
+1227:    const modal = document.getElementById("modal-edit-training-quiz");
+1231:window.hideEditTrainingQuizModal = function() {
+1232:    const modal = document.getElementById("modal-edit-training-quiz");
+1234:    currentEditTrainingId = null;
+1237:window.renderQuizQuestionsList = function() {
+1238:    const listContainer = document.getElementById("quiz-questions-list");
+1241:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+1242:    const training = trainings.find(t => t.id === currentEditTrainingId);
+1244:    if (!training || !training.quiz || training.quiz.length === 0) {
+1245:        listContainer.innerHTML = '<p style="font-size: 13px; color: var(--text-muted); text-align: center; padding: 20px 0;">Belum ada pertanyaan kuis.</p>';
+1249:    listContainer.innerHTML = "";
+1250:    training.quiz.forEach((q, i) => {
+1251:        const item = document.createElement("div");
+1252:        item.style.cssText = "padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); margin-bottom: 10px; position: relative;";
+1253:        item.innerHTML = `
+1254:            <div style="font-size: 13px; font-weight: bold; margin-bottom: 6px; padding-right: 24px;">${i + 1}. ${q.q}</div>
+1255:            <div style="font-size: 12px; margin-bottom: 2px; color: ${q.correct === 'a' ? 'var(--success-green)' : 'var(--text-muted)'}; font-weight: ${q.correct === 'a' ? 'bold' : 'normal'};">A. ${q.a}</div>
+1256:            <div style="font-size: 12px; margin-bottom: 2px; color: ${q.correct === 'b' ? 'var(--success-green)' : 'var(--text-muted)'}; font-weight: ${q.correct === 'b' ? 'bold' : 'normal'};">B. ${q.b}</div>
+1257:            <div style="font-size: 12px; margin-bottom: 2px; color: ${q.correct === 'c' ? 'var(--success-green)' : 'var(--text-muted)'}; font-weight: ${q.correct === 'c' ? 'bold' : 'normal'};">C. ${q.c}</div>
+1258:            <div style="font-size: 12px; margin-bottom: 2px; color: ${q.correct === 'd' ? 'var(--success-green)' : 'var(--text-muted)'}; font-weight: ${q.correct === 'd' ? 'bold' : 'normal'};">D. ${q.d}</div>
+1259:            <button onclick="deleteQuizQuestion(${i})" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: var(--danger-red); cursor: pointer; padding: 4px;">
+1260:                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+1267:window.addQuizQuestion = function() {
+1270:    const q = document.getElementById("new-quiz-q").value.trim();
+1271:    const a = document.getElementById("new-quiz-a").value.trim();
+1272:    const b = document.getElementById("new-quiz-b").value.trim();
+1273:    const c = document.getElementById("new-quiz-c").value.trim();
+1274:    const d = document.getElementById("new-quiz-d").value.trim();
+1275:    const correct = document.getElementById("new-quiz-correct").value;
+1282:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+1283:    const trainingIndex = trainings.findIndex(t => t.id === currentEditTrainingId);
+1287:            trainings[trainingIndex].quiz = [];
+1293:        document.getElementById("new-quiz-q").value = "";
+1294:        document.getElementById("new-quiz-a").value = "";
+1295:        document.getElementById("new-quiz-b").value = "";
+1296:        document.getElementById("new-quiz-c").value = "";
+1297:        document.getElementById("new-quiz-d").value = "";
+1298:        document.getElementById("new-quiz-correct").value = "a";
+1304:window.deleteQuizQuestion = function(index) {
+1309:    const trainings = JSON.parse(localStorage.getItem("pa_trainings")) || [];
+1310:    const trainingIndex = trainings.findIndex(t => t.id === currentEditTrainingId);
+1319:// ==================== DASHBOARD TRAINER (MATERI & COACHING) ====================
+1320:window.switchTrainerTab = function(tabId) {
+1321:    const tabs = document.querySelectorAll('.trn-content');
+1322:    tabs.forEach(tab => tab.classList.remove('active'));
+1323:    const targetTab = document.getElementById(tabId);
+1326:    const btns = document.querySelectorAll('.trn-tab-btn');
+1327:    btns.forEach(btn => {
+1337:window.toggleMaterialQuizForm = function() {
+1338:    const isChecked = document.getElementById("trn-mat-has-quiz").checked;
+1339:    const container = document.getElementById("trn-mat-quiz-container");
+1341:        container.style.display = "block";
+1343:        container.style.display = "none";
+1347:window.addQuizQuestionBlock = function() {
+1348:    const list = document.getElementById("quiz-questions-list");
+1349:    const count = list.querySelectorAll(".quiz-question-item").length + 1;
+1351:    const block = document.createElement("div");
+1352:    block.className = "quiz-question-item";
+1353:    block.style.cssText = "border:1px dashed #cbd5e1; padding:16px; margin-bottom:16px; border-radius:8px; background-color:#ffffff; position:relative;";
+1355:    block.innerHTML = `
+1356:      <button type="button" onclick="this.parentElement.remove()" style="position:absolute; top:12px; right:12px; background:none; border:none; color:var(--danger-red); cursor:pointer; font-weight:bold;">X Hapus</button>
+1357:      <h5 style="margin-top:0; margin-bottom:12px; color:var(--primary-navy);">Soal ${count}</h5>
+1358:      <div class="form-group">
+1360:        <input type="text" class="trn-mat-q-q" placeholder="Tulis pertanyaan kuis..." required>
+1362:      <div class="form-grid-2">
+1363:        <div class="form-group"><label>Pilihan A</label><input type="text" class="trn-mat-q-a" required></div>
+1364:        <div class="form-group"><label>Pilihan B</label><input type="text" class="trn-mat-q-b" required></div>
+1365:        <div class="form-group"><label>Pilihan C</label><input type="text" class="trn-mat-q-c" required></div>
+1366:        <div class="form-group"><label>Pilihan D</label><input type="text" class="trn-mat-q-d" required></div>
+1368:      <div class="form-group">
+1370:        <select class="trn-mat-q-correct">
+1371:          <option value="a">A</option>
+1372:          <option value="b">B</option>
+1373:          <option value="c">C</option>
+1374:          <option value="d">D</option>
+1382:window.showCreateMaterialModal = function() {
+1383:    document.getElementById("trn-mat-title").value = "";
+1384:    document.getElementById("trn-mat-cat").value = "Dasar Asuransi";
+1385:    if (document.getElementById("trn-mat-level")) document.getElementById("trn-mat-level").value = "Basic";
+1386:    document.getElementById("trn-mat-desc").value = "";
+1387:    document.getElementById("trn-mat-article").value = "";
+1388:    document.getElementById("trn-mat-video").value = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+1389:    document.getElementById("trn-mat-pdf").value = "";
+1392:        document.getElementById("trn-mat-has-quiz").checked = false;
+1393:        document.getElementById("trn-mat-quiz-container").style.display = "none";
+1394:        const list = document.getElementById("quiz-questions-list");
+1396:            list.innerHTML = `
+1397:                <div class="quiz-question-item" style="border:1px dashed #cbd5e1; padding:16px; margin-bottom:16px; border-radius:8px; background-color:#ffffff;">
+1398:                  <h5 style="margin-top:0; margin-bottom:12px; color:var(--primary-navy);">Soal 1</h5>
+1399:                  <div class="form-group"><label>Pertanyaan</label><input type="text" class="trn-mat-q-q" placeholder="Tulis pertanyaan kuis..." required></div>
+1400:                  <div class="form-grid-2">
+1401:                    <div class="form-group"><label>Pilihan A</label><input type="text" class="trn-mat-q-a" required></div>
+1402:                    <div class="form-group"><label>Pilihan B</label><input type="text" class="trn-mat-q-b" required></div>
+1403:                    <div class="form-group"><label>Pilihan C</label><input type="text" class="trn-mat-q-c" required></div>
+1404:                    <div class="form-group"><label>Pilihan D</label><input type="text" class="trn-mat-q-d" required></div>
+1406:                  <div class="form-group"><label>Kunci Jawaban Benar</label><select class="trn-mat-q-correct"><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></div>
+1412:    const modal = document.getElementById("trainer-material-modal");
+1416:window.hideCreateMaterialModal = function() {
+1417:    const modal = document.getElementById("trainer-material-modal");
+1421:window.saveTrainerMaterial = function() {
+1422:    const title = document.getElementById("trn-mat-title").value;
+1423:    const cat = document.getElementById("trn-mat-cat").value;
+1424:    const levelEl = document.getElementById("trn-mat-level");
+1425:    const level = levelEl ? levelEl.value : "Basic";
+1432:    let wajibKuis = false;
+1433:    let soalKuis = [];
+1434:    const hasQuizEl = document.getElementById("trn-mat-has-quiz");
+1436:        wajibKuis = true;
+1437:        const items = document.querySelectorAll(".quiz-question-item");
+1438:        items.forEach(item => {
+1439:            const q = item.querySelector(".trn-mat-q-q").value;
+1440:            const a = item.querySelector(".trn-mat-q-a").value;
+1441:            const b = item.querySelector(".trn-mat-q-b").value;
+1442:            const c = item.querySelector(".trn-mat-q-c").value;
+1443:            const d = item.querySelector(".trn-mat-q-d").value;
+1444:            const correct = item.querySelector(".trn-mat-q-correct").value;
+1451:    let materials = JSON.parse(localStorage.getItem('pa_materials')) || [];
+1469:window.renderTrainerMaterials = function() {
+1470:    const tbody = document.getElementById('trainer-material-rows');
+1473:    let materials = JSON.parse(localStorage.getItem('pa_materials')) || [];
+1474:    if (materials.length === 0) {
+1475:        materials = [
+1482:    tbody.innerHTML = "";
+1483:    materials.forEach(m => {
+1484:        tbody.innerHTML += `
+1487:                <td>${m.cat} <br><small style="color:var(--text-muted); font-weight:600;">(${m.level || 'Basic'})</small></td>
+1490:                    <button class="btn-secondary" style="padding:4px 8px; font-size:11px;" onclick="alert('Demo: Hapus modul ini')">Hapus</button>
+1498:window.showCreateCoachingModal = function() {
+1499:    document.getElementById("trn-coach-title").value = "";
+1500:    document.getElementById("trn-coach-tips").value = "";
+1501:    document.getElementById("trn-coach-checklist").value = "";
+1502:    const modal = document.getElementById("trainer-coaching-modal");
+1506:window.hideCreateCoachingModal = function() {
+1507:    const modal = document.getElementById("trainer-coaching-modal");
+1511:window.saveTrainerCoaching = function() {
+1512:    const title = document.getElementById("trn-coach-title").value;
+1513:    const tips = document.getElementById("trn-coach-tips").value;
+1514:    const checklist = document.getElementById("trn-coach-checklist").value;
+1521:    let coachings = JSON.parse(localStorage.getItem('pa_coachings')) || [];
+1526:        targetCount: checklist.split('\n').filter(l => l.trim() !== "").length
+1535:window.renderTrainerCoaching = function() {
+1536:    const tbody = document.getElementById('trainer-coaching-rows');
+1539:    let coachings = JSON.parse(localStorage.getItem('pa_coachings')) || [];
+1540:    if (coachings.length === 0) {
+1541:        coachings = [
+1547:    tbody.innerHTML = "";
+1548:    coachings.forEach((c, index) => {
+1549:        tbody.innerHTML += `
+1556:                    <button class="btn-secondary" style="padding:4px 8px; font-size:11px;" onclick="alert('Demo: Hapus taktik ini')">Hapus</button>
+1564:window.renderTrainerProgress = function() {
+1565:    const tbody = document.getElementById('trainer-agent-progress-rows');
+1567:    tbody.innerHTML = `
+1585:window.renderTrainerClaims = function() {
+1586:    const tbody = document.getElementById('trainer-claims-rows');
+1588:    tbody.innerHTML = `
+1593:            <td><span style="color:#059669; font-weight:bold;">Selesai</span></td>
+1599:window.filterTrainerClaims = function(status) {
+1603:window.addCustomReward = function(e) {
+1608:// ==================== TEMPLATE SERTIFIKAT ====================
+1609:window.updateCertPreview = function() {
+1610:    const bgSelect = document.getElementById('cert-bg-select').value;
+1611:    const nameColor = document.getElementById('cert-name-color').value;
+1612:    const titleColor = document.getElementById('cert-title-color').value;
+1613:    const titleText = document.getElementById('cert-title').value;
+1615:    const canvas = document.getElementById('cert-preview-canvas');
+1616:    const nameEl = document.getElementById('preview-cert-name');
+1617:    const titleEl = document.getElementById('preview-cert-title');
+1619:    if (bgSelect === 'blue-gold') {
+1620:        canvas.style.background = 'linear-gradient(135deg, #e0f2fe, #bae6fd)';
+1621:        canvas.style.border = '2px solid #0284c7';
+1622:    } else if (bgSelect === 'modern-light') {
+1623:        canvas.style.background = '#f8fafc';
+1624:        canvas.style.border = '2px dashed #cbd5e1';
+1625:    } else if (bgSelect === 'dark-premium') {
+1626:        canvas.style.background = 'linear-gradient(135deg, #0f172a, #1e293b)';
+1627:        canvas.style.border = '2px solid #fbbf24';
+1628:        if (titleColor === '#0f172a') titleEl.style.color = '#f8fafc'; // auto contrast
+1629:        if (nameColor === '#1e293b') nameEl.style.color = '#fbbf24';
+1632:    nameEl.style.color = nameColor;
+1633:    titleEl.style.color = titleColor;
+1636:        titleEl.textContent = titleText;
+1638:        titleEl.textContent = "Sertifikat Kelulusan";
+1642:window.saveCertTemplate = function() {
+1643:    const title = document.getElementById('cert-title').value;

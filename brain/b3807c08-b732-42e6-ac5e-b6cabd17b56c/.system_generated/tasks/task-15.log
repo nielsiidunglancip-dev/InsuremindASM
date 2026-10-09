@@ -1,0 +1,171 @@
+Server Express berhasil dijalankan dan mendengarkan di http://localhost:3000
+Error fetching news: AggregateError: 
+    at D:\AI\APMA_WEB\app.js:105:29
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at next (D:\AI\APMA_WEB\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\AI\APMA_WEB\node_modules\router\lib\route.js:117:3)
+    at handle (D:\AI\APMA_WEB\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at D:\AI\APMA_WEB\node_modules\router\index.js:295:15
+    at processParams (D:\AI\APMA_WEB\node_modules\router\index.js:582:12)
+    at next (D:\AI\APMA_WEB\node_modules\router\index.js:291:5)
+    at SendStream.error (D:\AI\APMA_WEB\node_modules\serve-static\index.js:120:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+Error fetching downloads: AggregateError: 
+    at D:\AI\APMA_WEB\app.js:127:29
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at next (D:\AI\APMA_WEB\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\AI\APMA_WEB\node_modules\router\lib\route.js:117:3)
+    at handle (D:\AI\APMA_WEB\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at D:\AI\APMA_WEB\node_modules\router\index.js:295:15
+    at processParams (D:\AI\APMA_WEB\node_modules\router\index.js:582:12)
+    at next (D:\AI\APMA_WEB\node_modules\router\index.js:291:5)
+    at SendStream.error (D:\AI\APMA_WEB\node_modules\serve-static\index.js:120:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+Error fetching news: AggregateError: 
+    at D:\AI\APMA_WEB\app.js:105:29
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at next (D:\AI\APMA_WEB\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\AI\APMA_WEB\node_modules\router\lib\route.js:117:3)
+    at handle (D:\AI\APMA_WEB\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at D:\AI\APMA_WEB\node_modules\router\index.js:295:15
+    at processParams (D:\AI\APMA_WEB\node_modules\router\index.js:582:12)
+    at next (D:\AI\APMA_WEB\node_modules\router\index.js:291:5)
+    at SendStream.error (D:\AI\APMA_WEB\node_modules\serve-static\index.js:120:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+Error fetching downloads: AggregateError: 
+    at D:\AI\APMA_WEB\app.js:127:29
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at next (D:\AI\APMA_WEB\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\AI\APMA_WEB\node_modules\router\lib\route.js:117:3)
+    at handle (D:\AI\APMA_WEB\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at D:\AI\APMA_WEB\node_modules\router\index.js:295:15
+    at processParams (D:\AI\APMA_WEB\node_modules\router\index.js:582:12)
+    at next (D:\AI\APMA_WEB\node_modules\router\index.js:291:5)
+    at SendStream.error (D:\AI\APMA_WEB\node_modules\serve-static\index.js:120:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+Error fetching news: AggregateError: 
+    at D:\AI\APMA_WEB\app.js:105:29
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at next (D:\AI\APMA_WEB\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\AI\APMA_WEB\node_modules\router\lib\route.js:117:3)
+    at handle (D:\AI\APMA_WEB\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\AI\APMA_WEB\node_modules\router\lib\layer.js:152:17)
+    at D:\AI\APMA_WEB\node_modules\router\index.js:295:15
+    at processParams (D:\AI\APMA_WEB\node_modules\router\index.js:582:12)
+    at next (D:\AI\APMA_WEB\node_modules\router\index.js:291:5)
+    at SendStream.error (D:\AI\APMA_WEB\node_modules\serve-static\index.js:120:7) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+
+> client@0.0.0 dev
+> vite
+
+
+  VITE v8.2.2  ready in 1880 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+21.33.45 [vite] (client) [optimizer] bundling dependencies...
+21.39.32 [vite] (client) [console.error] Error: Gagal memuat public stats.
+    at handleResponse (http://localhost:3000/src/services/api.js:16:9)
+    at async Promise.all (index 0)
+    at async loadPublicData (http://localhost:3000/src/pages/PublicDashboardPage.jsx:26:34)
+21.39.32 [vite] (client) [console.error] Error: Gagal memuat public stats.
+    at handleResponse (http://localhost:3000/src/services/api.js:16:9)
+    at async Promise.all (index 0)
+    at async loadPublicData (http://localhost:3000/src/pages/PublicDashboardPage.jsx:26:34)

@@ -1,0 +1,15 @@
+
+InputObject                                                                SideIndicator
+-----------                                                                -------------
+/**                                                                        =>           
+ * app.js - Backend Web Server untuk InsureMind AI                         =>           
+ * Menggunakan Express.js, RAG (Vector Embeddings), dan Google Gemini API. =>           
+ */                                                                        =>           
+require('dotenv').config();                                                =>           
+const express = require('express');                                        =>           
+const cors = require('cors');                                              =>           
+const path = require('path');                                              =>           
+const { GoogleGenerativeAI } = require('@google/generative-ai');           =>           
+const { ASURANSI_KNOWLEDGE_BASE } = require('./data');                     =>           
+
+

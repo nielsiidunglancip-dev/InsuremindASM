@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Nama Produk (Contoh: Simas Mobil Exclusive)",
+    "category": "Asuransi Kendaraan Bermotor",
+    "url": "https://sinarmas.co.id/produk/simas-mobil-exclusive-proteksi-mobil-anda",
+    "benefits": "Jelaskan manfaat utama produk ini untuk nasabah.",
+    "object": "Apa yang diasuransikan, contoh: Mobil penumpang non-komersial max 10 tahun.",
+    "warranty": "Risiko-risiko yang dijamin, contoh: All Risk mencakup kerusakan kecil hingga besar.",
+    "extension": "Jaminan perluasan opsional, contoh: Banjir, Gempa, SRCC, TPL.",
+    "exclusions": "Risiko yang TIDAK dijamin, contoh: Penggelapan oleh sopir, ban pecah tanpa kecelakaan.",
+    "claimCase": "Contoh nyata kasus klaim yang bisa digunakan agen saat presentasi ke nasabah."
+  },
+  {
+    "name": "Produk Kedua (hapus baris ini jika tidak perlu)",
+    "category": "Asuransi Properti",
+    "url": "",
+    "benefits": "...",
+    "object": "...",
+    "warranty": "...",
+    "extension": "...",
+    "exclusions": "...",
+    "claimCase": "..."
+  }
+]

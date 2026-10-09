@@ -1,0 +1,4 @@
+- [x] Update UI in `index.html` for AI Product Finder to use a single free-text input (chat style).
+- [x] Update `app.js` (`findAIProduct`) to send the free-text query instead of `type, obj, needs` to the backend. Update the mock response.
+- [x] Update `server.js` (`/api/ai-product-finder`) to accept `query` and format the prompt accordingly.
+- [x] Verify the RAG API flow conceptually and handle the UI update smoothly.

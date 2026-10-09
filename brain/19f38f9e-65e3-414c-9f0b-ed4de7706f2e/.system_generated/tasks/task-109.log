@@ -1,0 +1,8 @@
+
+index.html:106:      <div class="mobile-user-avatar" onclick="navigateTo('progress')">
+index.html:139:          <button class="sidebar-link active" id="nav-dashboard" onclick="navigateTo('dashboard')">
+index.html:156:            <button class="sidebar-link" id="nav-agen-training" onclick="navigateTo('agen-training')">
+index.html:167:            <button class="sidebar-link" id="nav-belajar" onclick="navigateTo('belajar')">
+index.html:176:            <button class="sidebar-link" id="nav-tryout-welcome" onclick="navigateTo('tryout-welcome')">
+
+

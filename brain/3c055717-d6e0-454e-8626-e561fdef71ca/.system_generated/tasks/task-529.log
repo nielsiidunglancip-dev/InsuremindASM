@@ -1,0 +1,12 @@
+[eval]:1
+const puppeteer = require('puppeteer'); (async () => { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto('http://localhost:8000/?clear=1'); const btn = await page.#btn-demo-agent; if(btn) { console.log('Button found'); await btn.click(); await new Promise(r => setTimeout(r, 1000)); console.log('Email value:', await page.('#login-email', el => el.value)); console.log('Display of login-screen:', await page.('#login-screen', el => el.style.display)); } else { console.log('Button not found'); } await browser.close(); })();
+                                                                                                                                                                                                                ^
+Expected ident
+
+SyntaxError: Private field '#btn' must be declared in an enclosing class
+    at makeContextifyScript (node:internal/vm:194:14)
+    at compileScript (node:internal/process/execution:388:10)
+    at evalTypeScript (node:internal/process/execution:260:22)
+    at node:internal/main/eval_string:71:3
+
+Node.js v24.16.0

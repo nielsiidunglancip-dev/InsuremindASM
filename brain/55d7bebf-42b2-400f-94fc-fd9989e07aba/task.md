@@ -1,0 +1,7 @@
+- [x] Tambahkan data default di `data.js`
+- [x] Implementasikan HTML admin baru & modal input soal di `index.html`
+- [x] Implementasikan logika inisialisasi & CRUD admin di `app.js`
+- [x] Implementasikan logika permainan Underwriting Swipe Match di `app.js`
+- [x] Implementasikan logika permainan Insurance Word Duel di `app.js`
+- [x] Implementasikan integrasi kuota & pembelian tiket main di `app.js`
+- [x] Verifikasi dengan `check_shell.js` dan uji fungsionalitas

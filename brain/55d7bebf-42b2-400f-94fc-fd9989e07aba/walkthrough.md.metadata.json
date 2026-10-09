@@ -1,0 +1,5 @@
+{
+  "summary": "Fixed image path formatting in walkthrough.md to use absolute paths starting with / instead of file:// scheme.",
+  "updatedAt": "2026-06-29T01:59:07.074029900Z",
+  "userFacing": true
+}

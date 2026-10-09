@@ -1,0 +1,5 @@
+- Status: Failed to connect to http://localhost:3001/ (ERR_CONNECTION_REFUSED).
+- Cannot proceed with verifying the ATC page since the server is not running.
+- Tried localhost and 127.0.0.1 on ports 3001 and 3000, all refused.
+- Waited for 45 seconds total, still connection refused.
+- Stopped verification due to server connection failure.

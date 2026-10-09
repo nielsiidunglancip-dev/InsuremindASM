@@ -1,0 +1,19 @@
+{
+  "name": "insuremind-agent-backend",
+  "version": "1.0.0",
+  "description": "InsureMind Agent - Backend API Server untuk PPT Builder",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.22.2",
+    "multer": "^2.2.0",
+    "mysql2": "^3.22.5",
+    "nodemailer": "^9.0.0",
+    "pptxgenjs": "^3.12.0"
+  }
+}

@@ -1,0 +1,47 @@
+106:      <div class="mobile-user-avatar" onclick="navigateTo('progress')">
+139:          <button class="sidebar-link active" id="nav-dashboard" onclick="navigateTo('dashboard')">
+156:            <button class="sidebar-link" id="nav-agen-training" onclick="navigateTo('agen-training')">
+167:            <button class="sidebar-link" id="nav-belajar" onclick="navigateTo('belajar')">
+176:            <button class="sidebar-link" id="nav-tryout-welcome" onclick="navigateTo('tryout-welcome')">
+185:            <button class="sidebar-link" id="nav-sertifikasi" onclick="navigateTo('sertifikasi')">
+194:            <button class="sidebar-link" id="nav-progress" onclick="navigateTo('progress')">
+211:            <button class="sidebar-link" id="nav-produk" onclick="navigateTo('produk')">
+222:            <button class="sidebar-link" id="nav-kalkulator" onclick="navigateTo('kalkulator')">
+234:            <button class="sidebar-link" id="nav-penawaran" onclick="navigateTo('penawaran')">
+246:            <button class="sidebar-link" id="nav-coaching" onclick="navigateTo('coaching')">
+264:            <button class="sidebar-link" id="nav-ai-coach" onclick="navigateTo('ai-coach')">
+272:            <button class="sidebar-link" id="nav-arena-game" onclick="navigateTo('arena-game')">
+284:            <button class="sidebar-link" id="nav-leaderboard" onclick="navigateTo('leaderboard')">
+294:            <button class="sidebar-link" id="nav-rewards" onclick="navigateTo('rewards')">
+304:            <button class="sidebar-link" id="nav-profil" onclick="navigateTo('profil')">
+318:          <button class="sidebar-link" id="nav-trainer-dashboard" onclick="navigateTo('trainer-dashboard')">
+329:          <button class="sidebar-link" id="nav-trainer-training" onclick="navigateTo('trainer-training')">
+340:          <button class="sidebar-link" id="nav-trainer-sertifikat" onclick="navigateTo('trainer-sertifikat')">
+349:          <button class="sidebar-link" id="nav-trainer-evaluasi" onclick="navigateTo('trainer-evaluasi')">
+361:          <button class="sidebar-link" id="nav-trainer-ai-coach" onclick="navigateTo('ai-coach')">
+369:          <button class="sidebar-link" id="nav-trainer-rewards" onclick="navigateTo('admin-rewards')">
+383:          <button class="sidebar-link" id="nav-admin-dashboard" onclick="navigateTo('admin-dashboard')">
+394:          <button class="sidebar-link" id="nav-admin-user" onclick="navigateTo('admin-user')">
+405:          <button class="sidebar-link" id="nav-admin-master" onclick="navigateTo('admin-master')">
+415:          <button class="sidebar-link" id="nav-admin-log" onclick="navigateTo('admin-log')">
+424:          <button class="sidebar-link" id="nav-admin-ai-coach" onclick="navigateTo('ai-coach')">
+432:          <button class="sidebar-link" id="nav-admin-rewards" onclick="navigateTo('admin-rewards')">
+446:          <button class="sidebar-link" id="nav-pimpinan-dashboard" onclick="navigateTo('pimpinan-dashboard')">
+456:          <button class="sidebar-link" id="nav-pimpinan-laporan" onclick="navigateTo('pimpinan-laporan')">
+468:          <button class="sidebar-link" id="nav-pimpinan-monitoring" onclick="navigateTo('pimpinan-monitoring')">
+479:          <button class="sidebar-link" id="nav-pimpinan-peringkat" onclick="navigateTo('pimpinan-peringkat')">
+547:            <button class="profile-dropdown-item" onclick="navigateTo('profil'); closeProfileDropdown()">
+834:            <div class="quick-feature-item" onclick="navigateTo('kalkulator')">
+845:            <div class="quick-feature-item" onclick="navigateTo('penawaran')">
+855:            <div class="quick-feature-item" onclick="navigateTo('ai-coach')">
+862:            <div class="quick-feature-item" onclick="navigateTo('tryout-welcome')">
+913:          <button class="btn-back" onclick="navigateTo('belajar')">
+1618:              <button class="btn-primary" onclick="navigateTo('rewards')" style="font-size: 13px; padding: 10px 16px;">
+1718:          <button class="btn-buy-ticket" onclick="navigateTo('rewards')" id="btn-buy-ticket" style="display:none;">
+1896:              <button class="btn-secondary" onclick="closeGameResultModal(); navigateTo('arena-game')">🏠 Kembali ke
+1912:              <button class="btn-primary" onclick="closeGameQuotaModal(); navigateTo('rewards')">🛒 Beli Tiket (5
+1998:              <button class="btn-primary" onclick="navigateTo('tryout-welcome')"
+2177:              <button class="btn-secondary" onclick="navigateTo('tryout-welcome')">Kembali ke Latihan</button>
+2186:          <button class="btn-back" onclick="navigateTo('tryout-result')">
+2194:          <button class="btn-read" onclick="navigateTo('tryout-welcome')">Menu Tryout</button>
+2659:              <button class="btn-primary" onclick="navigateTo('admin-rewards')">Buka Manajemen Reward</button>

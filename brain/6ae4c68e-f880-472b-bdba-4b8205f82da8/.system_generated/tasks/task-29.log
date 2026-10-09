@@ -1,0 +1,11 @@
+
+> frontend@0.0.0 dev
+> vite
+
+
+  VITE v8.1.0  ready in 2275 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+11.09.38 [vite] (client) hmr update /src/App.jsx, /src/index.css
+11.09.38 [vite] (client) hmr update /src/App.jsx, /src/index.css

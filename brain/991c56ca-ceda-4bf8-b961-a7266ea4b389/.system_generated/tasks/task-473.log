@@ -1,0 +1,2 @@
+1253:  const existingShopItems = JSON.parse(localStorage.getItem("daftar_katalog_reward")) || [];
+1261:    localStorage.setItem("daftar_katalog_reward", JSON.stringify([...SHOP_ITEMS_DEFAULT, ...customItems]));

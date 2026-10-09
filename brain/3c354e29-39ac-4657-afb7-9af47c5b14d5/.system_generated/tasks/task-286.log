@@ -1,0 +1,2 @@
+887:            <button class="player-tab-btn" onclick="switchPlayerTab('tab-quiz')">Kuis Kompetensi</button>
+928:          <div class="player-tab-content" id="tab-quiz">
