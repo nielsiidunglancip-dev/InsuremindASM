@@ -1,0 +1,4 @@
+node_modules/
+brain/
+.system_generated/
+*.log

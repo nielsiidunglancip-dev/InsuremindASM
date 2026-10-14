@@ -877,6 +877,19 @@
             Evaluasi Nilai Ujian Agen
           </button>
 
+          <button class="sidebar-link" id="nav-trainer-qa" onclick="navigateTo('trainer-qa')" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <line x1="9" y1="10" x2="15" y2="10"></line>
+                <line x1="12" y1="7" x2="12" y2="13"></line>
+              </svg>
+              <span>Tanya Jawab Modul</span>
+            </div>
+            <span id="trainer-qa-badge" class="nav-badge" style="display: none; background: #ef4444; color: #ffffff; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-left: 8px;">0</span>
+          </button>
+
           <button class="sidebar-link" id="nav-trainer-ai-coach" onclick="navigateTo('ai-coach')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -3776,6 +3789,75 @@ Buat skrip follow-up yang personal untuk setiap prospek"></textarea>
         </div>
       </section>
 
+      <!-- ==================== PAGE: MODERASI & TANYA JAWAB MODUL (TRAINER) ==================== -->
+      <section id="page-trainer-qa" class="page-section">
+        <div class="page-heading flex-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+          <div>
+            <h2>💬 Moderasi & Tanya Jawab Modul (Trainer Q&A Hub)</h2>
+            <p>Kelola pertanyaan masuk dari agen seputar materi Belajar Mandiri. Berikan tanggapan resmi dan sematkan pertanyaan penting sebagai FAQ publik.</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn-secondary" onclick="window.addSimulatedQuestionModal()" style="font-size:13px; padding:9px 15px; display:inline-flex; align-items:center; gap:6px; cursor:pointer;">
+              <span>➕ Simulasi Pertanyaan Agen</span>
+            </button>
+            <button class="btn-primary" onclick="window.renderTrainerQAPage()" style="font-size:13px; padding:9px 15px; display:inline-flex; align-items:center; gap:6px; cursor:pointer;">
+              <span>🔄 Segarkan Data</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="kpi-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 24px; gap: 16px;">
+          <div class="kpi-card" style="border-left: 4px solid #0284c7; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow-sm);">
+            <div class="kpi-label" style="font-size:12px; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Total Pertanyaan Masuk</div>
+            <div class="kpi-value" id="trainer-qa-stat-total" style="font-size:26px; font-weight:800; color:var(--primary-navy); margin:6px 0;">0</div>
+            <div class="kpi-subtext" style="color:var(--text-muted); font-size:12px;">Akumulasi seluruh modul</div>
+          </div>
+          <div class="kpi-card" style="border-left: 4px solid #d97706; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow-sm);">
+            <div class="kpi-label" style="font-size:12px; color:#d97706; font-weight:700; text-transform:uppercase;">Menunggu Jawaban (Pending)</div>
+            <div class="kpi-value" id="trainer-qa-stat-pending" style="font-size:26px; font-weight:800; color:#d97706; margin:6px 0;">0</div>
+            <div class="kpi-subtext" style="color:#d97706; font-size:12px; font-weight:600;">⚠️ Butuh respon Trainer segera</div>
+          </div>
+          <div class="kpi-card" style="border-left: 4px solid #16a34a; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow-sm);">
+            <div class="kpi-label" style="font-size:12px; color:#16a34a; font-weight:700; text-transform:uppercase;">Sudah Dijawab Resmi</div>
+            <div class="kpi-value" id="trainer-qa-stat-answered" style="font-size:26px; font-weight:800; color:#16a34a; margin:6px 0;">0</div>
+            <div class="kpi-subtext" style="color:#16a34a; font-size:12px;">Diterbitkan ke publik agen</div>
+          </div>
+          <div class="kpi-card" style="border-left: 4px solid #854d0e; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow-sm);">
+            <div class="kpi-label" style="font-size:12px; color:#854d0e; font-weight:700; text-transform:uppercase;">FAQ Penting Disematkan</div>
+            <div class="kpi-value" id="trainer-qa-stat-pinned" style="font-size:26px; font-weight:800; color:#854d0e; margin:6px 0;">0</div>
+            <div class="kpi-subtext" style="color:#854d0e; font-size:12px;">📌 Tampil teratas di modul</div>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="content-card" style="padding:16px 20px; margin-bottom:20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; background:#ffffff; border-radius:12px; border:1px solid #e2e8f0;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; flex:1; min-width:280px;">
+            <div style="position:relative; flex:1; min-width:220px;">
+              <input type="text" id="trainer-qa-search-input" placeholder="🔍 Cari pertanyaan, nama/kode agen, atau topik..." oninput="window.handleTrainerQASearch(this.value)" style="width:100%; padding:9px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:13px; font-family:inherit;">
+            </div>
+            <div>
+              <select id="trainer-qa-filter-module" onchange="window.handleTrainerQAModuleFilter(this.value)" style="padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:13px; font-family:inherit; background:#ffffff; color:#334155; font-weight:600;">
+                <option value="ALL">Semua Modul Belajar</option>
+              </select>
+            </div>
+            <div>
+              <select id="trainer-qa-filter-status" onchange="window.handleTrainerQAStatusFilter(this.value)" style="padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:13px; font-family:inherit; background:#ffffff; color:#334155; font-weight:600;">
+                <option value="ALL">Semua Status</option>
+                <option value="pending">🟡 Menunggu Jawaban</option>
+                <option value="answered">🟢 Sudah Dijawab</option>
+                <option value="pinned">📌 Disematkan (FAQ)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container Daftar Pertanyaan per Modul -->
+        <div id="trainer-qa-list-container">
+          <!-- Rendered dynamically by window.renderTrainerQAPage -->
+        </div>
+      </section>
+
       <!-- ==================== DASHBOARD ADMIN (PENGELOLA SISTEM) ==================== -->
       <section id="page-admin-dashboard" class="page-section">
         <div class="page-heading">
@@ -5470,7 +5552,7 @@ Buat skrip follow-up yang personal untuk setiap prospek"></textarea>
   <!-- Memuat Script Data dan Logika Utama -->
   <script src="materi_pdf_text.js"></script>
   <script src="data.js"></script>
-  <script src="app.js?v=24"></script>
+  <script src="app.js?v=27"></script>
   <script src="ai-coach.js?v=1"></script>
 </body>
 

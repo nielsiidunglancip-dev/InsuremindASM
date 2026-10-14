@@ -482,6 +482,7 @@ window.handleLogin = function(e) {
             initCharts();
         }
 
+        if (typeof window.updateTrainerQABadge === 'function') window.updateTrainerQABadge();
         if (typeof renderHubPosts === 'function') {
             renderHubPosts();
         } else if (typeof initHub === 'function') {
@@ -583,6 +584,8 @@ window.navigateTo = function(pageId) {
         if (typeof window.renderAgenTrainings === 'function') window.renderAgenTrainings();
     } else if (pageId === 'trainer-training') {
         if (typeof window.renderTrainerTrainings === 'function') window.renderTrainerTrainings();
+    } else if (pageId === 'trainer-qa') {
+        if (typeof window.renderTrainerQAPage === 'function') window.renderTrainerQAPage();
     } else if (pageId === 'coaching') {
         if (typeof window.renderCoachingCategories === 'function') window.renderCoachingCategories();
     } else if (pageId === 'produk') {
@@ -2950,6 +2953,7 @@ window.renderLearningUI = function(container, moduleData, progress) {
             <button class="player-tab-btn">Video Pembelajaran</button>
             <button class="player-tab-btn">Unduh Dokumen PDF</button>
             <button class="player-tab-btn">Ringkasan</button>
+            <button class="player-tab-btn" id="btn-player-tab-qa">💬 Tanya Trainer & Diskusi Modul</button>
         </div>
         
         <div class="player-tab-content active" id="tab-article" style="display: block; padding: 20px; min-height: 250px; line-height: 1.6; font-size:13.5px; color:#334155;">
@@ -2973,11 +2977,44 @@ window.renderLearningUI = function(container, moduleData, progress) {
                     Buka Materi di Google Drive
                 </a>
             </div>
+            
+            <!-- Quick Link Callout to Module Q&A below PDF Viewer -->
+            <div style="margin-top: 20px; padding: 16px 20px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 5px rgba(2, 132, 199, 0.05);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 26px;">💬</span>
+                    <div>
+                        <strong style="color: #0369a1; font-size: 13.5px; display: block;">Ada klausul atau istilah teknis yang belum dipahami di dokumen PDF ini?</strong>
+                        <span style="color: #0284c7; font-size: 12px;">Tanyakan langsung kepada Trainer Hendra atau pelajari pembahasan rekan agen lain di modul ini.</span>
+                    </div>
+                </div>
+                <button type="button" class="btn-primary" onclick="window.switchPlayerTabByRef('tab-qa')" style="padding: 8px 16px; font-size: 12.5px; width: auto; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>💬 Buka Tanya Trainer & Diskusi ➔</span>
+                </button>
+            </div>
         </div>
         <div class="player-tab-content" id="tab-summary" style="display: none; padding: 20px; line-height: 1.6; font-size:13.5px; color:#334155;">
             <div class="summary-box">
                 <h3 style="font-size:15px; font-weight:700; margin-bottom:10px; color:var(--primary-navy);">Ringkasan Eksekutif</h3>
                 <p id="player-summary-text">${summaryText}</p>
+            </div>
+            <!-- Quick Link Callout to Module Q&A below Summary -->
+            <div style="margin-top: 20px; padding: 16px 20px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 5px rgba(2, 132, 199, 0.05);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 26px;">💬</span>
+                    <div>
+                        <strong style="color: #0369a1; font-size: 13.5px; display: block;">Punya pertanyaan mendalam seputar ringkasan materi ini?</strong>
+                        <span style="color: #0284c7; font-size: 12px;">Buka forum diskusi modul untuk konsultasi langsung dan pelajari Shared Knowledge Base.</span>
+                    </div>
+                </div>
+                <button type="button" class="btn-primary" onclick="window.switchPlayerTabByRef('tab-qa')" style="padding: 8px 16px; font-size: 12.5px; width: auto; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>💬 Buka Tanya Trainer & Diskusi ➔</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="player-tab-content" id="tab-qa" style="display: none; padding: 20px;">
+            <div id="module-qa-container-${moduleData.id}">
+                <!-- Rendered dynamically by window.renderModuleQA -->
             </div>
         </div>
         
@@ -2993,6 +3030,9 @@ window.renderLearningUI = function(container, moduleData, progress) {
     `;
     
     window.setupMaterialTabs();
+    if (typeof window.renderModuleQA === 'function') {
+        window.renderModuleQA(moduleData.id);
+    }
 };
 
 window.startPostTestPhase = function(moduleId) {
@@ -7382,7 +7422,8 @@ const originalNavigateTo = window.navigateTo;
 if (originalNavigateTo) {
     window.navigateTo = function(pageId) {
         originalNavigateTo(pageId);
-        if (pageId === 'trainer-training' || pageId === 'trainer-dashboard' || pageId === 'admin-dashboard') {
+        if (pageId === 'trainer-training' || pageId === 'trainer-dashboard' || pageId === 'admin-dashboard' || pageId === 'trainer-qa') {
+            if (typeof window.renderTrainerQAPage === 'function') window.renderTrainerQAPage();
             setTimeout(renderLspRegistrations, 100);
         }
         if (pageId === 'sertifikasi') {
@@ -9792,6 +9833,7 @@ window.toggleNotificationBookmark = function(notifId) {
     
     // Sync ke To-Do List Widget
     window.renderAgentTodoListWidget();
+    if (typeof window.initModuleCommunityQA === 'function') window.initModuleCommunityQA();
     window.renderSmartNotifications(window.currentNotifFilter || "all");
     window.updateSmartNotificationBadge();
     
@@ -10570,3 +10612,983 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+// ==================== [FITUR BARU] INTERACTIVE COMMUNITY Q&A PER MODUL ====================
+// Forum Tanya Jawab Modul dengan Trainer (Peer-to-Peer Learning & Shared Knowledge Base)
+
+window.INITIAL_MODULE_QA = [
+  {
+    questionId: "qa-001",
+    moduleId: "dasar-asuransi",
+    moduleTitle: "Dasar-Dasar Asuransi Umum",
+    askedBy: {
+      name: "Rian Aditya",
+      code: "AGN-001",
+      role: "Agen",
+      avatar: "RA"
+    },
+    timestamp: "14 Okt 2026, 09:30 WIB",
+    questionText: "Bagaimana penerapan prinsip Utmost Good Faith jika nasabah tidak sengaja lupa mencantumkan riwayat klaim kecil 4 tahun lalu saat pengisian formulir SPPA?",
+    status: "answered",
+    isPinned: true,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "14 Okt 2026, 11:15 WIB",
+      answerText: "Pertanyaan sangat bagus! Dalam prinsip Utmost Good Faith, fakta material (material fact) adalah informasi penting yang dapat mempengaruhi keputusan Underwriter dalam menerima/menolak risiko atau menentukan suku premi.\n\nJika fakta tersebut tergolong material, kelalaian tidak sengaja (innocent misrepresentation) tetap berpotensi membatalkan klaim atau memicu penyesuaian ganti rugi secara proporsional. Solusi terbaik di lapangan: Selalu anjurkan nasabah membuat Surat Pernyataan Tambahan/Adendum keterbukaan informasi jika ada keraguan riwayat masa lalu."
+    }
+  },
+  {
+    questionId: "qa-002",
+    moduleId: "asuransi-properti",
+    moduleTitle: "Asuransi Properti & Kebakaran (PSAKBI / PAR)",
+    askedBy: {
+      name: "Siti Nurhaliza",
+      code: "AGN-042",
+      role: "Agen",
+      avatar: "SN"
+    },
+    timestamp: "13 Okt 2026, 14:20 WIB",
+    questionText: "Apakah klausul pengecualian kerugian akibat 'wear and tear' (keausan alami) pada polis Property All Risks (PAR) mencakup kerusakan instalasi pipa air yang tiba-tiba pecah karena usia pipa?",
+    status: "answered",
+    isPinned: true,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "13 Okt 2026, 16:45 WIB",
+      answerText: "Penting dipahami bedanya kerusakan langsung vs resultant damage! Pipa yang pecah akibat aus (wear and tear) memang dikecualikan (biaya penggantian pipa itu sendiri tidak dijamin). Namun, semburan air yang membanjiri lantai dan merusak karpet, wallpaper, serta barang elektronik di sekitarnya dijamin sebagai 'resulting damage' (kerusakan akibat), selama tidak ada klausul pengecualian khusus lainnya pada polis."
+    }
+  },
+  {
+    questionId: "qa-003",
+    moduleId: "engineering-insurance",
+    moduleTitle: "Asuransi Rekayasa & Surety Bond (Engineering & Bonding)",
+    askedBy: {
+      name: "Budi Santoso",
+      code: "AGN-018",
+      role: "Agen",
+      avatar: "BS"
+    },
+    timestamp: "14 Okt 2026, 13:10 WIB",
+    questionText: "Untuk produk Jaminan Pelaksanaan (Performance Bond), apakah Principal wajib menyerahkan agunan (collateral) fisik jika nilai proyek konstruksi di atas 5 Miliar Rupiah?",
+    status: "answered",
+    isPinned: false,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "14 Okt 2026, 15:00 WIB",
+      answerText: "Secara standar underwriting ASM: Untuk proyek konstruksi dengan nilai bond > Rp 2,5 Miliar, tim Underwriting Surety umumnya mensyaratkan agunan berupa sertifikat tanah/deposito (Collateral) minimal 20%-30% dari nilai jaminan, ditambah Personal/Corporate Guarantee dari pemilik Principal yang telah diaudit laporan keuangannya 2 tahun terakhir dengan opini wajar tanpa pengecualian."
+    }
+  },
+  {
+    questionId: "qa-004",
+    moduleId: "kendaraan-bermotor",
+    moduleTitle: "Asuransi Kendaraan Bermotor (PSAKOB)",
+    askedBy: {
+      name: "Ahmad Fauzi",
+      code: "AGN-027",
+      role: "Agen",
+      avatar: "AF"
+    },
+    timestamp: "14 Okt 2026, 16:05 WIB",
+    questionText: "Jika nasabah menambah modifikasi sound system audio dan velg racing tanpa lapor ke perusahaan asuransi, lalu mobil hilang dicuri di parkiran, apakah klaim TLO tetap cair?",
+    status: "pending",
+    isPinned: false,
+    answer: null
+  },
+  {
+    questionId: "qa-005",
+    moduleId: "dasar-asuransi",
+    moduleTitle: "Dasar-Dasar Asuransi Umum",
+    askedBy: {
+      name: "Dewi Lestari",
+      code: "AGN-035",
+      role: "Agen",
+      avatar: "DL"
+    },
+    timestamp: "14 Okt 2026, 17:40 WIB",
+    questionText: "Bagaimana cara membedakan Subrogasi dengan Kontribusi saat terjadi tabrakan beruntun yang melibatkan 3 perusahaan asuransi berbeda?",
+    status: "pending",
+    isPinned: false,
+    answer: null
+  },
+  {
+    questionId: "qa-006",
+    moduleId: "asuransi-properti",
+    moduleTitle: "Asuransi Properti & Kebakaran (PSAKBI / PAR)",
+    askedBy: {
+      name: "Rizky Pratama",
+      code: "AGN-009",
+      role: "Agen",
+      avatar: "RP"
+    },
+    timestamp: "12 Okt 2026, 10:15 WIB",
+    questionText: "Pada asuransi kebakaran PSAKBI, apakah ledakan tabung gas elpiji 3kg di dapur rumah tinggal otomatis dijamin di bawah jaminan Explosion (E) tanpa klausul tambahan?",
+    status: "answered",
+    isPinned: false,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "12 Okt 2026, 11:30 WIB",
+      answerText: "Ya, betul sekali. Ledakan tabung gas rumah tangga atau instalasi gas dapur masuk dalam jaminan dasar Explosion (E) standar PSAKBI tanpa premi tambahan, selama tidak terbukti adanya unsur kesengajaan dari tertanggung dan peralatan dipasang sesuai SNI."
+    }
+  },
+  {
+    questionId: "qa-007",
+    moduleId: "kendaraan-bermotor",
+    moduleTitle: "Asuransi Kendaraan Bermotor (PSAKOB)",
+    askedBy: {
+      name: "Maya Anggraini",
+      code: "AGN-014",
+      role: "Agen",
+      avatar: "MA"
+    },
+    timestamp: "11 Okt 2026, 15:30 WIB",
+    questionText: "Apakah klausul Tanggung Jawab Hukum Pihak Ketiga (TPL) pada PSAKOB menjamin kerusakan pagar rumah tetangga yang tidak sengaja tertabrak mobil tertanggung saat mundur?",
+    status: "answered",
+    isPinned: false,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "11 Okt 2026, 17:00 WIB",
+      answerText: "Ya, kerusakan properti fisik pihak ketiga (Third Party Property Damage) seperti pagar rumah tetangga atau tiang listrik dijamin oleh perluasan klausul TPL PSAKOB hingga batas limit pertanggungan yang dipilih dalam ikhtisar polis."
+    }
+  },
+  {
+    questionId: "qa-008",
+    moduleId: "marine-cargo",
+    moduleTitle: "Asuransi Pengangkutan Barang (Marine Cargo)",
+    askedBy: {
+      name: "Fajar Ramadhan",
+      code: "AGN-051",
+      role: "Agen",
+      avatar: "FR"
+    },
+    timestamp: "10 Okt 2026, 11:00 WIB",
+    questionText: "Apa perbedaan paling mendasar antara klausul ICC 'A' dengan ICC 'C' saat mengasuransikan pengiriman kontainer spare part pabrik via kapal laut?",
+    status: "answered",
+    isPinned: true,
+    answer: {
+      answeredBy: "Hendra Wijaya (Trainer)",
+      trainerCode: "TRN-099",
+      answerTimestamp: "10 Okt 2026, 13:40 WIB",
+      answerText: "ICC 'A' bersifat All Risks (semua risiko kerusakan fisik dijamin kecuali yang dikecualikan eksplisit, mencakup rembesan air laut, goresan benturan palka, atau pencurian sebagian). Sebaliknya, ICC 'C' adalah Named Perils sempit (hanya menjamin kecelakaan fatal kapal seperti kandas, tenggelam, terbakar, atau tabrakan)."
+    }
+  }
+];
+
+window.moduleCommunityQA = [];
+
+// FUNGSI UTAMA: LOAD DATA DARI LOCALSTORAGE SECARA AMAN & SINKRON
+window.loadModuleQA = function() {
+  try {
+    const saved = localStorage.getItem("pa_module_community_qa");
+    if (saved && saved.trim() !== "" && saved !== "[]") {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        window.moduleCommunityQA = parsed;
+        // Pastikan initial mock questions tetap tersedia jika belum ada di database
+        if (window.INITIAL_MODULE_QA && Array.isArray(window.INITIAL_MODULE_QA)) {
+          let hasNew = false;
+          window.INITIAL_MODULE_QA.forEach(initQ => {
+            if (!window.moduleCommunityQA.some(q => q.questionId === initQ.questionId)) {
+              window.moduleCommunityQA.push(initQ);
+              hasNew = true;
+            }
+          });
+          if (hasNew) {
+            localStorage.setItem("pa_module_community_qa", JSON.stringify(window.moduleCommunityQA));
+          }
+        }
+        return window.moduleCommunityQA;
+      }
+    }
+    
+    // Inisialisasi awal
+    window.moduleCommunityQA = (window.INITIAL_MODULE_QA && Array.isArray(window.INITIAL_MODULE_QA)) 
+      ? JSON.parse(JSON.stringify(window.INITIAL_MODULE_QA)) 
+      : [];
+    localStorage.setItem("pa_module_community_qa", JSON.stringify(window.moduleCommunityQA));
+  } catch(e) {
+    console.warn("Gagal membaca pa_module_community_qa:", e);
+    if (!window.moduleCommunityQA || window.moduleCommunityQA.length === 0) {
+      window.moduleCommunityQA = JSON.parse(JSON.stringify(window.INITIAL_MODULE_QA || []));
+    }
+  }
+  return window.moduleCommunityQA;
+};
+
+window.initModuleCommunityQA = function() {
+  window.loadModuleQA();
+  window.updateTrainerQABadge();
+};
+
+window.saveModuleQA = function() {
+  try {
+    localStorage.setItem("pa_module_community_qa", JSON.stringify(window.moduleCommunityQA || []));
+  } catch(e) {
+    console.error("Gagal menyimpan pa_module_community_qa:", e);
+  }
+  window.updateTrainerQABadge();
+};
+
+window.updateTrainerQABadge = function() {
+  // Selalu load data terbaru
+  try {
+    const saved = localStorage.getItem("pa_module_community_qa");
+    if (saved && saved.trim() !== "" && saved !== "[]") {
+      window.moduleCommunityQA = JSON.parse(saved);
+    }
+  } catch(e) {}
+
+  const list = window.moduleCommunityQA || [];
+  const pendingCount = list.filter(q => q.status === "pending").length;
+  const answeredCount = list.filter(q => q.status === "answered").length;
+  const pinnedCount = list.filter(q => q.isPinned).length;
+
+  const badgeEl = document.getElementById("trainer-qa-badge");
+  if (badgeEl) {
+    if (pendingCount > 0) {
+      badgeEl.innerText = pendingCount;
+      badgeEl.style.display = "inline-block";
+    } else {
+      badgeEl.style.display = "none";
+    }
+  }
+  const statPending = document.getElementById("trainer-qa-stat-pending");
+  if (statPending) statPending.innerText = pendingCount;
+  const statTotal = document.getElementById("trainer-qa-stat-total");
+  if (statTotal) statTotal.innerText = list.length;
+  const statAnswered = document.getElementById("trainer-qa-stat-answered");
+  if (statAnswered) statAnswered.innerText = answeredCount;
+  const statPinned = document.getElementById("trainer-qa-stat-pinned");
+  if (statPinned) statPinned.innerText = pinnedCount;
+};
+
+window.getActiveUser = function() {
+  try {
+    const userStr = sessionStorage.getItem("pa_active_user") || localStorage.getItem("pa_active_user");
+    if (userStr) return JSON.parse(userStr);
+  } catch(e) {}
+  return { name: "Rian Aditya", role: "Agen", code: "AGN-001", avatar: "RA", branch: "Jakarta Pusat" };
+};
+
+window.switchPlayerTabByRef = function(tabContentId) {
+  const contents = document.querySelectorAll(".player-tab-content");
+  const tabs = document.querySelectorAll(".player-tab-btn");
+  let targetIndex = -1;
+  contents.forEach((c, idx) => {
+    if (c.id === tabContentId) targetIndex = idx;
+  });
+  if (targetIndex >= 0 && tabs[targetIndex]) {
+    tabs[targetIndex].click();
+    const playerContainer = document.querySelector(".course-player-container");
+    if (playerContainer) {
+      playerContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+};
+
+window.submitModuleQuestion = function(moduleId) {
+  window.loadModuleQA();
+  const inputEl = document.getElementById("qa-new-question-text-" + moduleId);
+  if (!inputEl) return;
+  const text = inputEl.value.trim();
+  if (!text || text.length < 3) {
+    if (window.showToast) window.showToast("Tulis pertanyaan Anda dengan jelas.", "warning");
+    else alert("Tulis pertanyaan Anda dengan jelas.");
+    return;
+  }
+
+  const user = window.getActiveUser();
+  
+  // Ambil nama modul secara pintar
+  let modTitle = "";
+  if (window.modules && Array.isArray(window.modules)) {
+    const modObj = window.modules.find(m => m.id === moduleId);
+    if (modObj && modObj.title) modTitle = modObj.title;
+  }
+  if (!modTitle && typeof STUDY_MATERIALS_DEFAULT !== 'undefined') {
+    const defaultMod = STUDY_MATERIALS_DEFAULT.find(m => m.id === moduleId);
+    if (defaultMod && defaultMod.title) modTitle = defaultMod.title;
+  }
+  if (!modTitle) {
+    const titleEl = document.getElementById("player-title");
+    if (titleEl && titleEl.innerText) modTitle = titleEl.innerText.trim();
+  }
+  if (!modTitle) {
+    modTitle = moduleId.replace(/-/g, ' ').replace(/\w/g, l => l.toUpperCase());
+  }
+
+  const newQuestion = {
+    questionId: "qa-" + Date.now(),
+    moduleId: moduleId,
+    moduleTitle: modTitle,
+    askedBy: {
+      name: user.name || "Rian Aditya",
+      code: user.code || "AGN-001",
+      role: user.role || "Agen",
+      avatar: user.avatar || (user.name ? user.name.split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase() : "RA")
+    },
+    timestamp: new Date().toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" }) + " WIB",
+    questionText: text,
+    status: "pending",
+    isPinned: false,
+    answer: null
+  };
+
+  window.moduleCommunityQA.unshift(newQuestion);
+  window.saveModuleQA();
+  inputEl.value = "";
+
+  if (window.showToast) {
+    window.showToast("Pertanyaan berhasil dikirim ke Trainer Hendra! Seluruh agen kini dapat melihat pertanyaan Anda di forum ini.", "success");
+  } else {
+    alert("Pertanyaan berhasil dikirim ke Trainer Hendra!");
+  }
+
+  window.renderModuleQA(moduleId);
+  window.updateTrainerQABadge();
+};
+
+window.filterModuleQA = function(moduleId, searchTerm) {
+  window.renderModuleQA(moduleId, searchTerm);
+};
+
+window.renderModuleQA = function(moduleId, searchTerm = "") {
+  window.loadModuleQA();
+  const container = document.getElementById("module-qa-container-" + moduleId);
+  if (!container) return;
+
+  const allModuleQA = (window.moduleCommunityQA || []).filter(q => q.moduleId === moduleId || (q.moduleId && q.moduleId.toLowerCase() === moduleId.toLowerCase()));
+  const activeUser = window.getActiveUser();
+
+  const term = (searchTerm || "").toLowerCase().trim();
+  const filteredQA = allModuleQA.filter(q => {
+    if (!term) return true;
+    const qText = (q.questionText || "").toLowerCase();
+    const asker = (q.askedBy && q.askedBy.name ? q.askedBy.name : "").toLowerCase();
+    const ansText = (q.answer && q.answer.answerText ? q.answer.answerText : "").toLowerCase();
+    return qText.includes(term) || asker.includes(term) || ansText.includes(term);
+  });
+
+  // Urutan: isPinned = true selalu di atas, lalu newest first
+  filteredQA.sort((a, b) => {
+    if (a.isPinned && !b.isPinned) return -1;
+    if (!a.isPinned && b.isPinned) return 1;
+    return 0;
+  });
+
+  const totalCount = allModuleQA.length;
+  const answeredCount = allModuleQA.filter(q => q.status === "answered").length;
+  const pendingCount = allModuleQA.filter(q => q.status === "pending").length;
+  const pinnedCount = allModuleQA.filter(q => q.isPinned).length;
+
+  let cardsHtml = "";
+  if (filteredQA.length === 0) {
+    cardsHtml = `
+      <div style="text-align: center; padding: 40px 20px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 12px; color: var(--text-muted); margin-top: 15px;">
+        <span style="font-size: 38px; display: block; margin-bottom: 10px;">💬</span>
+        <h4 style="margin: 0 0 6px 0; color: var(--text-dark); font-size: 15px; font-weight: 700;">
+          ${term ? "Tidak ada diskusi yang cocok dengan pencarian" : "Belum ada pertanyaan di modul ini"}
+        </h4>
+        <p style="margin: 0; font-size: 13px;">
+          ${term ? "Kata kunci \"" + searchTerm + "\" tidak ditemukan. Coba kata kunci lain atau ajukan pertanyaan baru di atas." : "Jadilah agen pertama yang bertanya kepada Trainer tentang materi modul ini!"}
+        </p>
+      </div>
+    `;
+  } else {
+    cardsHtml = filteredQA.map(q => {
+      const isAnswered = q.status === "answered";
+      const askerAvatar = (q.askedBy && q.askedBy.avatar) ? q.askedBy.avatar : "RA";
+      const askerName = (q.askedBy && q.askedBy.name) ? q.askedBy.name : "Agen";
+      const askerCode = (q.askedBy && q.askedBy.code) ? q.askedBy.code : "AGN";
+      const askerRole = (q.askedBy && q.askedBy.role) ? q.askedBy.role : "Agen";
+
+      let answerBlock = "";
+      if (isAnswered && q.answer) {
+        answerBlock = `
+          <div class="qa-answer-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="qa-avatar-circle trainer" style="width: 28px; height: 28px; font-size: 11px;">HW</div>
+                <strong style="color: #166534; font-size: 13px;">🎖️ Jawaban Resmi Trainer: ${q.answer.answeredBy}</strong>
+              </div>
+              <span style="color: #64748b; font-size: 11.5px; display: flex; align-items: center; gap: 4px;">
+                🕒 ${q.answer.answerTimestamp}
+              </span>
+            </div>
+            <div style="color: #1e293b; font-size: 13.5px; line-height: 1.6; white-space: pre-line;">${q.answer.answerText}</div>
+            <div style="margin-top: 10px; font-size: 11.5px; color: #15803d; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+              <span>💡</span> Shared Knowledge Base — Terbuka & bermanfaat bagi seluruh agen ASM Academy.
+            </div>
+          </div>
+        `;
+      } else {
+        answerBlock = `
+          <div class="qa-pending-box">
+            <span style="font-size: 16px;">⏳</span>
+            <div>
+              <strong>Menunggu Jawaban Trainer Hendra:</strong> Pertanyaan telah masuk ke antrean moderasi. Begitu dijawab, penjelasan teknis resmi akan otomatis tampil di sini.
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="qa-card ${q.isPinned ? 'is-pinned' : ''}">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="qa-avatar-circle">${askerAvatar}</div>
+              <div>
+                <div style="font-weight: 700; font-size: 13.5px; color: var(--primary-navy);">
+                  ${askerName}
+                  <span style="font-weight: 500; font-size: 12px; color: var(--text-muted); margin-left: 4px;">(${askerCode} • ${askerRole})</span>
+                </div>
+                <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">
+                  📅 Diposting: ${q.timestamp}
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              ${q.isPinned ? `<span class="qa-badge-pinned">📌 FAQ PENTING</span>` : ""}
+              ${isAnswered 
+                ? `<span class="qa-badge-answered">🟢 Terjawab oleh Trainer</span>` 
+                : `<span class="qa-badge-pending">🟡 Menunggu Jawaban Trainer</span>`}
+            </div>
+          </div>
+
+          <div style="font-size: 14px; color: #1e293b; font-weight: 600; line-height: 1.55; margin: 12px 0 6px 0; padding: 6px 0;">
+            ${q.questionText}
+          </div>
+
+          ${answerBlock}
+        </div>
+      `;
+    }).join("");
+  }
+
+  container.innerHTML = `
+    <div class="qa-section-wrapper">
+      <!-- Banner Pengantar -->
+      <div class="qa-banner-card">
+        <div>
+          <h3 style="margin: 0 0 4px 0; color: #0369a1; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+            <span>💬</span> Forum Tanya Jawab & Diskusi Modul
+          </h3>
+          <p style="margin: 0; color: #0284c7; font-size: 13px;">
+            Tanyakan langsung klausul atau istilah teknis kepada Trainer. Seluruh diskusi bersifat publik untuk mendukung Peer-to-Peer Learning & Shared Knowledge Base.
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="qa-stat-pill">📚 ${totalCount} Diskusi</span>
+          <span class="qa-stat-pill" style="color: #15803d; border-color: #bbf7d0;">🟢 ${answeredCount} Terjawab</span>
+          <span class="qa-stat-pill" style="color: #b45309; border-color: #fde68a;">🟡 ${pendingCount} Menunggu</span>
+          <span class="qa-stat-pill" style="color: #854d0e; border-color: #fef08a;">📌 ${pinnedCount} FAQ</span>
+        </div>
+      </div>
+
+      <!-- Form Pengajuan Pertanyaan -->
+      <div class="qa-form-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <h4 style="margin: 0; font-size: 14.5px; font-weight: 700; color: var(--primary-navy); display: flex; align-items: center; gap: 6px;">
+            <span>✍️</span> Ajukan Pertanyaan Baru ke Trainer
+          </h4>
+          <div style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+            <div class="qa-avatar-circle" style="width: 22px; height: 22px; font-size: 9px;">${activeUser.avatar || "RA"}</div>
+            <span>Bertanya sebagai: <strong style="color: var(--primary-navy);">${activeUser.name} (${activeUser.code || 'AGN-001'})</strong></span>
+          </div>
+        </div>
+
+        <textarea 
+          id="qa-new-question-text-${moduleId}" 
+          class="qa-textarea" 
+          rows="3" 
+          placeholder="Punya pertanyaan seputar modul ini? Tulis pertanyaan Anda di sini... (Contoh: Bagaimana implementasi klausul 72 jam gempa bumi atau syarat underwriting surety bond?)"
+        ></textarea>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 10px;">
+          <div style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+            <span>ℹ️</span> Pertanyaan akan tersimpan dan dapat dibaca oleh seluruh agen lain di cabang maupun nasional.
+          </div>
+          <button 
+            type="button" 
+            class="btn-primary" 
+            onclick="window.submitModuleQuestion('${moduleId}')" 
+            style="padding: 10px 20px; font-size: 13px; font-weight: 700; border-radius: 8px; width: auto; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; background: linear-gradient(135deg, var(--primary-blue) 0%, #1e40af 100%);"
+          >
+            <span>Kirim Pertanyaan ke Trainer</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Header Daftar Diskusi & Kolom Search / Filter -->
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 800; color: var(--primary-navy); display: flex; align-items: center; gap: 8px;">
+          <span>📖</span> Daftar Diskusi Publik (Shared Knowledge Base)
+          <span style="font-size: 12px; font-weight: 600; color: var(--text-muted);">(${filteredQA.length} topik)</span>
+        </h4>
+
+        <!-- Search Bar Mini -->
+        <div style="position: relative; width: 100%; max-width: 320px;">
+          <input 
+            type="text" 
+            id="qa-search-${moduleId}" 
+            value="${searchTerm}" 
+            placeholder="🔍 Cari pertanyaan di modul ini..." 
+            oninput="window.filterModuleQA('${moduleId}', this.value)" 
+            style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 12.5px; font-family: inherit; box-sizing: border-box;"
+          >
+          ${searchTerm ? `<button onclick="window.filterModuleQA('${moduleId}', '')" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer; color: #94a3b8; font-size: 14px;">✕</button>` : ""}
+        </div>
+      </div>
+
+      <!-- Feed Diskusi -->
+      <div id="qa-feed-${moduleId}">
+        ${cardsHtml}
+      </div>
+    </div>
+  `;
+};
+
+// ==================== PANEL TRAINER: MODERASI & JAWABAN ====================
+
+window.trainerQASearchQuery = "";
+window.trainerQAModuleFilter = "ALL";
+window.trainerQAStatusFilter = "ALL";
+window.trainerQAEditingId = null;
+
+window.handleTrainerQASearch = function(val) {
+  window.trainerQASearchQuery = val || "";
+  window.renderTrainerQAPage();
+};
+
+window.handleTrainerQAModuleFilter = function(val) {
+  window.trainerQAModuleFilter = val || "ALL";
+  window.renderTrainerQAPage();
+};
+
+window.handleTrainerQAStatusFilter = function(val) {
+  window.trainerQAStatusFilter = val || "ALL";
+  window.renderTrainerQAPage();
+};
+
+window.toggleTrainerAnswerEdit = function(qId) {
+  if (window.trainerQAEditingId === qId) {
+    window.trainerQAEditingId = null;
+  } else {
+    window.trainerQAEditingId = qId;
+  }
+  window.renderTrainerQAPage();
+};
+
+window.togglePinQuestion = function(qId) {
+  window.loadModuleQA();
+  const item = (window.moduleCommunityQA || []).find(q => q.questionId === qId);
+  if (!item) return;
+  item.isPinned = !item.isPinned;
+  window.saveModuleQA();
+  if (window.showToast) {
+    window.showToast(item.isPinned ? "📌 Pertanyaan disematkan sebagai FAQ Penting di modul!" : "Sematan FAQ dilepas.", "info");
+  }
+  window.renderTrainerQAPage();
+};
+
+window.submitTrainerAnswer = function(qId) {
+  window.loadModuleQA();
+  const textarea = document.getElementById("trainer-answer-input-" + qId);
+  if (!textarea) return;
+  const ansText = textarea.value.trim();
+  if (!ansText || ansText.length < 3) {
+    if (window.showToast) window.showToast("Tulis jawaban resmi dengan jelas.", "warning");
+    else alert("Tulis jawaban resmi dengan jelas.");
+    return;
+  }
+
+  const pinCheckbox = document.getElementById("trainer-pin-" + qId);
+  const isPinned = pinCheckbox ? pinCheckbox.checked : false;
+
+  const user = window.getActiveUser();
+  const item = (window.moduleCommunityQA || []).find(q => q.questionId === qId);
+  if (!item) return;
+
+  item.status = "answered";
+  item.isPinned = isPinned;
+  item.answer = {
+    answeredBy: (user.name || "Hendra Wijaya") + " (" + (user.role || "Trainer") + ")",
+    trainerCode: user.code || "TRN-099",
+    answerTimestamp: new Date().toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" }) + " WIB",
+    answerText: ansText
+  };
+
+  window.trainerQAEditingId = null;
+  window.saveModuleQA();
+
+  if (window.showToast) {
+    window.showToast("✅ Jawaban resmi Trainer berhasil diterbitkan ke modul!", "success");
+  } else {
+    alert("Jawaban resmi Trainer berhasil diterbitkan!");
+  }
+
+  window.renderTrainerQAPage();
+};
+
+window.renderTrainerQAPage = function() {
+  const container = document.getElementById("trainer-qa-list-container");
+  if (!container) return;
+
+  // SINKRONISASI MUTLAK: Selalu load data terbaru dari localStorage
+  window.loadModuleQA();
+  window.updateTrainerQABadge();
+
+  const allItems = window.moduleCommunityQA || [];
+
+  // Populate module dropdown
+  const moduleSelect = document.getElementById("trainer-qa-filter-module");
+  if (moduleSelect) {
+    const currentVal = window.trainerQAModuleFilter;
+    const uniqueModules = [];
+    allItems.forEach(q => {
+      const qModId = q.moduleId || "dasar-asuransi";
+      const qModTitle = q.moduleTitle || qModId;
+      if (!uniqueModules.some(m => m.id === qModId)) {
+        uniqueModules.push({ id: qModId, title: qModTitle });
+      }
+    });
+    // Add other modules from window.modules if any
+    (window.modules || []).forEach(m => {
+      if (!uniqueModules.some(u => u.id === m.id)) {
+        uniqueModules.push({ id: m.id, title: m.title });
+      }
+    });
+
+    let optHtml = `<option value="ALL">Semua Modul Belajar (${allItems.length} Tanya-Jawab)</option>`;
+    uniqueModules.forEach(m => {
+      optHtml += `<option value="${m.id}" ${m.id === currentVal ? 'selected' : ''}>${m.title}</option>`;
+    });
+    moduleSelect.innerHTML = optHtml;
+  }
+
+  // Filter items
+  const query = (window.trainerQASearchQuery || "").toLowerCase().trim();
+  const modFilter = window.trainerQAModuleFilter;
+  const statusFilter = window.trainerQAStatusFilter;
+
+  let filtered = [...allItems];
+
+  if (modFilter !== "ALL") {
+    filtered = filtered.filter(q => q.moduleId === modFilter || (q.moduleId && q.moduleId.toLowerCase() === modFilter.toLowerCase()));
+  }
+
+  if (statusFilter === "pending") {
+    filtered = filtered.filter(q => q.status === "pending");
+  } else if (statusFilter === "answered") {
+    filtered = filtered.filter(q => q.status === "answered");
+  } else if (statusFilter === "pinned") {
+    filtered = filtered.filter(q => q.isPinned);
+  }
+
+  if (query) {
+    filtered = filtered.filter(q => {
+      const qText = (q.questionText || "").toLowerCase();
+      const asker = (q.askedBy && q.askedBy.name ? q.askedBy.name : "").toLowerCase();
+      const askerCode = (q.askedBy && q.askedBy.code ? q.askedBy.code : "").toLowerCase();
+      const mod = (q.moduleTitle || "").toLowerCase();
+      const ans = (q.answer && q.answer.answerText ? q.answer.answerText : "").toLowerCase();
+      return qText.includes(query) || asker.includes(query) || askerCode.includes(query) || mod.includes(query) || ans.includes(query);
+    });
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 50px 20px; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 12px; color: var(--text-muted); margin-top: 10px;">
+        <span style="font-size: 42px; display: block; margin-bottom: 12px;">📭</span>
+        <h3 style="margin: 0 0 8px 0; color: var(--text-dark); font-size: 16px; font-weight: 700;">Tidak Ada Pertanyaan Ditemukan</h3>
+        <p style="margin: 0 0 16px 0; font-size: 13.5px;">Tidak ada pertanyaan yang sesuai dengan filter atau kata kunci pencarian saat ini.</p>
+        <button class="btn-secondary" onclick="window.trainerQASearchQuery=''; window.trainerQAModuleFilter='ALL'; window.trainerQAStatusFilter='ALL'; window.renderTrainerQAPage();" style="padding: 8px 16px; font-size: 12.5px; cursor: pointer;">
+          Reset Filter Pencarian
+        </button>
+      </div>
+    `;
+    return;
+  }
+
+  // Kelompokkan per modul produk
+  const grouped = {};
+  filtered.forEach(q => {
+    let key = q.moduleTitle;
+    if (!key) {
+      if (window.modules && Array.isArray(window.modules)) {
+        const found = window.modules.find(m => m.id === q.moduleId);
+        if (found) key = found.title;
+      }
+    }
+    if (!key) key = q.moduleId || "Dasar-Dasar Asuransi Umum";
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(q);
+  });
+
+  let groupHtml = "";
+  for (const [moduleName, items] of Object.entries(grouped)) {
+    const pendingInGroup = items.filter(q => q.status === "pending").length;
+    const answeredInGroup = items.filter(q => q.status === "answered").length;
+
+    const cardsInGroup = items.map(q => {
+      const isAnswered = q.status === "answered";
+      const isEditing = window.trainerQAEditingId === q.questionId;
+      const asker = q.askedBy || {};
+
+      let responseArea = "";
+      if (isAnswered && !isEditing) {
+        responseArea = `
+          <div style="margin-top: 14px; padding: 14px 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 8px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+              <div style="font-size: 13px; font-weight: 700; color: #166534; display: flex; align-items: center; gap: 6px;">
+                <span>🎖️</span> Jawaban Resmi Trainer: ${q.answer ? q.answer.answeredBy : "Hendra Wijaya (Trainer)"}
+              </div>
+              <span style="font-size: 11.5px; color: #64748b;">🕒 ${q.answer ? q.answer.answerTimestamp : ""}</span>
+            </div>
+            <div style="font-size: 13.5px; color: #1e293b; line-height: 1.6; white-space: pre-line;">
+              ${q.answer ? q.answer.answerText : ""}
+            </div>
+            <div style="margin-top: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <button class="btn-secondary" onclick="window.toggleTrainerAnswerEdit('${q.questionId}')" style="padding: 6px 12px; font-size: 12px; cursor: pointer; border-radius: 6px;">
+                ✏️ Edit Balasan
+              </button>
+              <button class="btn-secondary" onclick="window.togglePinQuestion('${q.questionId}')" style="padding: 6px 12px; font-size: 12px; cursor: pointer; border-radius: 6px;">
+                ${q.isPinned ? "📌 Lepas Sematan (Unpin)" : "📌 Sematkan ke Top FAQ"}
+              </button>
+            </div>
+          </div>
+        `;
+      } else {
+        // Pending or Edit Mode
+        const initialText = q.answer ? q.answer.answerText : "";
+        responseArea = `
+          <div style="margin-top: 14px; padding: 16px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;">
+            <label style="display: block; font-weight: 700; color: #92400e; font-size: 13px; margin-bottom: 8px;">
+              ${isEditing ? "✏️ Perbarui Jawaban Resmi Trainer:" : "✍️ Tulis Jawaban Resmi Trainer:"}
+            </label>
+            <textarea 
+              id="trainer-answer-input-${q.questionId}" 
+              class="qa-textarea" 
+              rows="4" 
+              placeholder="Tulis penjelasan teknis, dasar hukum asuransi (PSAKBI, PSAKOB, ICC), atau panduan underwriting untuk menjawab agen..."
+            >${initialText}</textarea>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 10px;">
+              <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #78350f; cursor: pointer; font-weight: 600;">
+                <input type="checkbox" id="trainer-pin-${q.questionId}" ${q.isPinned ? "checked" : ""} style="width: 16px; height: 16px; cursor: pointer;">
+                <span>Sematkan sebagai FAQ Penting (Pin to Top)</span>
+              </label>
+
+              <div style="display: flex; gap: 8px;">
+                ${isEditing ? `
+                  <button class="btn-secondary" onclick="window.toggleTrainerAnswerEdit('${q.questionId}')" style="padding: 8px 14px; font-size: 12.5px; border-radius: 6px; cursor: pointer;">
+                    Batal
+                  </button>
+                ` : ""}
+                <button class="btn-primary" onclick="window.submitTrainerAnswer('${q.questionId}')" style="padding: 8px 18px; font-size: 12.5px; font-weight: 700; border-radius: 6px; cursor: pointer; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                  <span>🚀 Kirim Jawaban Resmi</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="qa-card ${q.isPinned ? 'is-pinned' : ''}" style="margin-bottom: 16px; ${!isAnswered ? 'border-left: 4px solid #f59e0b; background: #fffdf5;' : 'border-left: 4px solid #10b981;'}">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="qa-avatar-circle" style="${!isAnswered ? 'background: linear-gradient(135deg, #d97706 0%, #b45309 100%);' : ''}">${asker.avatar || "RA"}</div>
+              <div>
+                <strong style="color: var(--primary-navy); font-size: 13.5px;">${asker.name || "Agen Asuransi"}</strong>
+                <span style="font-size: 12px; color: var(--text-muted); margin-left: 4px;">(${asker.code || "AGN-001"} • ${asker.role || "Agen"})</span>
+                <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">📅 Diajukan: ${q.timestamp}</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              ${q.isPinned ? `<span class="qa-badge-pinned">📌 FAQ PENTING</span>` : ""}
+              ${isAnswered 
+                ? `<span class="qa-badge-answered">🟢 Terjawab</span>` 
+                : `<span class="qa-badge-pending" style="background:#fef3c7; color:#b45309; font-weight:800; border:1px solid #fde68a;">🟡 Butuh Tanggapan Trainer</span>`}
+            </div>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 14.5px; color: #1e293b; font-weight: 700; line-height: 1.55;">
+            "${q.questionText}"
+          </div>
+
+          ${responseArea}
+        </div>
+      `;
+    }).join("");
+
+    groupHtml += `
+      <div style="margin-bottom: 28px;">
+        <div class="qa-module-group-header">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 22px;">📁</span>
+            <div>
+              <h3 style="margin: 0; font-size: 15.5px; font-weight: 800; color: var(--primary-navy);">${moduleName}</h3>
+              <span style="font-size: 12px; color: var(--text-muted);">Kategori Modul Pembelajaran Belajar Mandiri</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span class="qa-stat-pill">Total: ${items.length}</span>
+            <span class="qa-stat-pill" style="color: #15803d; border-color: #bbf7d0;">Terjawab: ${answeredInGroup}</span>
+            ${pendingInGroup > 0 ? `<span class="qa-stat-pill" style="color: #b45309; border-color: #fde68a; background: #fffbeb; font-weight: 800;">⚠️ Menunggu: ${pendingInGroup}</span>` : ""}
+          </div>
+        </div>
+
+        <div>
+          ${cardsInGroup}
+        </div>
+      </div>
+    `;
+  }
+
+  container.innerHTML = groupHtml;
+};
+
+// ==================== MODAL SIMULASI PERTANYAAN AGEN (UNTUK DEMO) ====================
+
+window.addSimulatedQuestionModal = function() {
+  const existing = document.getElementById("sim-qa-modal");
+  if (existing) existing.remove();
+
+  window.loadModuleQA();
+
+  const modal = document.createElement("div");
+  modal.id = "sim-qa-modal";
+  modal.style.cssText = "position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(4px); z-index: 999999; display: flex; align-items: center; justify-content: center; padding: 20px;";
+
+  const uniqueModules = [];
+  (window.moduleCommunityQA || []).forEach(q => {
+    if (!uniqueModules.some(m => m.id === q.moduleId)) {
+      uniqueModules.push({ id: q.moduleId, title: q.moduleTitle || q.moduleId });
+    }
+  });
+  (window.modules || []).forEach(m => {
+    if (!uniqueModules.some(u => u.id === m.id)) {
+      uniqueModules.push({ id: m.id, title: m.title });
+    }
+  });
+
+  const optHtml = uniqueModules.map(m => `<option value="${m.id}">${m.title}</option>`).join("");
+
+  modal.innerHTML = `
+    <div style="background: #ffffff; border-radius: 16px; padding: 28px; max-width: 520px; width: 100%; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); border: 1px solid #e2e8f0; animation: scaleUp 0.2s ease;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 800; color: var(--primary-navy); display: flex; align-items: center; gap: 8px;">
+          <span>➕</span> Simulasi Pertanyaan Agen Baru
+        </h3>
+        <button onclick="window.closeSimulatedQuestionModal()" style="border: none; background: none; font-size: 18px; cursor: pointer; color: #94a3b8;">✕</button>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); margin: 0 0 16px 0;">
+        Fitur demo: Tambahkan pertanyaan baru dari agen simulasi untuk menguji antrean notifikasi badge dan moderasi balasan Trainer.
+      </p>
+
+      <div style="margin-bottom: 14px;">
+        <label style="display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark);">Pilih Modul Pembelajaran:</label>
+        <select id="sim-qa-module" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-family: inherit;">
+          ${optHtml}
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+        <div>
+          <label style="display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark);">Nama Agen:</label>
+          <input type="text" id="sim-qa-name" value="Rian Aditya" style="width: 100%; padding: 9px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-family: inherit; box-sizing: border-box;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark);">Kode Agen:</label>
+          <input type="text" id="sim-qa-code" value="AGN-001" style="width: 100%; padding: 9px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-family: inherit; box-sizing: border-box;">
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark);">Isi Pertanyaan Agen:</label>
+        <textarea id="sim-qa-text" rows="3" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-family: inherit; box-sizing: border-box;" placeholder="Contoh: Apakah penutupan asuransi CAR memerlukan survei risiko awal oleh Loss Adjuster?">Apakah asuransi banjir memiliki masa tunggu (waiting period) 72 jam sejak polis dinyatakan aktif?</textarea>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="btn-secondary" onclick="window.closeSimulatedQuestionModal()" style="padding: 9px 16px; font-size: 13px; border-radius: 8px; cursor: pointer;">
+          Batal
+        </button>
+        <button class="btn-primary" onclick="window.submitSimulatedQuestion()" style="padding: 9px 20px; font-size: 13px; font-weight: 700; border-radius: 8px; cursor: pointer;">
+          Tambahkan Pertanyaan
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+};
+
+window.closeSimulatedQuestionModal = function() {
+  const modal = document.getElementById("sim-qa-modal");
+  if (modal) modal.remove();
+};
+
+window.submitSimulatedQuestion = function() {
+  window.loadModuleQA();
+  const modSelect = document.getElementById("sim-qa-module");
+  const nameInput = document.getElementById("sim-qa-name");
+  const codeInput = document.getElementById("sim-qa-code");
+  const textInput = document.getElementById("sim-qa-text");
+
+  if (!modSelect || !nameInput || !textInput) return;
+
+  const moduleId = modSelect.value;
+  const moduleTitle = modSelect.options[modSelect.selectedIndex].text;
+  const name = nameInput.value.trim() || "Agen Asuransi";
+  const code = codeInput.value.trim() || "AGN-001";
+  const text = textInput.value.trim();
+
+  if (!text || text.length < 3) {
+    alert("Isi pertanyaan minimal 3 karakter.");
+    return;
+  }
+
+  const initials = name.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase() || "RA";
+
+  const newQ = {
+    questionId: "qa-" + Date.now(),
+    moduleId: moduleId,
+    moduleTitle: moduleTitle,
+    askedBy: {
+      name: name,
+      code: code,
+      role: "Agen",
+      avatar: initials
+    },
+    timestamp: new Date().toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" }) + " WIB",
+    questionText: text,
+    status: "pending",
+    isPinned: false,
+    answer: null
+  };
+
+  window.moduleCommunityQA.unshift(newQ);
+  window.saveModuleQA();
+  window.closeSimulatedQuestionModal();
+
+  if (window.showToast) {
+    window.showToast(`Pertanyaan simulasi dari ${name} (${code}) berhasil ditambahkan ke antrean!`, "success");
+  }
+
+  if (typeof window.renderTrainerQAPage === "function") {
+    window.renderTrainerQAPage();
+  }
+};
+
+// EKSEKUSI SEGERA SAAT FILE SCRIPT DIMUAT:
+window.loadModuleQA();
+window.updateTrainerQABadge();
