@@ -741,7 +741,7 @@
               Kalkulator Premi
             </button>
 
-            <button class="sidebar-link" id="nav-penawaran" onclick="navigateTo('penawaran')">
+            <button class="sidebar-link" id="nav-penawaran" onclick="navigateTo('penawaran')" style="display: none !important;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -821,7 +821,7 @@
             </button>
           </div>
 
-          <button class="sidebar-link" id="nav-atc" onclick="navigateTo('atc')">
+          <button class="sidebar-link" id="nav-atc" onclick="navigateTo('atc')" style="display: none !important;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3.5S19 4 17.5 5.5L14 9 5.8 7.2c-.8-.2-1.6.3-1.8 1.1l-.5 2 7.7 3.3-3 3-4.6-.9c-.7-.1-1.4.3-1.6 1l-.3.9 4.3 2.1 2.1 4.3.9-.3c.7-.2 1.1-.9 1-1.6l-.9-4.6 3-3 3.3 7.7 2-.5c.8-.2 1.3-1 1.1-1.8z"/>
@@ -1284,8 +1284,8 @@
           </div>
         </div>
 
-        <!-- ELEMEN PENJUALAN -->
-        <div class="content-card" style="margin-bottom: 20px;">
+        <!-- ELEMEN PENJUALAN: Grafik Tren Produksi & Komisi (Dihide sesuai permintaan) -->
+        <div class="content-card" style="margin-bottom: 20px; display: none !important;">
           <div class="card-header">
             <h3>Grafik Tren Produksi & Komisi</h3>
           </div>
@@ -1302,7 +1302,8 @@
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:4px; height:150px; padding-bottom:20px; border-bottom:1px solid var(--border-color); position:relative;" id="production-chart-container"></div>
         </div>
         
-        <div class="content-card" style="margin-bottom: 20px;">
+        <!-- TARGET KONTES WISATA (Dihide sesuai permintaan) -->
+        <div class="content-card" style="margin-bottom: 20px; display: none !important;">
           <div class="card-header">
             <h3 id="contest-title">Target Kontes Wisata</h3>
           </div>
@@ -1321,7 +1322,8 @@
           </div>
         </div>
 
-        <div class="content-card" style="margin-bottom: 20px;">
+        <!-- DETAIL PENCAPAIAN KONTES (Dihide sesuai permintaan) -->
+        <div class="content-card" style="margin-bottom: 20px; display: none !important;">
           <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
             <h3 style="margin: 0;">Detail Pencapaian Kontes</h3>
           </div>
@@ -1366,12 +1368,13 @@
           </table>
         </div>
 
-        <div id="gamification-cockpit-container" style="margin-bottom: 20px;"></div>
+        <!-- KOKPIT PENCAPAIAN KONTES DASHBOARD (Dihide sesuai permintaan) -->
+        <div id="gamification-cockpit-container" style="margin-bottom: 20px; display: none !important;"></div>
 
       </section>
 
-      <!-- ==================== PAGE: AGENCY TOUR CONTEST (ATC) ==================== -->
-      <section id="page-atc" class="page-section">
+      <!-- ==================== PAGE: AGENCY TOUR CONTEST (ATC) (Dihide sesuai permintaan) ==================== -->
+      <section id="page-atc" class="page-section" style="display: none !important;">
         <div class="page-heading">
           <h2>Agency Tour Contest (ATC)</h2>
           <p>Pantau status kelayakan penerbangan Anda menuju destinasi impian.</p>
@@ -1858,9 +1861,9 @@
                 </div>
               </div>
 
-              <!-- Aksi penawaran -->
+              <!-- Aksi penawaran (Dihide sesuai permintaan) -->
               <button class="btn-secondary" onclick="convertCalculationToProposal()"
-                style="margin-top: 20px; width: 100%;">
+                style="margin-top: 20px; width: 100%; display: none !important;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -1874,8 +1877,8 @@
         </div>
       </section>
 
-      <!-- ==================== PAGE: MENU MEMBUAT PENAWARAN ==================== -->
-      <section id="page-penawaran" class="page-section">
+      <!-- ==================== PAGE: MENU MEMBUAT PENAWARAN (Dihide sesuai permintaan) ==================== -->
+      <section id="page-penawaran" class="page-section" style="display: none !important;">
         <div class="page-heading">
           <h2>Buat Proposal & SPPA</h2>
           <p>Keluarkan dokumen penawaran quotation atau isi Surat Permohonan Penutupan Asuransi secara digital.</p>
@@ -5490,8 +5493,8 @@ Buat skrip follow-up yang personal untuk setiap prospek"></textarea>
           <!-- Filled dynamically with client info and all potential products -->
         </div>
 
-        <!-- Tombol Aksi Langsung ke Proposal -->
-        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #86efac; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+        <!-- Tombol Aksi Langsung ke Proposal (Dihide sesuai permintaan) -->
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #86efac; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; display: none !important; align-items: center; justify-content: space-between; gap: 14px;">
           <div>
             <strong style="color: #166534; font-size: 13.5px; display: block; margin-bottom: 2px;">
               Siap Terbitkan Penawaran Resmi?

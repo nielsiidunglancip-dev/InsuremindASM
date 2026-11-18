@@ -552,6 +552,9 @@ window.toggleNavDropdown = function(dropdownId) {
 };
 
 window.navigateTo = function(pageId) {
+    if (pageId === 'penawaran' || pageId === 'atc') {
+        pageId = 'dashboard';
+    }
     // Sembunyikan semua section
     const sections = document.querySelectorAll('.page-section');
     sections.forEach(sec => sec.classList.remove('active'));
@@ -7421,6 +7424,7 @@ window.confirmLspStatusUpdate = function() {
 const originalNavigateTo = window.navigateTo;
 if (originalNavigateTo) {
     window.navigateTo = function(pageId) {
+        if (pageId === 'penawaran' || pageId === 'atc') pageId = 'dashboard';
         originalNavigateTo(pageId);
         if (pageId === 'trainer-training' || pageId === 'trainer-dashboard' || pageId === 'admin-dashboard' || pageId === 'trainer-qa') {
             if (typeof window.renderTrainerQAPage === 'function') window.renderTrainerQAPage();
