@@ -1458,6 +1458,58 @@
           <p>Materi pembelajaran interaktif untuk menguasai polis asuransi umum Indonesia.</p>
         </div>
 
+        <!-- Banner / Tombol Panduan Alur Belajar Mandiri (Flowchart) -->
+        <div class="flowchart-guide-banner" style="
+          background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+          border: 1px solid #bae6fd;
+          border-radius: 12px;
+          padding: 16px 20px;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 16px;
+          box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+        ">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="
+              width: 46px; height: 46px; border-radius: 12px;
+              background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+              color: white; display: flex; align-items: center; justify-content: center;
+              font-size: 24px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+            ">📖</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 3px;">
+                <h4 style="margin: 0; color: #0f172a; font-size: 15.5px; font-weight: 800;">
+                  Alur &amp; Panduan Belajar Mandiri (Flowchart Interaktif)
+                </h4>
+                <span style="background: #10b981; color: white; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">SOP Mandiri</span>
+              </div>
+              <p style="margin: 0; color: #475569; font-size: 13px; line-height: 1.4;">
+                Panduan alur belajar mandiri: Pilih Level &amp; Modul &rarr; Ikuti Pre-Test Awal &rarr; Pelajari Materi &amp; PDF &rarr; Diskusi Q&amp;A Trainer &rarr; Post-Test Evaluasi &rarr; Klaim Reward (+100 XP &amp; +20 Koin).
+              </p>
+            </div>
+          </div>
+          <button type="button" class="btn-primary" onclick="window.openBelajarFlowchartModal()" style="
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: none;
+            padding: 11px 20px;
+            font-size: 13.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+            transition: all 0.2s ease;
+          ">
+            <span>📖</span> Lihat Alur &amp; Panduan Belajar (Flowchart)
+          </button>
+        </div>
+
         <div class="filter-search-row">
           <input type="text" id="search-materi" placeholder="Cari materi asuransi..." oninput="filterMaterials()">
         </div>
@@ -1484,6 +1536,337 @@
 
         <div id="materials-grid-container" class="materials-grid" style="display: none;">
           <!-- Kontainer lama yang disembunyikan -->
+        </div>
+
+        <!-- ==================== MODAL PANDUAN & FLOWCHART BELAJAR MANDIRI ==================== -->
+        <div id="modal-belajar-mandiri-flowchart" class="modal-overlay" onclick="if(event.target===this) window.closeBelajarFlowchartModal()">
+          <div class="modal-card" style="max-width: 940px; width: 95%; max-height: 90vh; overflow-y: auto; padding: 0; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35); background: #ffffff;">
+            
+            <!-- Modal Header (Navy to Blue Gradient) -->
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); padding: 22px 26px; border-radius: 15px 15px 0 0; color: white; display: flex; justify-content: space-between; align-items: flex-start; position: sticky; top: 0; z-index: 10;">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">📖</div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <h3 style="margin: 0; font-size: 19px; font-weight: 800; color: #ffffff;">Panduan &amp; Flowchart Belajar Mandiri</h3>
+                    <span style="background: #10b981; color: white; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Portal Agen</span>
+                  </div>
+                  <p style="margin: 4px 0 0; font-size: 13px; color: #e0f2fe;">
+                    Alur operasional e-learning agen: Pilih Level, Pre-Test Awal, Eksplorasi Modul &amp; PDF, Tanya Trainer (Q&amp;A), Post-Test Evaluasi, hingga Klaim Reward XP &amp; Koin.
+                  </p>
+                </div>
+              </div>
+              <button type="button" onclick="window.closeBelajarFlowchartModal()" style="background: rgba(255,255,255,0.15); border: none; font-size: 20px; color: white; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">&times;</button>
+            </div>
+
+            <!-- 3 Highlights Ringkas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 18px 24px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">🎯</span>
+                <div>
+                  <div style="font-size: 11px; color: #0369a1; font-weight: 700; text-transform: uppercase;">3 Level Berjenjang</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Basic, Intermediate, Advanced</div>
+                </div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #c7d2fe; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">📝</span>
+                <div>
+                  <div style="font-size: 11px; color: #4f46e5; font-weight: 700; text-transform: uppercase;">Pre-Test &amp; Post-Test</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Uji Baseline Awal &amp; KKM 70%</div>
+                </div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">⚡</span>
+                <div>
+                  <div style="font-size: 11px; color: #15803d; font-weight: 700; text-transform: uppercase;">Reward Kelulusan Modul</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">+100 XP &amp; +20 Koin Tiap Modul</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Switcher Navigation -->
+            <div style="display: flex; border-bottom: 1px solid #e2e8f0; background: #f8fafc; padding: 0 24px; gap: 4px;">
+              <button type="button" id="btn-bfc-tab-visual" class="fc-tab-btn active" onclick="window.switchBelajarFlowchartTab('visual')" style="padding: 12px 18px; border: none; border-bottom: 3px solid #0284c7; background: #ffffff; color: #0284c7; font-weight: 700; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                🗺️ Visual Flowchart Diagram
+              </button>
+              <button type="button" id="btn-bfc-tab-sop" class="fc-tab-btn" onclick="window.switchBelajarFlowchartTab('sop')" style="padding: 12px 18px; border: none; border-bottom: 3px solid transparent; background: #f8fafc; color: #64748b; font-weight: 600; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                📋 SOP Lengkap Belajar Mandiri
+              </button>
+              <button type="button" id="btn-bfc-tab-mermaid" class="fc-tab-btn" onclick="window.switchBelajarFlowchartTab('mermaid')" style="padding: 12px 18px; border: none; border-bottom: 3px solid transparent; background: #f8fafc; color: #64748b; font-weight: 600; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                💻 Kode Diagram Mermaid
+              </button>
+            </div>
+
+            <!-- Modal Content Panes -->
+            <div style="padding: 24px;">
+
+              <!-- PANE 1: VISUAL FLOWCHART -->
+              <div id="bfc-pane-visual" class="fc-tab-pane" style="display: block;">
+                <div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+
+                  <!-- STEP 1 -->
+                  <div style="width: 100%; background: #f0f9ff; border: 2px solid #0284c7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #0284c7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 1 — PEMILIHAN</span>
+                      <span style="font-size: 12px; color: #0284c7; font-weight: 600;">Katalog Materi</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">🎯</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Pilih Level &amp; Buka Modul Pembelajaran</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Pilih tab level (<em>Basic, Intermediate, Advanced</em>), manfaatkan kartu <em>Rekomendasi Materi Selanjutnya</em>, atau ketik kata kunci pada kotak pencarian (misal: <em>PSAKOB, Kebakaran</em>).</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 1 -> 2 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #6366f1;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #6366f1;"></div>
+                  </div>
+
+                  <!-- STEP 2 (PRE-TEST) -->
+                  <div style="width: 100%; background: #eef2ff; border: 2px solid #6366f1; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(99, 102, 241, 0.12);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #6366f1; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 2 — UJI AWAL</span>
+                      <span style="font-size: 12px; color: #4f46e5; font-weight: 600;">Pre-Test Modul</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">📝</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Ikuti Uji Pemahaman Awal (Pre-Test)</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Saat membuka modul pertama kali, ikuti Pre-Test singkat untuk mengukur tingkat pemahaman awal (<em>baseline score</em>). Hasil Pre-Test <strong>tidak memengaruhi kelulusan akhir modul</strong> dan langsung membuka akses materi.</span>
+                      </div>
+                    </div>
+                    <div style="margin-top: 8px; background: #e0e7ff; border: 1px dashed #c7d2fe; border-radius: 6px; padding: 6px 10px; font-size: 11.5px; color: #3730a3;">
+                      📊 <em>Catatan:</em> Wajib diisi saat modul pertama kali dibuka agar fase materi aktif dan progres belajar tercatat.
+                    </div>
+                  </div>
+
+                  <!-- Arrow 2 -> 3 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #0284c7;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #0284c7;"></div>
+                  </div>
+
+                  <!-- STEP 3 (EKSPLORASI MATERI) -->
+                  <div style="width: 100%; background: #f0f9ff; border: 2px solid #0284c7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #0284c7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 3 — EKSPLORASI</span>
+                      <span style="font-size: 12px; color: #0284c7; font-weight: 600;">Course Player SPA</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">📚</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Pelajari Materi Interaktif &amp; Unduh Dokumen PDF</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Masuk ke Course Player modul. Baca artikel terstruktur, tonton video pembelajaran terintegrasi, dan unduh dokumen resmi PDF untuk referensi offline.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 3 -> 4 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #f59e0b;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #f59e0b;"></div>
+                  </div>
+
+                  <!-- STEP 4 (KONSULTASI & DISKUSI) -->
+                  <div style="width: 100%; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #f59e0b; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 4 — KONSULTASI &amp; DISKUSI</span>
+                      <span style="font-size: 12px; color: #d97706; font-weight: 600;">Community Q&amp;A</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">💬</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Diskusi &amp; Tanya Trainer (Community Q&amp;A)</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Ada istilah teknis atau klausul polis yang membingungkan? Buka tab <em>"Tanya Trainer &amp; Diskusi"</em> untuk membaca pembahasan atau posting pertanyaan baru ke Master Trainer Cabang.</span>
+                      </div>
+                    </div>
+                    <div style="margin-top: 8px; background: #fef3c7; border: 1px dashed #fde68a; border-radius: 6px; padding: 6px 10px; font-size: 11.5px; color: #92400e;">
+                      💡 <em>Opsional:</em> Jika materi sudah dipahami dengan baik, agen dapat langsung melangkah ke pengerjaan kuis.
+                    </div>
+                  </div>
+
+                  <!-- Arrow 4 -> 5 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #a855f7;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #a855f7;"></div>
+                  </div>
+
+                  <!-- STEP 5 (POST-TEST EVALUASI) -->
+                  <div style="width: 100%; background: #faf5ff; border: 2px solid #a855f7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(168, 85, 247, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #a855f7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 5 — EVALUASI AKHIR</span>
+                      <span style="font-size: 12px; color: #9333ea; font-weight: 600;">Post-Test Kuis</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">🎯</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Selesaikan Kuis Pemahaman Modul (Post-Test)</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Klik tombol <em>"Selesai Belajar &amp; Ambil Post-test"</em> untuk mengerjakan soal evaluasi pilihan ganda. Sistem akan membandingkan skor akhir ini terhadap skor Pre-Test awal Anda.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 5 -> Decision -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #0f172a;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #0f172a;"></div>
+                  </div>
+
+                  <!-- DECISION NODE (DIAMOND / GATE) -->
+                  <div style="width: 85%; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border: 2px solid #38bdf8; border-radius: 28px; padding: 14px 22px; text-align: center; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);">
+                    <div style="font-size: 11px; color: #38bdf8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px;">
+                      ⚖️ PENGAMBILAN KEPUTUSAN EVALUASI
+                    </div>
+                    <strong style="font-size: 16px; letter-spacing: 0.2px;">Apakah Nilai Post-Test &gt;= 70% (KKM)?</strong>
+                  </div>
+
+                  <!-- Two Branching Branches -->
+                  <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+
+                    <!-- CABANG TIDAK (< 70) -->
+                    <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                      <div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                          <span style="background: #ef4444; color: white; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 10px;">❌ TIDAK (&lt; 70%)</span>
+                          <span style="font-size: 11px; color: #b91c1c; font-weight: 700;">Remedial</span>
+                        </div>
+                        <strong style="color: #991b1b; font-size: 13.5px; display: block; margin-bottom: 4px;">Ulangi Post-Test / Review Materi</strong>
+                        <p style="margin: 0; font-size: 12px; color: #7f1d1d; line-height: 1.4;">
+                          Buka dan pelajari kembali modul PDF atau ajukan pertanyaan ke Trainer. Agen memiliki <strong>2x kesempatan</strong> remedial kuis.
+                        </p>
+                      </div>
+                      <div style="margin-top: 10px; background: #fee2e2; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #991b1b; display: flex; align-items: center; gap: 6px;">
+                        <span>🔄</span>
+                        <span>Klik 'Coba Remedial Kuis' di player</span>
+                      </div>
+                    </div>
+
+                    <!-- CABANG YA (>= 70) -->
+                    <div style="background: #f0fdf4; border: 2px solid #10b981; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.12);">
+                      <div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                          <span style="background: #10b981; color: white; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 10px;">✅ YA (&gt;= 70%)</span>
+                          <span style="font-size: 11px; color: #047857; font-weight: 700;">Langkah 6: Lulus Modul</span>
+                        </div>
+                        <strong style="color: #065f46; font-size: 13.5px; display: block; margin-bottom: 4px;">Klaim Reward &amp; Naik Level Keagenan</strong>
+                        <p style="margin: 0; font-size: 12px; color: #047857; line-height: 1.4;">
+                          Otomatis klaim <strong>+100 XP &amp; +20 Koin</strong> reward, status modul ditandai <em>SELESAI</em>, dan rekomendasi modul tingkat berikutnya terbuka!
+                        </p>
+                      </div>
+                      <div style="margin-top: 10px; background: #dcfce7; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #166534; display: flex; align-items: center; gap: 6px;">
+                        <span>🏆</span>
+                        <span>Sertifikat kelulusan modul otomatis terbit</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANE 2: SOP LENGKAP BELAJAR MANDIRI -->
+              <div id="bfc-pane-sop" class="fc-tab-pane" style="display: none;">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                  
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #0284c7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">1</span>
+                      Pilih Level &amp; Buka Modul Pembelajaran
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Agen login ke portal InsureMind ASM, lalu masuk ke menu <strong>Belajar Mandiri</strong> di sidebar. Tentukan fokus materi dengan menekan filter <strong>Level Basic</strong> (fondasi prinsip asuransi &amp; regulasi OJK), <strong>Level Intermediate</strong> (teknis produk komersial properti &amp; kendaraan), atau <strong>Level Advanced</strong> (suretyship &amp; reasuransi). Manfaatkan juga kartu <strong>Rekomendasi Materi Selanjutnya</strong> untuk jalur belajar terarah.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #6366f1; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">2</span>
+                      Ikuti Uji Pemahaman Awal (Pre-Test Modul)
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Saat agen pertama kali membuka modul yang dipilih, antarmuka Course Player akan menampilkan layar <strong>Uji Pemahaman Awal (Pre-Test)</strong>. Agen mengerjakan kuis singkat ini untuk memetakan pemahaman dasar mengenai topik yang akan dipelajari. Skor Pre-Test ini dicatat sebagai tolak ukur (<em>baseline</em>) pemahaman awal dan <strong>tidak memengaruhi kelulusan akhir modul</strong>. Setelah jawaban dikirim, materi lengkap modul otomatis terbuka.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #0284c7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">3</span>
+                      Pelajari Materi Interaktif &amp; Unduh Dokumen PDF
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Buka tab pembelajaran di Course Player SPA. Pelajari artikel lengkap, tonton video pembelajaran terintegrasi, dan unduh dokumen resmi ringkasan polis PDF untuk referensi presentasi offline ke nasabah.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">4</span>
+                      Diskusi &amp; Tanya Trainer (Community Q&amp;A)
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Jika agen menemukan istilah teknis atau klausul pengecualian yang belum dipahami saat membaca PDF, klik tab <strong>"Tanya Trainer &amp; Diskusi"</strong>. Agen dapat membaca pembahasan tanya-jawab rekan agen lain, mempelajari FAQ yang dipin oleh Trainer, atau mengetik pertanyaan baru langsung kepada Master Trainer Hendra Wijaya.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #a855f7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">5</span>
+                      Selesaikan Kuis Pemahaman Modul (Post-Test)
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Setelah membaca dan mendiskusikan materi, klik tombol <strong>"Selesai Belajar &amp; Ambil Post-test"</strong> di bagian bawah player. Jawab butir-butir pertanyaan evaluasi pemahaman produk. Sistem menerapkan batas kelulusan KKM sebesar <strong>70%</strong> dan membandingkan capaian nilai terhadap Pre-Test awal.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">6</span>
+                      Klaim Reward (+100 XP &amp; +20 Koin) &amp; Naik Level
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Setelah lulus (nilai &gt;= 70%), sistem memicu animasi confetti selebrasi, menambahkan <strong>+100 XP</strong> dan <strong>+20 Koin</strong> ke saldo profil agen, menerbitkan sertifikat kelulusan modul, memperbarui kartu progres di Dashboard, dan merekomendasikan modul tingkat berikutnya.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- PANE 3: KODE DIAGRAM MERMAID -->
+              <div id="bfc-pane-mermaid" class="fc-tab-pane" style="display: none;">
+                <p style="font-size: 13px; color: #475569; margin: 0 0 10px 0;">
+                  Berikut adalah sintaks kode Mermaid.js standar yang merepresentasikan alur belajar mandiri di atas, dapat disalin dan digunakan di Markdown atau dokumentasi SOP tim:
+                </p>
+                <pre style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 10px; font-family: Consolas, monospace; font-size: 12.5px; overflow-x: auto; line-height: 1.5; margin: 0;"><code>flowchart TD
+    Start([Mulai: Buka Menu Belajar Mandiri]) --&gt; Step1[Langkah 1: Pilih Level Basic/Inter/Adv &amp; Buka Modul]
+    Step1 --&gt; Step2[Langkah 2: Kerjakan Uji Pemahaman Awal Pre-Test\nUkur Nilai Baseline - Tidak Menggugurkan Modul]
+    Step2 --&gt; Step3[Langkah 3: Pelajari Materi Interaktif, Video &amp; Unduh PDF]
+    Step3 --&gt; CheckQA{Ada Klausul yang Belum Dipahami?}
+    
+    CheckQA -- Ya --&gt; Step4[Langkah 4: Diskusi &amp; Tanya Trainer di Tab Community Q&amp;A]
+    Step4 -- Setelah Paham --&gt; Step5[Langkah 5: Selesaikan Kuis Pemahaman Modul Post-Test]
+    CheckQA -- Tidak, Sudah Paham --&gt; Step5
+    
+    Step5 --&gt; CheckScore{Apakah Skor Post-Test &gt;= 70% KKM?}
+    
+    CheckScore -- Tidak (&lt; 70%) --&gt; Remedial[Ulangi Post-Test / Review Materi PDF\nMaksimal 2x Remedial]
+    Remedial -. Pelajari Ulang Modul .-&gt; Step3
+    
+    CheckScore -- Ya (&gt;= 70%) --&gt; Success[Langkah 6: Klaim Reward +100 XP &amp; +20 Koin\nModul SELESAI, Sertifikat Terbit &amp; Rekomendasi Terbuka]</code></pre>
+              </div>
+
+            </div>
+
+            <!-- Modal Footer with Simulation Button -->
+            <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 24px; border-radius: 0 0 15px 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <button type="button" class="btn-primary" onclick="window.startBelajarDemoSimulation()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); border: none; padding: 11px 20px; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);">
+                <span>⚡</span> Coba Simulasi Belajar Sekarang (Pilih Modul Rekomendasi)
+              </button>
+              <button type="button" class="btn-secondary" onclick="window.closeBelajarFlowchartModal()">Tutup Panduan</button>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -4372,6 +4755,58 @@ Buat skrip follow-up yang personal untuk setiap prospek"></textarea>
           <h2>Jadwal Training Tersedia</h2>
           <p>Ikuti training, selesaikan kuis, dan raih sertifikasi resmi.</p>
         </div>
+
+        <!-- Banner / Tombol Panduan Alur Flowchart Live Training -->
+        <div class="flowchart-guide-banner" style="
+          background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+          border: 1px solid #bae6fd;
+          border-radius: 12px;
+          padding: 16px 20px;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 16px;
+          box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+        ">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="
+              width: 46px; height: 46px; border-radius: 12px;
+              background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+              color: white; display: flex; align-items: center; justify-content: center;
+              font-size: 24px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+            ">🗺️</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 3px;">
+                <h4 style="margin: 0; color: #0f172a; font-size: 15.5px; font-weight: 800;">
+                  Alur &amp; Panduan Live Training (Flowchart Interaktif)
+                </h4>
+                <span style="background: #0284c7; color: white; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">SOP Agen</span>
+              </div>
+              <p style="margin: 0; color: #475569; font-size: 13px; line-height: 1.4;">
+                Panduan 7 tahapan resmi: Pendaftaran (RSVP), Sesi Zoom/Kelas, Absensi Token Trainer, Evaluasi Post-Test, hingga Terbit e-Sertifikat LSP.
+              </p>
+            </div>
+          </div>
+          <button type="button" class="btn-primary" onclick="window.openFlowchartGuideModal()" style="
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: none;
+            padding: 11px 20px;
+            font-size: 13.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+            transition: all 0.2s ease;
+          ">
+            <span>🗺️</span> Lihat Alur &amp; Panduan Live Training (Flowchart)
+          </button>
+        </div>
         <div class="training-grid" id="agen-training-grid"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
           <!-- Diisi dinamis -->
@@ -4458,6 +4893,348 @@ Buat skrip follow-up yang personal untuk setiap prospek"></textarea>
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+
+        <!-- ==================== MODAL PANDUAN & FLOWCHART LIVE TRAINING ==================== -->
+        <div id="modal-live-training-flowchart" class="modal-overlay" onclick="if(event.target===this) window.closeFlowchartGuideModal()">
+          <div class="modal-card" style="max-width: 940px; width: 95%; max-height: 90vh; overflow-y: auto; padding: 0; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35); background: #ffffff;">
+            
+            <!-- Modal Header (Navy to Blue Gradient) -->
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); padding: 22px 26px; border-radius: 15px 15px 0 0; color: white; display: flex; justify-content: space-between; align-items: flex-start; position: sticky; top: 0; z-index: 10;">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">🗺️</div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <h3 style="margin: 0; font-size: 19px; font-weight: 800; color: #ffffff;">Panduan &amp; Flowchart Live Training</h3>
+                    <span style="background: #38bdf8; color: #0f172a; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Portal Agen</span>
+                  </div>
+                  <p style="margin: 4px 0 0; font-size: 13px; color: #e0f2fe;">
+                    Alur operasional resmi: Pendaftaran (RSVP), Sesi Kelas, Absensi Token, Post-Test, hingga Terbit Sertifikat LSP AAUI.
+                  </p>
+                </div>
+              </div>
+              <button type="button" onclick="window.closeFlowchartGuideModal()" style="background: rgba(255,255,255,0.15); border: none; font-size: 20px; color: white; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">&times;</button>
+            </div>
+
+            <!-- 3 Highlights Ringkas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 18px 24px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">📝</span>
+                <div>
+                  <div style="font-size: 11px; color: #0369a1; font-weight: 700; text-transform: uppercase;">Pre-Test RSVP</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Asesmen Awal &amp; Kunci Kursi</div>
+                </div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">🔑</span>
+                <div>
+                  <div style="font-size: 11px; color: #b45309; font-weight: 700; text-transform: uppercase;">Token Kehadiran</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">4 Digit Kode dari Trainer</div>
+                </div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 24px;">🏆</span>
+                <div>
+                  <div style="font-size: 11px; color: #15803d; font-weight: 700; text-transform: uppercase;">Kelulusan Skor &gt;= 70%</div>
+                  <div style="font-size: 13px; font-weight: 800; color: #0f172a;">+150 XP, +50 Koin &amp; Sertifikat</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Switcher Navigation -->
+            <div style="display: flex; border-bottom: 1px solid #e2e8f0; background: #f8fafc; padding: 0 24px; gap: 4px;">
+              <button type="button" id="btn-fc-tab-visual" class="fc-tab-btn active" onclick="window.switchFlowchartTab('visual')" style="padding: 12px 18px; border: none; border-bottom: 3px solid #0284c7; background: #ffffff; color: #0284c7; font-weight: 700; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                🗺️ Visual Flowchart Diagram
+              </button>
+              <button type="button" id="btn-fc-tab-sop" class="fc-tab-btn" onclick="window.switchFlowchartTab('sop')" style="padding: 12px 18px; border: none; border-bottom: 3px solid transparent; background: #f8fafc; color: #64748b; font-weight: 600; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                📋 SOP &amp; Rincian Tiap Langkah
+              </button>
+              <button type="button" id="btn-fc-tab-mermaid" class="fc-tab-btn" onclick="window.switchFlowchartTab('mermaid')" style="padding: 12px 18px; border: none; border-bottom: 3px solid transparent; background: #f8fafc; color: #64748b; font-weight: 600; font-size: 13.5px; cursor: pointer; font-family: inherit;">
+                💻 Kode Diagram Mermaid
+              </button>
+            </div>
+
+            <!-- Modal Content Panes -->
+            <div style="padding: 24px;">
+
+              <!-- PANE 1: VISUAL FLOWCHART -->
+              <div id="fc-pane-visual" class="fc-tab-pane" style="display: block;">
+                <div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+
+                  <!-- STEP 1 -->
+                  <div style="width: 100%; background: #f0f9ff; border: 2px solid #0284c7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #0284c7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 1 — AWAL</span>
+                      <span style="font-size: 12px; color: #0284c7; font-weight: 600;">Menu Utama</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">📱</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Mulai: Buka Menu "Live Training"</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Akses submenu Live Training pada kategori <em>Akademi &amp; Training</em> di bilah navigasi kiri portal agen.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 1 -> 2 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #0284c7;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #0284c7;"></div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div style="width: 100%; background: #f0f9ff; border: 2px solid #0284c7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #0284c7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 2</span>
+                      <span style="font-size: 12px; color: #0284c7; font-weight: 600;">Eksplorasi Jadwal</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">📅</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Pilih Jadwal Training Aktif (Online Zoom / Offline)</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Pilih kartu kelas yang berstatus <em>Sedang Berlangsung</em> (Live) atau <em>Mendatang</em> sesuai topik kebutuhan sertifikasi.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 2 -> 3 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #6366f1;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #6366f1;"></div>
+                  </div>
+
+                  <!-- STEP 3 -->
+                  <div style="width: 100%; background: #f5f3ff; border: 2px solid #6366f1; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(99, 102, 241, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #6366f1; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 3</span>
+                      <span style="font-size: 12px; color: #6366f1; font-weight: 600;">Registrasi (RSVP)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">✍️</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Klik "Daftar Sekarang" &amp; Konfirmasi Kursi (Pre-Test)</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Jawab 3 pertanyaan Pre-Test untuk mengukur baseline pemahaman awal. Kursi pendaftaran langsung terkunci.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 3 -> 4 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #f59e0b;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #f59e0b;"></div>
+                  </div>
+
+                  <!-- STEP 4 -->
+                  <div style="width: 100%; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #f59e0b; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 4</span>
+                      <span style="font-size: 12px; color: #d97706; font-weight: 600;">Mengikuti Kelas</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">🎥</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Ikuti Sesi Training Sesuai Jadwal</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Klik tombol <em>"Gabung Zoom"</em> (tersedia ID Rapat &amp; Passcode) atau datang langsung ke ruang kelas cabang.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 4 -> 5 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #f59e0b;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #f59e0b;"></div>
+                  </div>
+
+                  <!-- STEP 5 -->
+                  <div style="width: 100%; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #f59e0b; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 5</span>
+                      <span style="font-size: 12px; color: #d97706; font-weight: 600;">Validasi Kehadiran</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">🔑</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Input Token Kehadiran dari Trainer</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Masukkan 4 digit kode token unik yang dibagikan Trainer di akhir sesi untuk memvalidasi absensi dan membuka Kuis Post-Test.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 5 -> 6 -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #a855f7;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #a855f7;"></div>
+                  </div>
+
+                  <!-- STEP 6 -->
+                  <div style="width: 100%; background: #faf5ff; border: 2px solid #a855f7; border-radius: 12px; padding: 14px 18px; box-shadow: 0 2px 6px rgba(168, 85, 247, 0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span style="background: #a855f7; color: white; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.5px;">LANGKAH 6</span>
+                      <span style="font-size: 12px; color: #9333ea; font-weight: 600;">Evaluasi Akhir</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="font-size: 24px;">📝</span>
+                      <div>
+                        <strong style="color: #0f172a; font-size: 14.5px; display: block;">Kerjakan Post-Test Evaluasi</strong>
+                        <span style="font-size: 12.5px; color: #475569;">Klik tombol <em>"📝 Ikuti Kuis Post-Test"</em> untuk menjawab pertanyaan evaluasi kompetensi akhir materi.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow 6 -> Decision -->
+                  <div style="display: flex; flex-direction: column; align-items: center; height: 28px; justify-content: center;">
+                    <div style="width: 2px; height: 18px; background: #0f172a;"></div>
+                    <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #0f172a;"></div>
+                  </div>
+
+                  <!-- DECISION NODE (DIAMOND / GATE) -->
+                  <div style="width: 85%; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border: 2px solid #38bdf8; border-radius: 28px; padding: 14px 22px; text-align: center; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);">
+                    <div style="font-size: 11px; color: #38bdf8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px;">
+                      ⚖️ PENGAMBILAN KEPUTUSAN KELULUSAN
+                    </div>
+                    <strong style="font-size: 16px; letter-spacing: 0.2px;">Apakah Nilai Evaluasi &gt;= 70?</strong>
+                  </div>
+
+                  <!-- Two Branching Branches -->
+                  <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+
+                    <!-- CABANG TIDAK (< 70) -->
+                    <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                      <div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                          <span style="background: #ef4444; color: white; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 10px;">❌ TIDAK (&lt; 70)</span>
+                          <span style="font-size: 11px; color: #b91c1c; font-weight: 700;">Remedial</span>
+                        </div>
+                        <strong style="color: #991b1b; font-size: 13.5px; display: block; margin-bottom: 4px;">Ulangi Post-Test / Review Materi</strong>
+                        <p style="margin: 0; font-size: 12px; color: #7f1d1d; line-height: 1.4;">
+                          Buka dan pelajari modul PDF. Agen memiliki <strong>2x kesempatan</strong> pengerjaan. Jika kuota habis, hubungi Trainer Cabang.
+                        </p>
+                      </div>
+                      <div style="margin-top: 10px; background: #fee2e2; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #991b1b; display: flex; align-items: center; gap: 6px;">
+                        <span>🔄</span>
+                        <span>Dapat langsung mencoba ulang kuis</span>
+                      </div>
+                    </div>
+
+                    <!-- CABANG YA (>= 70) -->
+                    <div style="background: #f0fdf4; border: 2px solid #10b981; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.12);">
+                      <div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                          <span style="background: #10b981; color: white; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 10px;">✅ YA (&gt;= 70)</span>
+                          <span style="font-size: 11px; color: #047857; font-weight: 700;">Lulus Resmi</span>
+                        </div>
+                        <strong style="color: #065f46; font-size: 13.5px; display: block; margin-bottom: 4px;">Dapatkan XP + Koin &amp; Terbit e-Certificate LSP</strong>
+                        <p style="margin: 0; font-size: 12px; color: #047857; line-height: 1.4;">
+                          Otomatis klaim <strong>+150 XP</strong> &amp; <strong>+50 Koin</strong> reward, dan e-Sertifikat resmi LSP AAUI terbit seketika siap dicetak!
+                        </p>
+                      </div>
+                      <div style="margin-top: 10px; background: #dcfce7; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #166534; display: flex; align-items: center; gap: 6px;">
+                        <span>🏆</span>
+                        <span>Klik tombol 'Download Sertifikat Resmi'</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANE 2: SOP & RINCIAN TIAP LANGKAH -->
+              <div id="fc-pane-sop" class="fc-tab-pane" style="display: none;">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                  
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #0284c7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">1</span>
+                      Buka Menu Live Training
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Agen login ke portal InsureMind ASM, lalu klik menu <strong>Live Training</strong> di sidebar kiri. Halaman ini memuat seluruh jadwal kelas webinar Zoom interaktif dan tatap muka cabang.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #0284c7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">2</span>
+                      Pilih Jadwal Training Aktif
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Cek tanggal, jam tayang, instruktur, dan kuota peserta. Sesi bertanda <span style="background:#ef4444; color:white; font-size:10.5px; padding:1px 6px; border-radius:6px; font-weight:700;">SEDANG BERLANGSUNG</span> dapat langsung diikuti secara live.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #6366f1; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">3</span>
+                      Klik "Daftar Sekarang" &amp; Konfirmasi Kursi (Pre-Test)
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Agen wajib menyelesaikan <strong>Pre-Test Pemahaman Awal (3 soal)</strong>. Skor Pre-Test tidak menggugurkan kepesertaan, melainkan berfungsi sebagai tolok ukur pertumbuhan pemahaman (*growth metric*).
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">4</span>
+                      Ikuti Sesi Training Sesuai Jadwal
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Masuk ke ruang Zoom menggunakan tombol hijau <em>"Gabung Zoom"</em> yang otomatis tampil pada kartu setelah RSVP berhasil. Hadir tepat waktu untuk menyimak pemaparan materi dari Master Trainer.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">5</span>
+                      Input Token Kehadiran dari Trainer
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Pada akhir sesi kelas, Trainer mengumumkan <strong>4 Digit Token Absensi</strong> (contoh: <code>1234</code>). Agen memasukkan token ini ke dalam modal untuk membuka akses Modul PDF dan Kuis Evaluasi.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                      <span style="background: #a855f7; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">6</span>
+                      Kerjakan Post-Test Evaluasi &amp; Tolok Ukur Kelulusan (Passing Grade 70%)
+                    </h4>
+                    <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                      Selesaikan seluruh pertanyaan post-test. Jika skor <strong>&gt;= 70%</strong>, agen dinyatakan <strong>LULUS</strong>, menerima reward <strong>+150 XP &amp; +50 Koin</strong>, serta e-Certificate LSP terbit otomatis. Jika nilai &lt; 70%, agen dapat mempelajari PDF dan mengulang tes (maksimal 2x percobaan).
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- PANE 3: KODE DIAGRAM MERMAID -->
+              <div id="fc-pane-mermaid" class="fc-tab-pane" style="display: none;">
+                <p style="font-size: 13px; color: #475569; margin: 0 0 10px 0;">
+                  Berikut adalah sintaks kode Mermaid.js standar yang merepresentasikan alur di atas, dapat disalin dan digunakan di Markdown atau dokumentasi tim:
+                </p>
+                <pre style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 10px; font-family: Consolas, monospace; font-size: 12.5px; overflow-x: auto; line-height: 1.5; margin: 0;"><code>flowchart TD
+    Start([Mulai: Buka Menu Live Training]) --&gt; Select[Pilih Jadwal Training Aktif Online Zoom / Offline]
+    Select --&gt; RSVP[Klik 'Daftar Sekarang' &amp; Konfirmasi Kursi Pre-Test]
+    RSVP --&gt; Attend[Ikuti Sesi Training Sesuai Jadwal]
+    Attend --&gt; Token[Input Token Kehadiran dari Trainer]
+    Token --&gt; PostTest[Kerjakan Post-Test Evaluasi]
+    PostTest --&gt; CheckScore{Apakah Nilai &gt;= 70?}
+    
+    CheckScore -- Tidak (&lt; 70) --&gt; Remedial[Ulangi Post-Test / Review Materi PDF]
+    Remedial -. Pelajari Ulang Materi .-&gt; PostTest
+    
+    CheckScore -- Ya (&gt;= 70) --&gt; Success[Dapatkan XP + Koin &amp; Terbit e-Certificate LSP]</code></pre>
+              </div>
+
+            </div>
+
+            <!-- Modal Footer with Simulation Button -->
+            <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 24px; border-radius: 0 0 15px 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <button type="button" class="btn-primary" onclick="window.startLiveTrainingDemoSimulation()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); border: none; padding: 11px 20px; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);">
+                <span>⚡</span> Coba Simulasi Sesi Aktif Sekarang (Live Demo)
+              </button>
+              <button type="button" class="btn-secondary" onclick="window.closeFlowchartGuideModal()">Tutup Panduan</button>
+            </div>
+
           </div>
         </div>
       </section>

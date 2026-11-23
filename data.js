@@ -1657,54 +1657,54 @@ const BRANCH_AGENTS_DEFAULT = [
 const BRANCH_TRAININGS_DEFAULT = [
   {
     id: "TRN-01",
-    title: "Mastering Commercial Property Insurance & Risk Assessment",
-    category: "Properti",
+    title: "Sertifikasi Keagenan Level 3 (Dasar Keagenan ASM)",
+    category: "Dasar Keagenan",
     trainer: "Coach Hendra Wijaya, AAIK",
-    date: "02 Okt 2026",
-    time: "09:00 - 11:30 WIB",
+    date: "19 Nov 2026",
+    time: "14:00 - 16:30 WIB",
     mode: "Live Webinar Zoom",
-    token: "PROP2026",
-    status: "Selesai",
-    rsvpAgents: ["AGN-001", "AGN-004", "AGN-008", "AGN-012", "AGN-021"],
-    attendedAgents: ["AGN-001", "AGN-004", "AGN-008", "AGN-012"]
+    token: "1234",
+    status: "Sedang Berlangsung",
+    rsvpAgents: ["AGN-004", "AGN-008", "AGN-012"],
+    attendedAgents: []
   },
   {
     id: "TRN-02",
-    title: "Strategi Penetrasi Asuransi Kendaraan PSAKOB & All Risk",
-    category: "Kendaraan Bermotor",
+    title: "Mastering Commercial Property Insurance & Risk Assessment",
+    category: "Properti",
     trainer: "Coach Hendra Wijaya, AAIK",
-    date: "04 Okt 2026",
-    time: "13:30 - 15:30 WIB",
+    date: "26 Nov 2026",
+    time: "09:00 - 11:30 WIB",
     mode: "Live Webinar Zoom",
-    token: "AUTO44",
-    status: "Selesai",
-    rsvpAgents: ["AGN-001", "AGN-004", "AGN-012", "AGN-015"],
-    attendedAgents: ["AGN-001", "AGN-004", "AGN-015"]
+    token: "PROP2026",
+    status: "Mendatang",
+    rsvpAgents: ["AGN-004", "AGN-012", "AGN-015"],
+    attendedAgents: []
   },
   {
     id: "TRN-03",
-    title: "Teknik Closing Surety Bond & Kontra Bank Garansi Proyek",
-    category: "Suretyship & Bonding",
+    title: "Strategi Penetrasi Asuransi Kendaraan PSAKOB & All Risk",
+    category: "Kendaraan Bermotor",
     trainer: "Ir. Gunawan Santoso (Guest Expert)",
-    date: "06 Okt 2026",
-    time: "10:00 - 12:00 WIB",
-    mode: "Live Webinar Zoom",
-    token: "SURETY99",
-    status: "Selesai",
-    rsvpAgents: ["AGN-001", "AGN-004", "AGN-008", "AGN-033"],
-    attendedAgents: ["AGN-001", "AGN-008", "AGN-033"]
+    date: "03 Des 2026",
+    time: "13:30 - 15:30 WIB",
+    mode: "Offline (Auditorium Kantor Pusat ASM)",
+    token: "AUTO2026",
+    status: "Mendatang",
+    rsvpAgents: ["AGN-004", "AGN-008", "AGN-033"],
+    attendedAgents: []
   },
   {
     id: "TRN-04",
-    title: "Bedah Regulasi OJK & Etika Keagenan Perlindungan Konsumen",
-    category: "Regulasi",
+    title: "Teknik Closing Surety Bond & Kontra Bank Garansi Proyek",
+    category: "Suretyship & Bonding",
     trainer: "Siti Rahma, S.H.",
-    date: "12 Okt 2026",
-    time: "14:00 - 16:00 WIB",
+    date: "10 Des 2026",
+    time: "10:00 - 12:00 WIB",
     mode: "Live Webinar Zoom",
-    token: "ETIKA77",
+    token: "BOND2026",
     status: "Mendatang",
-    rsvpAgents: ["AGN-001", "AGN-033"],
+    rsvpAgents: ["AGN-033"],
     attendedAgents: []
   }
 ];
@@ -1740,7 +1740,9 @@ function initializeDatabase() {
   if (needsBranchAgentMigration) {
     localStorage.setItem("pa_branch_agents", JSON.stringify(BRANCH_AGENTS_DEFAULT));
   }
-  if (!localStorage.getItem("pa_branch_trainings")) {
+  const existingBranchTrainings = JSON.parse(localStorage.getItem("pa_branch_trainings")) || [];
+  const needsBranchTrainingMigration = existingBranchTrainings.length === 0 || existingBranchTrainings.some(t => t.date && t.date.includes("Okt 2026"));
+  if (needsBranchTrainingMigration) {
     localStorage.setItem("pa_branch_trainings", JSON.stringify(BRANCH_TRAININGS_DEFAULT));
   }
   // Selalu sync katalog reward dengan data terbaru (agar item baru langsung muncul)

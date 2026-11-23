@@ -1615,31 +1615,80 @@ window.closeFlyerLightbox = function() {
 // Inisialisasi Data Training jika kosong
 function initTrainingData() {
     const raw = localStorage.getItem("pa_trainings");
-    if (!raw || raw === "[]" || (Array.isArray(JSON.parse(raw)) && JSON.parse(raw).length === 0)) {
+    const hasOldData = !raw || raw === "[]" || raw.includes("PAYDI") || (Array.isArray(JSON.parse(raw)) && JSON.parse(raw).length <= 2);
+    if (hasOldData) {
         const defaultTrainings = [
             {
                 id: "tr-001",
                 title: "Sertifikasi Keagenan Level 3 (Dasar Keagenan)",
-                time: Date.now() - 3600000, 
+                status: "Sedang Berlangsung",
+                time: Date.now() - (15 * 60 * 1000), // Sedang berlangsung hari ini (19 Nov 2026)
+                duration: 7200000,
                 method: "Online Zoom Meeting",
                 quota: "100 Peserta",
                 token: "1234",
-                pdf: "#",
+                link: "https://zoom.us/j/8294710293",
+                zoomId: "829 4710 293",
+                zoomPw: "ASM2026",
+                level: "Basic",
+                pdf: "/materi_pdf/1. Prinsip Dasar Asuransi.pdf",
                 quiz: [
-                    { q: "Apa yang dimaksud dengan Insurable Interest?", a: "Kepentingan finansial yang sah", b: "Diskon premi", c: "Batal demi hukum", d: "Klaim ganda", correct: "a" },
-                    { q: "Prinsip Utmost Good Faith mewajibkan agen untuk?", a: "Menutupi penyakit", b: "Memberi diskon", c: "Mengungkap fakta material secara jujur", d: "Membayar premi", correct: "c" }
+                    { q: "Apa yang dimaksud dengan Insurable Interest dalam prinsip dasar asuransi?", a: "Kepentingan finansial yang sah atas objek yang dipertanggungkan", b: "Diskon premi musiman bagi nasabah baru", c: "Batalnya polis secara sepihak", d: "Klaim tanpa bukti kerugian", correct: "a" },
+                    { q: "Prinsip Utmost Good Faith mewajibkan agen dan calon tertanggung untuk?", a: "Menutupi riwayat klaim", b: "Memberi komisi di bawah meja", c: "Mengungkap fakta material secara jujur dan transparan", d: "Menolak pembayaran klaim nasabah", correct: "c" },
+                    { q: "Dalam asuransi kendaraan bermotor di Indonesia, polis standar yang diatur oleh AAUI adalah?", a: "PSAKOB (Polis Standar Asuransi Kendaraan Bermotor)", b: "PSAKI (Polis Standar Asuransi Kebakaran)", c: "PAR (Property All Risks)", d: "CAR (Contractors' All Risks)", correct: "a" }
                 ]
             },
             {
                 id: "tr-002",
-                title: "Sertifikasi Khusus - Produk PAYDI",
-                time: Date.now() + (24 * 3600000), 
-                method: "Offline (Kantor Pusat)",
-                quota: "50 Peserta",
-                token: "8888",
-                pdf: "#",
+                title: "Mastering Commercial Property Insurance & Risk Assessment",
+                status: "Mendatang",
+                time: new Date('2026-11-26T09:00:00+07:00').getTime(), // 26 Nov 2026
+                duration: 7200000,
+                method: "Online Zoom Meeting",
+                quota: "80 Peserta",
+                token: "PROP2026",
+                link: "https://zoom.us/j/9103847291",
+                zoomId: "910 3847 291",
+                zoomPw: "ASM2026",
+                level: "Intermediate",
+                pdf: "/materi_pdf/3. Produk Asuransi Umum 300925.pdf",
                 quiz: [
-                    { q: "PAYDI adalah singkatan dari?", a: "Produk Asuransi Yang Dikaitkan dengan Investasi", b: "Premi Asuransi Yang Dibayar", c: "Polis Asuransi Yang Diperbarui", d: "Pusat Asuransi Yang Diotorisasi", correct: "a" }
+                    { q: "Klausul apa yang memberikan perluasan atas kerusakan akibat kerusuhan dan pemogokan pada polis properti?", a: "RSMDCC (Riots, Strikes, Malicious Damage and Civil Commotion)", b: "Deductible Clause", c: "Average Clause", d: "Subrogation Clause", correct: "a" },
+                    { q: "Faktor utama dalam survei risiko kebakaran komersial mencakup?", a: "Konstruksi bangunan, okupasi, proteksi kebakaran, dan eksposur sekitar", b: "Warna cat dinding dan interior", c: "Jumlah karyawan administrasi saja", d: "Tahun pendirian perusahaan kontraktor", correct: "a" }
+                ]
+            },
+            {
+                id: "tr-003",
+                title: "Strategi Penetrasi Asuransi Kendaraan PSAKOB & All Risk",
+                status: "Mendatang",
+                time: new Date('2026-12-03T13:30:00+07:00').getTime(), // 03 Des 2026
+                duration: 7200000,
+                method: "Offline (Auditorium Kantor Pusat ASM)",
+                quota: "50 Peserta",
+                token: "AUTO2026",
+                link: "Auditorium Kantor Pusat ASM, Lantai 5",
+                level: "Intermediate",
+                pdf: "/materi_pdf/3. Produk Asuransi Umum 300925.pdf",
+                quiz: [
+                    { q: "Perbedaan mendasar pertanggungan Comprehensive (All Risk) vs TLO adalah?", a: "All Risk menjamin kerugian sebagian dan total, TLO hanya menjamin kerugian >= 75%", b: "TLO lebih mahal dari All Risk", c: "All Risk tidak menjamin kecelakaan di jalan tol", d: "TLO hanya berlaku untuk mobil baru", correct: "a" }
+                ]
+            },
+            {
+                id: "tr-004",
+                title: "Teknik Closing Surety Bond & Kontra Bank Garansi Proyek",
+                status: "Mendatang",
+                time: new Date('2026-12-10T10:00:00+07:00').getTime(), // 10 Des 2026
+                duration: 7200000,
+                method: "Online Zoom Meeting",
+                quota: "60 Peserta",
+                token: "BOND2026",
+                link: "https://zoom.us/j/9283746152",
+                zoomId: "928 3746 152",
+                zoomPw: "ASM2026",
+                level: "Advanced",
+                pdf: "/materi_pdf/1. Prinsip Dasar Asuransi.pdf",
+                quiz: [
+                    { q: "Pihak yang memberikan jaminan dalam kontrak Suretyship disebut?", a: "Surety", b: "Principal", c: "Obligee", d: "Beneficiary", correct: "a" }
                 ]
             }
         ];
@@ -1795,18 +1844,21 @@ window.renderJadwalTrainingUntukAgen = function() {
 
         let actionBtnHTML = "";
         
+        const isLive = t.status === "Sedang Berlangsung" || t.status === "Live";
         const isCompleted = t.status === "Completed";
-        const isExpired = Date.now() > t.time;
+        const isExpired = !isLive && (Date.now() > t.time + (t.duration || 4 * 3600000));
         const pdfMap = {
             'tr-001': '/materi_pdf/1. Prinsip Dasar Asuransi.pdf',
             'tr-002': '/materi_pdf/3. Produk Asuransi Umum 300925.pdf',
+            'tr-003': '/materi_pdf/3. Produk Asuransi Umum 300925.pdf',
+            'tr-004': '/materi_pdf/1. Prinsip Dasar Asuransi.pdf',
         };
         const pdfUrl = (t.pdf && t.pdf !== '#') ? t.pdf : (pdfMap[t.id] || '/materi_pdf/1. Prinsip Dasar Asuransi.pdf');
 
         if (attemptData.passed) {
             // Kondisi D: Setelah Lulus Kuis -> Tampilkan tombol utama 'Download Sertifikat Resmi'
             actionBtnHTML = `
-                <button class="btn-primary" style="width:100%; background:#f59e0b; border:none; box-shadow:0 4px 10px rgba(245,158,11,0.25);" onclick="window.openPrintCertificate('${t.title}', '${attemptData.bestScore || 100}')">🏆 Download Sertifikat Resmi</button>
+                <button class="btn-primary" style="width:100%; background: linear-gradient(135deg, #f59e0b, #d97706); border:none; box-shadow:0 4px 10px rgba(245,158,11,0.25); font-weight:700;" onclick="window.openPrintCertificate('${t.title}', '${attemptData.bestScore || 100}')">🏆 Download Sertifikat Resmi</button>
             `;
         } else if (isHadir) {
             // Kondisi C: Setelah Token Diisi -> Tampilkan dua tombol sejajar (Unduh Materi PDF dan Ikuti Kuis Singkat)
@@ -1814,12 +1866,12 @@ window.renderJadwalTrainingUntukAgen = function() {
             if (attemptData.attempts >= 2) {
                 kuisBtnHtml = `<button class="btn-secondary btn-training-half" style="opacity:0.5; cursor:not-allowed; background:#f1f5f9; color:#64748b; border:1px solid #cbd5e1;" disabled>❌ Kuis (Habis)</button>`;
             } else {
-                kuisBtnHtml = `<button class="btn-primary btn-training-half" onclick="openTrainingQuiz('${t.id}')">📝 Ikuti Kuis</button>`;
+                kuisBtnHtml = `<button class="btn-primary btn-training-half" style="font-weight:700; background: linear-gradient(135deg, #0284c7, #0369a1); border:none;" onclick="openTrainingQuiz('${t.id}')">📝 Ikuti Kuis Post-Test</button>`;
             }
 
             actionBtnHTML = `
                 <div class="training-card-row">
-                    <a href="${pdfUrl}" target="_blank" rel="noopener" class="btn-primary btn-training-pdf" style="background:#3b82f6; border:none; display:flex; align-items:center; justify-content:center; text-decoration:none; padding:10px 0; border-radius:8px; color:white; font-weight:600; box-sizing:border-box;">📄 PDF</a>
+                    <a href="${pdfUrl}" target="_blank" rel="noopener" class="btn-primary btn-training-pdf" style="background:#3b82f6; border:none; display:flex; align-items:center; justify-content:center; text-decoration:none; padding:10px 0; border-radius:8px; color:white; font-weight:600; box-sizing:border-box;">📄 Unduh PDF</a>
                     ${kuisBtnHtml}
                 </div>
             `;
@@ -1829,30 +1881,36 @@ window.renderJadwalTrainingUntukAgen = function() {
             let pretestScore = (myAttendance[t.id] && myAttendance[t.id].pretestScore !== undefined) ? myAttendance[t.id].pretestScore : (myPretest ? myPretest.score : null);
 
             let pretestBadgeHtml = (pretestScore !== null) ? 
-                `<div style="font-size:11.5px; color:#0369a1; background:#e0f2fe; border:1px solid #bae6fd; border-radius:6px; padding:4px 8px; margin-top:8px; font-weight:700; display:flex; align-items:center; gap:4px; justify-content:center; width:100%; box-sizing:border-box;">📊 Skor Pre-Test: ${pretestScore}/100</div>` : '';
+                `<div style="font-size:11.5px; color:#0369a1; background:#e0f2fe; border:1px solid #bae6fd; border-radius:6px; padding:4px 8px; margin-top:8px; font-weight:700; display:flex; align-items:center; gap:4px; justify-content:center; width:100%; box-sizing:border-box;">📊 Skor Pre-Test: ${pretestScore}/100 (RSVP Aktif)</div>` : '';
 
-            if (isCompleted || isExpired) {
-                // Kondisi B: Training Selesai & sudah RSVP -> Tampilkan tombol 'Konfirmasi Kehadiran'
+            if (isLive || isCompleted || Date.now() >= t.time) {
+                // Kondisi B: Training Sedang Berlangsung / Selesai & sudah RSVP -> Tampilkan tombol 'Konfirmasi Kehadiran'
                 actionBtnHTML = `
-                    <button class="btn-primary" style="width:100%;" onclick="openTokenModal('${t.id}')">Konfirmasi Kehadiran</button>
+                    <button class="btn-primary" style="width:100%; background: linear-gradient(135deg, #10b981, #059669); border:none; font-weight:700; box-shadow:0 4px 10px rgba(16,185,129,0.25);" onclick="openTokenModal('${t.id}')">🔑 Input Token Kehadiran (Live)</button>
+                    <div style="font-size:11.5px; color:#15803d; text-align:center; margin-top:6px; font-weight:600;">💡 Token dari Trainer: <strong style="background:#dcfce7; padding:2px 6px; border-radius:4px; letter-spacing:1px;">${t.token}</strong></div>
                     ${pretestBadgeHtml}
                 `;
             } else {
                 // Kondisi A Awal: Hanya tampilkan tombol 'RSVP Berhasil'
                 actionBtnHTML = `
-                    <button class="btn-primary" style="width:100%; background:#10b981; border:none; cursor:default;" disabled>✅ RSVP Berhasil</button>
+                    <button class="btn-primary" style="width:100%; background:#10b981; border:none; cursor:default; font-weight:700;" disabled>✅ RSVP Berhasil</button>
                     ${pretestBadgeHtml}
                 `;
             }
         } else {
             // Belum RSVP sama sekali
-            if (isCompleted || isExpired) {
+            if (isExpired) {
                 actionBtnHTML = `
                     <button class="btn-secondary" style="width:100%; opacity:0.6; cursor:not-allowed; background:#f1f5f9; color:#64748b; border:1px solid #cbd5e1;" disabled>❌ Sesi Telah Berakhir</button>
                 `;
+            } else if (isLive) {
+                actionBtnHTML = `
+                    <button class="btn-primary" style="width:100%; background: linear-gradient(135deg, #0284c7, #0369a1); border:none; font-weight:800; box-shadow:0 4px 12px rgba(2,132,199,0.3);" onclick="window.rsvpTraining('${t.id}')">🔴 Daftar &amp; Ikuti Sesi (Live Now)</button>
+                    <div style="font-size:11px; color:#0284c7; text-align:center; margin-top:5px; font-weight:600;">⚡ Kelas sedang tayang! Daftar sekarang untuk masuk sesi.</div>
+                `;
             } else {
                 actionBtnHTML = `
-                    <button class="btn-primary" style="width:100%;" onclick="window.rsvpTraining('${t.id}')">Daftar (RSVP) Sekarang</button>
+                    <button class="btn-primary" style="width:100%; background: linear-gradient(135deg, #0284c7, #0369a1); border:none; font-weight:700;" onclick="window.rsvpTraining('${t.id}')">Daftar (RSVP) Sekarang</button>
                 `;
             }
         }
@@ -1904,6 +1962,7 @@ window.renderJadwalTrainingUntukAgen = function() {
         <div class="training-flyer-wrapper" style="cursor:zoom-in; position:relative;">
             <img class="flyer-thumb" alt="Flyer ${t.title.replace(/"/g,'&quot;')}" style="width:100%; height:140px; object-fit:cover; display:block; border-radius:8px 8px 0 0; transition:transform 0.3s ease;">
             <div class="training-method-badge">${t.method}</div>
+            ${isLive ? '<div style="position:absolute; top:8px; right:8px; background:#ef4444; color:#fff; font-size:10.5px; font-weight:800; padding:4px 10px; border-radius:12px; box-shadow:0 2px 8px rgba(239,68,68,0.5); display:flex; align-items:center; gap:5px; z-index:2;"><span style="display:inline-block; width:7px; height:7px; background:white; border-radius:50%;"></span>SEDANG BERLANGSUNG</div>' : ''}
             <div style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;padding:3px 8px;border-radius:12px;backdrop-filter:blur(4px);">🔍 Klik untuk perbesar</div>
         </div>
         <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; padding: 14px 16px;">
@@ -2459,6 +2518,9 @@ window.submitTrainingQuiz = function(e) {
                 progressData[userKey].levelProgress[ev.level] = (progressData[userKey].levelProgress[ev.level] || 0) + 1;
                 localStorage.setItem("pa_agent_progress", JSON.stringify(progressData));
             }
+            if (typeof window.addAgentXpAndCoins === 'function') {
+                window.addAgentXpAndCoins(150, 50);
+            }
         }
         localStorage.setItem("pa_training_quiz_attempts", JSON.stringify(attemptsData));
         
@@ -2479,9 +2541,9 @@ window.submitTrainingQuiz = function(e) {
         const statusText = passed ? 'LULUS!' : 'Belum Lulus';
         const statusColor = passed ? '#16a34a' : '#dc2626';
         const detailText = passed
-            ? `Selamat! Anda berhasil lulus dengan skor <strong>${score}%</strong>.<br>Sertifikat pelatihan kini dapat diunduh.`
-            : `Skor Anda <strong>${score}%</strong>. Minimal kelulusan 70%.<br>${sisaKesempatan > 0 ? `Sisa kesempatan: <strong>${sisaKesempatan}x</strong>` : '<span style="color:#dc2626">Kesempatan telah habis.</span>'}`;
-        const btnLabel = passed ? '🏆 Lihat Sertifikat' : 'Tutup';
+            ? `Selamat! Anda berhasil lulus dengan skor <strong>${score}%</strong>.<br>🎁 <strong>+150 XP &amp; +50 Koin</strong> berhasil diklaim!<br>🏆 e-Certificate resmi LSP AAUI kini dapat diunduh &amp; dicetak.`
+            : `Skor Anda <strong>${score}%</strong>. Minimal kelulusan 70%.<br>${sisaKesempatan > 0 ? `Sisa kesempatan: <strong>${sisaKesempatan}x</strong>. Silakan pelajari kembali materi PDF sebelum mencoba lagi.` : '<span style="color:#dc2626">Kesempatan telah habis. Silakan hubungi Trainer Cabang.</span>'}`;
+        const btnLabel = passed ? '🏆 Lihat Sertifikat & Cetak' : 'Tutup';
         let pretestData = JSON.parse(localStorage.getItem("pa_training_pretest_attempts")) || {};
         let myPretest = (pretestData[email] && pretestData[email][currentQuizEvId]) ? pretestData[email][currentQuizEvId] : null;
         let comparisonHtml = "";
@@ -11596,3 +11658,134 @@ window.submitSimulatedQuestion = function() {
 // EKSEKUSI SEGERA SAAT FILE SCRIPT DIMUAT:
 window.loadModuleQA();
 window.updateTrainerQABadge();
+
+// ==================== LIVE TRAINING FLOWCHART GUIDE MODAL ====================
+window.openFlowchartGuideModal = function() {
+  const modal = document.getElementById('modal-live-training-flowchart');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeFlowchartGuideModal = function() {
+  const modal = document.getElementById('modal-live-training-flowchart');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+window.switchFlowchartTab = function(tabName) {
+  const tabs = ['visual', 'sop', 'mermaid'];
+  tabs.forEach(t => {
+    const btn = document.getElementById('btn-fc-tab-' + t);
+    const pane = document.getElementById('fc-pane-' + t);
+    if (btn) {
+      if (t === tabName) {
+        btn.classList.add('active');
+        btn.style.color = '#0284c7';
+        btn.style.borderBottom = '3px solid #0284c7';
+        btn.style.fontWeight = '700';
+        btn.style.background = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.color = '#64748b';
+        btn.style.borderBottom = '3px solid transparent';
+        btn.style.fontWeight = '600';
+        btn.style.background = '#f8fafc';
+      }
+    }
+    if (pane) {
+      pane.style.display = (t === tabName) ? 'block' : 'none';
+    }
+  });
+};
+
+window.startLiveTrainingDemoSimulation = function() {
+  window.closeFlowchartGuideModal();
+  const grid = document.getElementById('agen-training-grid');
+  if (grid) {
+    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const firstCard = grid.querySelector('.training-compact-card');
+    if (firstCard) {
+      firstCard.style.outline = '3px solid #0284c7';
+      firstCard.style.boxShadow = '0 0 25px rgba(2, 132, 199, 0.45)';
+      firstCard.style.transition = 'all 0.4s ease';
+      setTimeout(() => {
+        firstCard.style.outline = '';
+        firstCard.style.boxShadow = '';
+      }, 4000);
+    }
+  }
+  if (window.showToast) {
+    window.showToast('👉 Silakan klik tombol "Daftar & Ikuti Sesi (Live Now)" atau "Input Token Kehadiran" untuk mencoba alur simulasi!', 'info');
+  }
+};
+
+// ==================== BELAJAR MANDIRI FLOWCHART GUIDE MODAL ====================
+window.openBelajarFlowchartModal = function() {
+  const modal = document.getElementById('modal-belajar-mandiri-flowchart');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeBelajarFlowchartModal = function() {
+  const modal = document.getElementById('modal-belajar-mandiri-flowchart');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+window.switchBelajarFlowchartTab = function(tabName) {
+  const tabs = ['visual', 'sop', 'mermaid'];
+  tabs.forEach(t => {
+    const btn = document.getElementById('btn-bfc-tab-' + t);
+    const pane = document.getElementById('bfc-pane-' + t);
+    if (btn) {
+      if (t === tabName) {
+        btn.classList.add('active');
+        btn.style.color = '#0284c7';
+        btn.style.borderBottom = '3px solid #0284c7';
+        btn.style.fontWeight = '700';
+        btn.style.background = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.color = '#64748b';
+        btn.style.borderBottom = '3px solid transparent';
+        btn.style.fontWeight = '600';
+        btn.style.background = '#f8fafc';
+      }
+    }
+    if (pane) {
+      pane.style.display = (t === tabName) ? 'block' : 'none';
+    }
+  });
+};
+
+window.startBelajarDemoSimulation = function() {
+  window.closeBelajarFlowchartModal();
+  const recCard = document.getElementById('dash-recommendation-card');
+  const listContainer = document.getElementById('container-list-materi');
+  
+  if (recCard) {
+    recCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    recCard.style.outline = '3px solid #0284c7';
+    recCard.style.boxShadow = '0 0 25px rgba(2, 132, 199, 0.45)';
+    recCard.style.borderRadius = '10px';
+    recCard.style.transition = 'all 0.4s ease';
+    setTimeout(() => {
+      recCard.style.outline = '';
+      recCard.style.boxShadow = '';
+    }, 4000);
+  } else if (listContainer) {
+    listContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  
+  if (window.showToast) {
+    window.showToast('👉 Silakan klik pada kartu "Rekomendasi Materi" atau pilih salah satu kartu modul di bawah untuk memulai pembelajaran!', 'info');
+  }
+};
